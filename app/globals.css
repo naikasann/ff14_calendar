@@ -123,18 +123,18 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .legend-result { background: #c69b51; }
 .calendar-shell { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
 .weekday-row, .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
-.weekday-row { color: #67758c; background: rgba(255,255,255,.018); font-size: 9px; text-align: center; }
+.weekday-row { color: #67758c; background: rgba(255,255,255,.018); font-size: 11px; text-align: center; }
 .weekday-row div { padding: 10px 4px; border-right: 1px solid var(--line); }
 .weekday-row div:last-child { border-right: 0; }
 .weekday-row .sunday { color: #b87987; }
 .weekday-row .saturday { color: #668ec7; }
-.calendar-cell { min-width: 0; min-height: 111px; padding: 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: rgba(7,13,27,.26); }
+.calendar-cell { min-width: 0; min-height: 120px; padding: 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: rgba(7,13,27,.26); }
 .calendar-cell:nth-child(7n) { border-right: 0; }
 .calendar-cell.outside { opacity: .28; background: rgba(0,0,0,.14); }
 .calendar-cell.current { background: linear-gradient(145deg, rgba(34,75,91,.22), rgba(7,13,27,.2)); box-shadow: inset 0 0 0 1px rgba(91,224,237,.33); }
-.date-line { height: 24px; display: flex; justify-content: space-between; align-items: flex-start; color: #98a8bf; font: 500 11px var(--font-geist-mono), monospace; }
-.date-line small { color: var(--cyan); font-size: 7px; letter-spacing: .09em; }
-.event-pill { min-width: 0; display: flex; align-items: center; gap: 6px; height: 25px; margin-top: 5px; padding: 0 7px; border-radius: 4px; font-size: 9px; overflow: hidden; }
+.date-line { height: 26px; display: flex; justify-content: space-between; align-items: flex-start; color: #98a8bf; font: 500 13px var(--font-geist-mono), monospace; }
+.date-line small { color: var(--cyan); font-size: 8px; letter-spacing: .09em; }
+.event-pill { min-width: 0; display: flex; align-items: center; gap: 6px; height: 28px; margin-top: 5px; padding: 0 7px; border-radius: 4px; font-size: 11px; overflow: hidden; }
 .event-pill strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 500; }
 .frontline-event { color: #8bdce5; background: rgba(48,160,176,.075); border-left: 2px solid #4cc5d2; }
 .event-dot { flex: 0 0 auto; width: 5px; height: 5px; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; }
@@ -145,7 +145,7 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .housing-event { color: #b8a3f3; background: rgba(135,107,207,.085); border-left: 2px solid #9479df; }
 .housing-event span { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
 .housing-event.result { color: #d6ad68; background: rgba(176,126,51,.08); border-left-color: #c2934b; }
-.calendar-note { margin: 13px 0 0; color: #59667c; font-size: 9px; }
+.calendar-note { margin: 13px 0 0; color: #59667c; font-size: 10px; }
 
 .sources-section { scroll-margin-top: 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; margin-top: 18px; padding: 28px 30px; border-radius: 13px; }
 .sources-section h2 { margin: 0 0 7px; font-size: 16px; font-weight: 560; }
@@ -171,7 +171,7 @@ footer small { grid-column: 2; }
   .season-dc { border: 0; padding: 0; }
   .official-link { justify-self: end; }
   .calendar-section { padding: 22px 14px; }
-  .calendar-cell { min-height: 91px; padding: 7px 5px; }
+  .calendar-cell { min-height: 104px; padding: 7px 5px; }
   .event-pill { padding: 0 5px; gap: 4px; }
   .legend { display: none; }
   .sources-section { grid-template-columns: 1fr; gap: 20px; }
@@ -193,10 +193,10 @@ footer small { grid-column: 2; }
   .calendar-toolbar .eyebrow { display: none; }
   .calendar-toolbar h2 { font-size: 18px; }
   .filter-row button { padding: 7px 10px; }
-  .calendar-cell { min-height: 82px; }
-  .date-line { height: 20px; }
+  .calendar-cell { min-height: 92px; }
+  .date-line { height: 23px; }
   .date-line small, .event-dot { display: none; }
-  .event-pill { height: 22px; font-size: 8px; }
+  .event-pill { height: 24px; font-size: 9px; }
   .housing-event span { display: none; }
   footer { grid-template-columns: 1fr; }
   footer small { grid-column: 1; }
