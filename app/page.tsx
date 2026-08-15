@@ -19,6 +19,47 @@ import {
 type CalendarFilter = "all" | "frontline" | "housing";
 const WEEKDAYS = ["日", "月", "火", "水", "木", "金", "土"];
 
+type CalendarEvent = {
+  fileName: string;
+  title: string;
+  description: string;
+  start: CalendarDate;
+  endExclusive: CalendarDate;
+};
+
+function toIcsDate(date: CalendarDate): string {
+  return formatDateKey(date).replaceAll("-", "");
+}
+
+function escapeIcsText(value: string): string {
+  return value.replaceAll("\\", "\\\\").replaceAll(";", "\\;").replaceAll(",", "\\,").replaceAll("\n", "\\n");
+}
+
+function downloadCalendarEvent(event: CalendarEvent) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const content = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Eorzea Schedule//FF14 Calendar//JA",
+    "CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT",
+    `UID:${toIcsDate(event.start)}-${event.fileName}@ff14-calendar`,
+    `DTSTAMP:${stamp}`,
+    `DTSTART;VALUE=DATE:${toIcsDate(event.start)}`,
+    `DTEND;VALUE=DATE:${toIcsDate(event.endExclusive)}`,
+    `SUMMARY:${escapeIcsText(event.title)}`,
+    `DESCRIPTION:${escapeIcsText(event.description)}`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\r\n");
+  const url = URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${event.fileName}.ics`;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 function Icon({ name }: { name: "left" | "right" | "external" | "calendar" | "home" | "sword" }) {
   const paths = {
     left: <path d="m15 18-6-6 6-6" />,
@@ -50,6 +91,17 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const nextFrontline = getFrontlineForDate(addDays(today, 1));
   const housing = getHousingCycle(today);
+  const upcomingFrontlines = [1, 2, 3].map((daysLater) => {
+    const date = addDays(today, daysLater);
+    return { date, schedule: getFrontlineForDate(date) };
+  });
+  const firstHousingStart = housing.nextPhaseDate;
+  const firstHousing = getHousingCycle(firstHousingStart);
+  const secondHousingStart = addDays(firstHousingStart, firstHousing.phaseLength);
+  const upcomingHousing = [
+    { date: firstHousingStart, schedule: firstHousing },
+    { date: secondHousingStart, schedule: getHousingCycle(secondHousingStart) },
+  ];
 
   return (
     <section className="today-section" id="today">
@@ -88,6 +140,47 @@ function TodayPanel({ today }: { today: CalendarDate }) {
           </div>
         </article>
       </div>
+
+      <div className="details-grid">
+        <article className="detail-card">
+          <div>
+            <p className="eyebrow">FRONTLINE GUIDE</p>
+            <h3>フロントラインについて</h3>
+            <p className="detail-description">大規模PvP「フロントライン」の本日のルールです。対象コンテンツは日本時間の毎日0:00に切り替わります。</p>
+          </div>
+          <div className="next-schedule">
+            <strong>次回予定</strong>
+            <ul>{upcomingFrontlines.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.name}（{schedule.subtitle}）</li>)}</ul>
+          </div>
+          <button className="calendar-add-button" type="button" onClick={() => downloadCalendarEvent({
+            fileName: `frontline-${formatDateKey(today)}`,
+            title: `FF14 フロントライン：${frontline.name}`,
+            description: `${frontline.name}（${frontline.subtitle}）。日本時間0:00に切り替わります。`,
+            start: today,
+            endExclusive: addDays(today, 1),
+          })}><Icon name="calendar" />本日の予定をカレンダーに追加</button>
+        </article>
+
+        <article className="detail-card housing-detail">
+          <div>
+            <p className="eyebrow">HOUSING GUIDE</p>
+            <h3>ハウジング抽選について</h3>
+            <p className="detail-description">土地抽選は「応募5日間」と「結果発表4日間」の周期です。応募後は結果発表期間中に土地のサインボードで結果を確認します。</p>
+          </div>
+          <div className="next-schedule">
+            <strong>次回予定</strong>
+            <ul>{upcomingHousing.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.phaseLabel} 開始</li>)}</ul>
+          </div>
+          <button className="calendar-add-button housing-add-button" type="button" onClick={() => downloadCalendarEvent({
+            fileName: `housing-${housing.phase}-${formatDateKey(housing.phaseStart)}`,
+            title: `FF14 ハウジング：${housing.phaseLabel}`,
+            description: `ハウジング土地抽選の${housing.phaseLabel}です。${housing.rangeLabel}`,
+            start: housing.phaseStart,
+            endExclusive: addDays(housing.phaseEnd, 1),
+          })}><Icon name="calendar" />現在の期間をカレンダーに追加</button>
+        </article>
+      </div>
+      <p className="ics-note">※ 追加ボタンで .ics ファイルを保存します。Googleカレンダー、Outlook、Appleカレンダーなどで開いて登録できます。</p>
 
       <article className="season-card">
         <div className="season-emblem"><span>CC</span><small>21</small></div>
