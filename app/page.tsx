@@ -152,13 +152,6 @@ function TodayPanel({ today }: { today: CalendarDate }) {
             <strong>次回予定</strong>
             <ul>{upcomingFrontlines.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.name}（{schedule.subtitle}）</li>)}</ul>
           </div>
-          <button className="calendar-add-button" type="button" onClick={() => downloadCalendarEvent({
-            fileName: `frontline-${formatDateKey(today)}`,
-            title: `FF14 フロントライン：${frontline.name}`,
-            description: `${frontline.name}（${frontline.subtitle}）。日本時間0:00に切り替わります。`,
-            start: today,
-            endExclusive: addDays(today, 1),
-          })}><Icon name="calendar" />本日の予定をカレンダーに追加</button>
         </article>
 
         <article className="detail-card housing-detail">
@@ -171,16 +164,8 @@ function TodayPanel({ today }: { today: CalendarDate }) {
             <strong>次回予定</strong>
             <ul>{upcomingHousing.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.phaseLabel} 開始</li>)}</ul>
           </div>
-          <button className="calendar-add-button housing-add-button" type="button" onClick={() => downloadCalendarEvent({
-            fileName: `housing-${housing.phase}-${formatDateKey(housing.phaseStart)}`,
-            title: `FF14 ハウジング：${housing.phaseLabel}`,
-            description: `ハウジング土地抽選の${housing.phaseLabel}です。${housing.rangeLabel}`,
-            start: housing.phaseStart,
-            endExclusive: addDays(housing.phaseEnd, 1),
-          })}><Icon name="calendar" />現在の期間をカレンダーに追加</button>
         </article>
       </div>
-      <p className="ics-note">※ 追加ボタンで .ics ファイルを保存します。Googleカレンダー、Outlook、Appleカレンダーなどで開いて登録できます。</p>
 
       <article className="season-card">
         <div className="season-emblem"><span>CC</span><small>21</small></div>
@@ -259,6 +244,38 @@ function Sources() {
   );
 }
 
+function CalendarExport({ today }: { today: CalendarDate }) {
+  const frontline = getFrontlineForDate(today);
+  const housing = getHousingCycle(today);
+
+  return (
+    <section className="calendar-export-section" id="calendar-export">
+      <div>
+        <p className="eyebrow">ADD TO YOUR CALENDAR</p>
+        <h2>予定をカレンダーに追加</h2>
+        <p>今日のフロントライン、または現在のハウジング抽選期間を登録できます。</p>
+      </div>
+      <div className="export-actions">
+        <button className="calendar-add-button" type="button" onClick={() => downloadCalendarEvent({
+          fileName: `frontline-${formatDateKey(today)}`,
+          title: `FF14 フロントライン：${frontline.name}`,
+          description: `${frontline.name}（${frontline.subtitle}）。日本時間0:00に切り替わります。`,
+          start: today,
+          endExclusive: addDays(today, 1),
+        })}><Icon name="calendar" />本日のフロントラインを追加</button>
+        <button className="calendar-add-button housing-add-button" type="button" onClick={() => downloadCalendarEvent({
+          fileName: `housing-${housing.phase}-${formatDateKey(housing.phaseStart)}`,
+          title: `FF14 ハウジング：${housing.phaseLabel}`,
+          description: `ハウジング土地抽選の${housing.phaseLabel}です。${housing.rangeLabel}`,
+          start: housing.phaseStart,
+          endExclusive: addDays(housing.phaseEnd, 1),
+        })}><Icon name="calendar" />現在のハウジング期間を追加</button>
+      </div>
+      <p className="ics-note">※ .ics ファイルを保存します。Googleカレンダー、Outlook、Appleカレンダーなどで開いて登録できます。</p>
+    </section>
+  );
+}
+
 export default function Home() {
   const [today, setToday] = useState<CalendarDate>({ year: 2026, month: 8, day: 14 });
   useEffect(() => {
@@ -272,7 +289,7 @@ export default function Home() {
     <main id="top">
       <div className="aurora aurora-one" /><div className="aurora aurora-two" />
       <div className="page-shell">
-        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><Sources />
+        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><Sources /><CalendarExport today={today} />
         <footer><span>EORZEA SCHEDULE</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
       </div>
     </main>
