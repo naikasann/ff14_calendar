@@ -96,7 +96,10 @@ export function getHousingCycle(date: CalendarDate) {
     phaseDay: isEntry ? dayInCycle + 1 : dayInCycle - 4,
     phaseLength: isEntry ? 5 : 4,
     rangeLabel: `${phaseStart.month}/${phaseStart.day} 0:00 — ${phaseEnd.month}/${phaseEnd.day} 23:59`,
+    phaseStart,
+    phaseEnd,
     nextPhaseLabel: isEntry ? "結果発表" : "応募開始",
+    nextPhaseDate,
     nextPhaseDateLabel: `${nextPhaseDate.month}/${nextPhaseDate.day} 0:00`,
   };
 }
