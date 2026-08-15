@@ -85,11 +85,15 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .next-schedule li { display: flex; gap: 8px; }
 .next-schedule li span { flex: 0 0 36px; color: var(--cyan); font-family: var(--font-geist-mono), monospace; }
 .housing-detail .next-schedule li span { color: #bda9ff; }
-.calendar-add-button { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 0 16px; border: 1px solid rgba(88,216,231,.28); border-radius: 6px; background: rgba(61,177,191,.09); color: #bceff5; cursor: pointer; font-size: 10px; transition: .18s ease; }
+.calendar-add-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(88,216,231,.28); border-radius: 6px; background: rgba(61,177,191,.09); color: #bceff5; cursor: pointer; font-size: 11px; transition: .18s ease; }
 .calendar-add-button:hover { border-color: rgba(88,216,231,.55); background: rgba(61,177,191,.16); }
 .housing-add-button { border-color: rgba(169,140,255,.3); background: rgba(169,140,255,.09); color: #d8ceff; }
 .housing-add-button:hover { border-color: rgba(169,140,255,.58); background: rgba(169,140,255,.16); }
-.ics-note { margin: 9px 2px 0; color: #5e6c82; font-size: 9px; line-height: 1.6; }
+.calendar-export-section { margin-top: 18px; padding: 28px 30px; border: 1px solid var(--line); border-radius: 13px; background: linear-gradient(145deg, rgba(18,29,53,.84), rgba(8,15,31,.88)); }
+.calendar-export-section h2 { margin: 0 0 7px; font-size: 18px; font-weight: 560; }
+.calendar-export-section > div > p:last-child { margin: 0; color: #8492a9; font-size: 11px; }
+.export-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.ics-note { margin: 10px 0 0; color: #5e6c82; font-size: 9px; line-height: 1.6; }
 
 .season-card { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 22px; min-height: 104px; border-radius: 12px; margin-top: 18px; padding: 18px 22px; }
 .season-emblem { position: relative; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid rgba(125,219,231,.22); transform: rotate(45deg); }
@@ -176,6 +180,7 @@ footer small { grid-column: 2; }
   .legend { display: none; }
   .sources-section { grid-template-columns: 1fr; gap: 20px; }
   .source-links { grid-template-columns: 1fr; }
+  .export-actions { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
