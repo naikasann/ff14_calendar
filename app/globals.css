@@ -75,6 +75,22 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .progress-track span { display: block; height: 100%; background: linear-gradient(90deg, #8c72dc, #ccbaff); box-shadow: 0 0 8px #a98cff; }
 .housing-card.result .progress-track span { background: linear-gradient(90deg, #a97633, #efca82); box-shadow: 0 0 8px #e8ba66; }
 
+.details-grid { display: grid; grid-template-columns: 1.16fr .84fr; gap: 18px; margin-top: 18px; }
+.detail-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 24px; align-items: start; padding: 22px 24px; border: 1px solid var(--line); border-radius: 12px; background: rgba(10, 18, 35, .7); }
+.detail-card h3 { margin: 0 0 7px; font-size: 16px; font-weight: 570; }
+.detail-description { max-width: 560px; margin: 0; color: #91a0b7; font-size: 11px; line-height: 1.8; }
+.next-schedule { min-width: 210px; padding-left: 20px; border-left: 1px solid var(--line); }
+.next-schedule > strong { display: block; margin-bottom: 8px; color: #b9c8dc; font-size: 10px; }
+.next-schedule ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; color: #8290a8; font-size: 10px; }
+.next-schedule li { display: flex; gap: 8px; }
+.next-schedule li span { flex: 0 0 36px; color: var(--cyan); font-family: var(--font-geist-mono), monospace; }
+.housing-detail .next-schedule li span { color: #bda9ff; }
+.calendar-add-button { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 0 16px; border: 1px solid rgba(88,216,231,.28); border-radius: 6px; background: rgba(61,177,191,.09); color: #bceff5; cursor: pointer; font-size: 10px; transition: .18s ease; }
+.calendar-add-button:hover { border-color: rgba(88,216,231,.55); background: rgba(61,177,191,.16); }
+.housing-add-button { border-color: rgba(169,140,255,.3); background: rgba(169,140,255,.09); color: #d8ceff; }
+.housing-add-button:hover { border-color: rgba(169,140,255,.58); background: rgba(169,140,255,.16); }
+.ics-note { margin: 9px 2px 0; color: #5e6c82; font-size: 9px; line-height: 1.6; }
+
 .season-card { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 22px; min-height: 104px; border-radius: 12px; margin-top: 18px; padding: 18px 22px; }
 .season-emblem { position: relative; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid rgba(125,219,231,.22); transform: rotate(45deg); }
 .season-emblem span, .season-emblem small { transform: rotate(-45deg); position: absolute; }
@@ -149,6 +165,7 @@ footer small { grid-column: 2; }
   .site-header nav { display: none; }
   .today-section { padding-top: 42px; }
   .overview-grid { grid-template-columns: 1fr; }
+  .details-grid { grid-template-columns: 1fr; }
   .feature-card { min-height: 255px; }
   .season-card { grid-template-columns: auto 1fr; }
   .season-dc { border: 0; padding: 0; }
@@ -167,6 +184,8 @@ footer small { grid-column: 2; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
   .live-pill { padding: 0; }
   .feature-card { padding-left: 18px; padding-right: 18px; }
+  .detail-card { grid-template-columns: 1fr; padding: 19px 18px; }
+  .next-schedule { min-width: 0; padding: 14px 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .feature-content { margin-top: 42px; }
   .map-number { font-size: 54px; }
   .card-footer-row { left: 18px; right: 18px; }
