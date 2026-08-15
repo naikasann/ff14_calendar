@@ -60,6 +60,16 @@ function downloadCalendarEvent(event: CalendarEvent) {
   URL.revokeObjectURL(url);
 }
 
+function getGoogleCalendarUrl(event: CalendarEvent): string {
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${toIcsDate(event.start)}/${toIcsDate(event.endExclusive)}`,
+    details: event.description,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
 function Icon({ name }: { name: "left" | "right" | "external" | "calendar" | "home" | "sword" }) {
   const paths = {
     left: <path d="m15 18-6-6 6-6" />,
@@ -253,6 +263,20 @@ function ScheduleGuides({ today }: { today: CalendarDate }) {
 function CalendarExport({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const housing = getHousingCycle(today);
+  const frontlineEvent: CalendarEvent = {
+    fileName: `frontline-${formatDateKey(today)}`,
+    title: `FF14 フロントライン：${frontline.name}`,
+    description: `${frontline.name}（${frontline.subtitle}）。日本時間0:00に切り替わります。`,
+    start: today,
+    endExclusive: addDays(today, 1),
+  };
+  const housingEvent: CalendarEvent = {
+    fileName: `housing-${housing.phase}-${formatDateKey(housing.phaseStart)}`,
+    title: `FF14 ハウジング：${housing.phaseLabel}`,
+    description: `ハウジング土地抽選の${housing.phaseLabel}です。${housing.rangeLabel}`,
+    start: housing.phaseStart,
+    endExclusive: addDays(housing.phaseEnd, 1),
+  };
 
   return (
     <section className="calendar-export-section" id="calendar-export">
@@ -262,22 +286,24 @@ function CalendarExport({ today }: { today: CalendarDate }) {
         <p>今日のフロントライン、または現在のハウジング抽選期間を登録できます。</p>
       </div>
       <div className="export-actions">
-        <button className="calendar-add-button" type="button" onClick={() => downloadCalendarEvent({
-          fileName: `frontline-${formatDateKey(today)}`,
-          title: `FF14 フロントライン：${frontline.name}`,
-          description: `${frontline.name}（${frontline.subtitle}）。日本時間0:00に切り替わります。`,
-          start: today,
-          endExclusive: addDays(today, 1),
-        })}><Icon name="calendar" />本日のフロントラインを追加</button>
-        <button className="calendar-add-button housing-add-button" type="button" onClick={() => downloadCalendarEvent({
-          fileName: `housing-${housing.phase}-${formatDateKey(housing.phaseStart)}`,
-          title: `FF14 ハウジング：${housing.phaseLabel}`,
-          description: `ハウジング土地抽選の${housing.phaseLabel}です。${housing.rangeLabel}`,
-          start: housing.phaseStart,
-          endExclusive: addDays(housing.phaseEnd, 1),
-        })}><Icon name="calendar" />現在のハウジング期間を追加</button>
+        <div className="export-event-group">
+          <strong>本日のフロントライン</strong>
+          <span>{frontline.name}（{frontline.subtitle}）</span>
+          <div className="export-event-buttons">
+            <button className="calendar-add-button" type="button" onClick={() => downloadCalendarEvent(frontlineEvent)}><Icon name="calendar" />.icsで追加</button>
+            <a className="calendar-add-button google-calendar-button" href={getGoogleCalendarUrl(frontlineEvent)} target="_blank" rel="noreferrer">Googleカレンダーに追加<Icon name="external" /></a>
+          </div>
+        </div>
+        <div className="export-event-group housing-export-group">
+          <strong>現在のハウジング期間</strong>
+          <span>{housing.phaseLabel}・{housing.rangeLabel}</span>
+          <div className="export-event-buttons">
+            <button className="calendar-add-button housing-add-button" type="button" onClick={() => downloadCalendarEvent(housingEvent)}><Icon name="calendar" />.icsで追加</button>
+            <a className="calendar-add-button google-calendar-button" href={getGoogleCalendarUrl(housingEvent)} target="_blank" rel="noreferrer">Googleカレンダーに追加<Icon name="external" /></a>
+          </div>
+        </div>
       </div>
-      <p className="ics-note">※ .ics ファイルを保存します。Googleカレンダー、Outlook、Appleカレンダーなどで開いて登録できます。</p>
+      <p className="ics-note">※ Googleカレンダーは予定入力画面が開きます。内容を確認して「保存」を押してください。.icsはOutlookやAppleカレンダーでも利用できます。</p>
     </section>
   );
 }
@@ -295,7 +321,7 @@ export default function Home() {
     <main id="top">
       <div className="aurora aurora-one" /><div className="aurora aurora-two" />
       <div className="page-shell">
-        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><Sources /><ScheduleGuides today={today} /><CalendarExport today={today} />
+        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><CalendarExport today={today} /><Sources /><ScheduleGuides today={today} />
         <footer><span>EORZEA SCHEDULE</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
       </div>
     </main>
