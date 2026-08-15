@@ -91,17 +91,6 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const nextFrontline = getFrontlineForDate(addDays(today, 1));
   const housing = getHousingCycle(today);
-  const upcomingFrontlines = [1, 2, 3].map((daysLater) => {
-    const date = addDays(today, daysLater);
-    return { date, schedule: getFrontlineForDate(date) };
-  });
-  const firstHousingStart = housing.nextPhaseDate;
-  const firstHousing = getHousingCycle(firstHousingStart);
-  const secondHousingStart = addDays(firstHousingStart, firstHousing.phaseLength);
-  const upcomingHousing = [
-    { date: firstHousingStart, schedule: firstHousing },
-    { date: secondHousingStart, schedule: getHousingCycle(secondHousingStart) },
-  ];
 
   return (
     <section className="today-section" id="today">
@@ -137,32 +126,6 @@ function TodayPanel({ today }: { today: CalendarDate }) {
           </div>
           <div className="card-footer-row">
             <span>{housing.phaseDay}日目 / {housing.phaseLength}日間</span><span>次回：{housing.nextPhaseLabel} {housing.nextPhaseDateLabel}</span>
-          </div>
-        </article>
-      </div>
-
-      <div className="details-grid">
-        <article className="detail-card">
-          <div>
-            <p className="eyebrow">FRONTLINE GUIDE</p>
-            <h3>フロントラインについて</h3>
-            <p className="detail-description">大規模PvP「フロントライン」の本日のルールです。対象コンテンツは日本時間の毎日0:00に切り替わります。</p>
-          </div>
-          <div className="next-schedule">
-            <strong>次回予定</strong>
-            <ul>{upcomingFrontlines.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.name}（{schedule.subtitle}）</li>)}</ul>
-          </div>
-        </article>
-
-        <article className="detail-card housing-detail">
-          <div>
-            <p className="eyebrow">HOUSING GUIDE</p>
-            <h3>ハウジング抽選について</h3>
-            <p className="detail-description">土地抽選は「応募5日間」と「結果発表4日間」の周期です。応募後は結果発表期間中に土地のサインボードで結果を確認します。</p>
-          </div>
-          <div className="next-schedule">
-            <strong>次回予定</strong>
-            <ul>{upcomingHousing.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.phaseLabel} 開始</li>)}</ul>
           </div>
         </article>
       </div>
@@ -244,6 +207,49 @@ function Sources() {
   );
 }
 
+function ScheduleGuides({ today }: { today: CalendarDate }) {
+  const housing = getHousingCycle(today);
+  const upcomingFrontlines = [1, 2, 3].map((daysLater) => {
+    const date = addDays(today, daysLater);
+    return { date, schedule: getFrontlineForDate(date) };
+  });
+  const firstHousingStart = housing.nextPhaseDate;
+  const firstHousing = getHousingCycle(firstHousingStart);
+  const secondHousingStart = addDays(firstHousingStart, firstHousing.phaseLength);
+  const upcomingHousing = [
+    { date: firstHousingStart, schedule: firstHousing },
+    { date: secondHousingStart, schedule: getHousingCycle(secondHousingStart) },
+  ];
+
+  return (
+    <section className="details-grid" aria-label="スケジュールガイド">
+      <article className="detail-card">
+        <div>
+          <p className="eyebrow">FRONTLINE GUIDE</p>
+          <h3>フロントラインについて</h3>
+          <p className="detail-description">大規模PvP「フロントライン」の本日のルールです。対象コンテンツは日本時間の毎日0:00に切り替わります。</p>
+        </div>
+        <div className="next-schedule">
+          <strong>次回予定</strong>
+          <ul>{upcomingFrontlines.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.name}（{schedule.subtitle}）</li>)}</ul>
+        </div>
+      </article>
+
+      <article className="detail-card housing-detail">
+        <div>
+          <p className="eyebrow">HOUSING GUIDE</p>
+          <h3>ハウジング抽選について</h3>
+          <p className="detail-description">土地抽選は「応募5日間」と「結果発表4日間」の周期です。応募後は結果発表期間中に土地のサインボードで結果を確認します。</p>
+        </div>
+        <div className="next-schedule">
+          <strong>次回予定</strong>
+          <ul>{upcomingHousing.map(({ date, schedule }) => <li key={formatDateKey(date)}><span>{date.month}/{date.day}</span>{schedule.phaseLabel} 開始</li>)}</ul>
+        </div>
+      </article>
+    </section>
+  );
+}
+
 function CalendarExport({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const housing = getHousingCycle(today);
@@ -289,7 +295,7 @@ export default function Home() {
     <main id="top">
       <div className="aurora aurora-one" /><div className="aurora aurora-two" />
       <div className="page-shell">
-        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><Sources /><CalendarExport today={today} />
+        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><Sources /><ScheduleGuides today={today} /><CalendarExport today={today} />
         <footer><span>EORZEA SCHEDULE</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
       </div>
     </main>
