@@ -3,6 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 
 import {
+  OFFICIAL_EVENTS_UPDATED_AT,
+  getCurrentPvpSeriesEvent,
+  getOfficialEventsForDate,
+  getOfficialEventTypeLabel,
+  getUpcomingOfficialEvents,
+  type OfficialEvent,
+} from "./official-events";
+import {
   CC_SEASON,
   addDays,
   formatDateKey,
@@ -16,7 +24,7 @@ import {
   type CalendarDate,
 } from "./schedule";
 
-type CalendarFilter = "all" | "frontline" | "housing";
+type CalendarFilter = "all" | "frontline" | "housing" | "official";
 const WEEKDAYS = ["日", "月", "火", "水", "木", "金", "土"];
 
 type CalendarEvent = {
@@ -25,6 +33,8 @@ type CalendarEvent = {
   description: string;
   start: CalendarDate;
   endExclusive: CalendarDate;
+  startDateTime?: string;
+  endDateTime?: string;
 };
 
 function toIcsDate(date: CalendarDate): string {
@@ -33,6 +43,48 @@ function toIcsDate(date: CalendarDate): string {
 
 function escapeIcsText(value: string): string {
   return value.replaceAll("\\", "\\\\").replaceAll(";", "\\;").replaceAll(",", "\\,").replaceAll("\n", "\\n");
+}
+
+function toIcsDateTime(value: string): string {
+  return `${value.slice(0, 10).replaceAll("-", "")}T${value.slice(11, 19).replaceAll(":", "")}`;
+}
+
+function parseDateKey(value: string): CalendarDate {
+  const [year, month, day] = value.slice(0, 10).split("-").map(Number);
+  return { year, month, day };
+}
+
+function officialEventToCalendarEvent(event: OfficialEvent): CalendarEvent {
+  return {
+    fileName: `ff14-${event.id}`,
+    title: `FF14 ${event.title}`,
+    description: `${event.description}\n公式情報: ${event.url}`,
+    start: parseDateKey(event.start),
+    endExclusive: parseDateKey(event.end),
+    startDateTime: event.allDay ? undefined : event.start,
+    endDateTime: event.allDay ? undefined : event.end,
+  };
+}
+
+function formatOfficialEventDate(event: OfficialEvent): string {
+  const start = parseDateKey(event.start);
+  if (event.allDay) return `${start.month}/${start.day}`;
+  const end = parseDateKey(event.end);
+  const startTime = event.start.slice(11, 16);
+  const endTime = event.end.slice(11, 16);
+  const endDate = start.month === end.month && start.day === end.day ? "" : `${end.month}/${end.day} `;
+  return `${start.month}/${start.day} ${startTime}–${endDate}${endTime}`;
+}
+
+function formatUpdatedAt(value: string | null): string {
+  if (!value) return "未取得";
+  return new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(value));
 }
 
 function downloadCalendarEvent(event: CalendarEvent) {
@@ -45,8 +97,12 @@ function downloadCalendarEvent(event: CalendarEvent) {
     "BEGIN:VEVENT",
     `UID:${toIcsDate(event.start)}-${event.fileName}@ff14-calendar`,
     `DTSTAMP:${stamp}`,
-    `DTSTART;VALUE=DATE:${toIcsDate(event.start)}`,
-    `DTEND;VALUE=DATE:${toIcsDate(event.endExclusive)}`,
+    event.startDateTime
+      ? `DTSTART;TZID=Asia/Tokyo:${toIcsDateTime(event.startDateTime)}`
+      : `DTSTART;VALUE=DATE:${toIcsDate(event.start)}`,
+    event.endDateTime
+      ? `DTEND;TZID=Asia/Tokyo:${toIcsDateTime(event.endDateTime)}`
+      : `DTEND;VALUE=DATE:${toIcsDate(event.endExclusive)}`,
     `SUMMARY:${escapeIcsText(event.title)}`,
     `DESCRIPTION:${escapeIcsText(event.description)}`,
     "END:VEVENT",
@@ -61,12 +117,16 @@ function downloadCalendarEvent(event: CalendarEvent) {
 }
 
 function getGoogleCalendarUrl(event: CalendarEvent): string {
+  const dates = event.startDateTime && event.endDateTime
+    ? `${toIcsDateTime(event.startDateTime)}/${toIcsDateTime(event.endDateTime)}`
+    : `${toIcsDate(event.start)}/${toIcsDate(event.endExclusive)}`;
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: event.title,
-    dates: `${toIcsDate(event.start)}/${toIcsDate(event.endExclusive)}`,
+    dates,
     details: event.description,
   });
+  if (event.startDateTime) params.set("ctz", "Asia/Tokyo");
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
@@ -101,6 +161,7 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const nextFrontline = getFrontlineForDate(addDays(today, 1));
   const housing = getHousingCycle(today);
+  const pvpSeries = getCurrentPvpSeriesEvent(today);
 
   return (
     <section className="today-section" id="today">
@@ -146,6 +207,13 @@ function TodayPanel({ today }: { today: CalendarDate }) {
         <div className="season-dc"><span>日本ランクマッチ</span><strong>{CC_SEASON.jpDataCenter}</strong></div>
         <a className="official-link" href={CC_SEASON.officialUrl} target="_blank" rel="noreferrer">公式発表 <Icon name="external" /></a>
       </article>
+      {pvpSeries && (
+        <article className="pvp-series-card">
+          <div><p className="eyebrow">PVP SERIES</p><h2>{pvpSeries.title}</h2><p>シリーズ報酬の進行期間です。クリスタルコンフリクトのランクシーズンとは別の周期です。</p></div>
+          <strong>{formatOfficialEventDate(pvpSeries)}まで</strong>
+          <a className="official-link" href={pvpSeries.url} target="_blank" rel="noreferrer">公式発表 <Icon name="external" /></a>
+        </article>
+      )}
     </section>
   );
 }
@@ -153,6 +221,7 @@ function TodayPanel({ today }: { today: CalendarDate }) {
 function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDate; displayMonth: CalendarDate; filter: CalendarFilter; today: CalendarDate }) {
   const frontline = getFrontlineForDate(date);
   const housing = getHousingCycle(date);
+  const officialEvents = getOfficialEventsForDate(date);
   const outside = date.month !== displayMonth.month;
   const current = isSameDate(date, today);
 
@@ -161,6 +230,8 @@ function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDat
       <div className="date-line"><span>{date.day}</span>{current && <small>TODAY</small>}</div>
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
+      {(filter === "all" || filter === "official") && officialEvents.slice(0, 1).map((event) => <div key={event.id} className={`event-pill official-event ${event.type}`} title={event.title}><span>{getOfficialEventTypeLabel(event.type)}</span><strong>{event.title}</strong></div>)}
+      {(filter === "all" || filter === "official") && officialEvents.length > 1 && <small className="more-events">ほか{officialEvents.length - 1}件</small>}
     </div>
   );
 }
@@ -186,10 +257,10 @@ function MonthCalendar({ today }: { today: CalendarDate }) {
       </div>
 
       <div className="filter-row" role="group" aria-label="カレンダーの表示内容">
-        {([["all", "すべて"], ["frontline", "フロントライン"], ["housing", "ハウジング"]] as const).map(([value, label]) => (
+        {([["all", "すべて"], ["frontline", "フロントライン"], ["housing", "ハウジング"], ["official", "公式予定"]] as const).map(([value, label]) => (
           <button key={value} type="button" className={filter === value ? "active" : ""} onClick={() => setFilter(value)} aria-pressed={filter === value}>{label}</button>
         ))}
-        <div className="legend"><span><i className="legend-entry" />応募期間</span><span><i className="legend-result" />結果期間</span></div>
+        <div className="legend"><span><i className="legend-entry" />応募期間</span><span><i className="legend-result" />結果期間</span><span><i className="legend-official" />公式予定</span></div>
       </div>
 
       <div className="calendar-shell">
@@ -198,7 +269,7 @@ function MonthCalendar({ today }: { today: CalendarDate }) {
           {days.map((date) => <CalendarCell key={formatDateKey(date)} date={date} displayMonth={month} filter={filter} today={today} />)}
         </div>
       </div>
-      <p className="calendar-note">※ フロントラインはパッチ7.5以降の8日周期、ハウジングは5日＋4日の抽選周期をもとに算出しています。</p>
+      <p className="calendar-note">※ フロントラインはパッチ7.5以降の8日周期、ハウジングは5日＋4日の抽選周期をもとに算出しています。公式予定は約3時間ごとに確認します。</p>
     </section>
   );
 }
@@ -277,6 +348,7 @@ function CalendarExport({ today }: { today: CalendarDate }) {
     start: housing.phaseStart,
     endExclusive: addDays(housing.phaseEnd, 1),
   };
+  const officialEvents = getUpcomingOfficialEvents(today);
 
   return (
     <section className="calendar-export-section" id="calendar-export">
@@ -302,6 +374,26 @@ function CalendarExport({ today }: { today: CalendarDate }) {
             <a className="calendar-add-button google-calendar-button" href={getGoogleCalendarUrl(housingEvent)} target="_blank" rel="noreferrer">Googleカレンダーに追加<Icon name="external" /></a>
           </div>
         </div>
+      </div>
+      <div className="official-schedule-list">
+        <div className="official-schedule-heading">
+          <div><p className="eyebrow">OFFICIAL AUTO UPDATE</p><h3>パッチ・PvP・メンテナンス予定</h3></div>
+          <small>最終確認：{formatUpdatedAt(OFFICIAL_EVENTS_UPDATED_AT)} JST</small>
+        </div>
+        {officialEvents.length > 0 ? officialEvents.map((event) => {
+          const calendarEvent = officialEventToCalendarEvent(event);
+          return (
+            <article className={`official-schedule-item ${event.type}`} key={event.id}>
+              <span className="official-type">{getOfficialEventTypeLabel(event.type)}</span>
+              <div className="official-event-copy">
+                <strong>{event.title}</strong><span>{formatOfficialEventDate(event)}</span>
+              </div>
+              <a className="official-source-button" href={event.url} target="_blank" rel="noreferrer" aria-label={`${event.title}の公式情報`}>公式<Icon name="external" /></a>
+              <button className="compact-calendar-button" type="button" onClick={() => downloadCalendarEvent(calendarEvent)}>.ics</button>
+              <a className="compact-calendar-button google" href={getGoogleCalendarUrl(calendarEvent)} target="_blank" rel="noreferrer">Google</a>
+            </article>
+          );
+        }) : <p className="no-official-events">現在、今後のゲーム関連公式予定は取得されていません。</p>}
       </div>
       <p className="ics-note">※ Googleカレンダーは予定入力画面が開きます。内容を確認して「保存」を押してください。.icsはOutlookやAppleカレンダーでも利用できます。</p>
     </section>
