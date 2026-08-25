@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-08-25T10:30:39.691Z",
+  "events": [
+    {
+      "id": "maintenance-2026-07-28T15:00",
+      "type": "maintenance",
+      "title": "全ワールド メンテナンス作業 終了時間変更のお知らせ(7/28)",
+      "start": "2026-07-28T15:00:00+09:00",
+      "end": "2026-07-28T18:20:00+09:00",
+      "allDay": false,
+      "description": "[続報] 全ワールド メンテナンス作業 終了時間変更のお知らせ(7/28)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/24021c748cb091588c50dc56f84479132464806f"
+    },
+    {
+      "id": "maintenance-2026-08-07T15:00",
+      "type": "maintenance",
+      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/7)",
+      "start": "2026-08-07T15:00:00+09:00",
+      "end": "2026-08-07T18:55:00+09:00",
+      "allDay": false,
+      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/7)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/3120aae217186f31dbb00369e7490d6ad61eeb5c"
+    },
+    {
+      "id": "maintenance-2026-08-14T15:00",
+      "type": "maintenance",
+      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/14)",
+      "start": "2026-08-14T15:00:00+09:00",
+      "end": "2026-08-14T17:50:00+09:00",
+      "allDay": false,
+      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/14)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/1711a3b2809c42b04bcd2570b92d5e11f0796c90"
+    },
+    {
+      "id": "pvp-series-11",
+      "type": "pvp",
+      "title": "PvPシリーズ11 終了予定",
+      "start": "2026-09-08",
+      "end": "2026-09-09",
+      "allDay": true,
+      "description": "PvPシリーズ11まもなく終了！ パッチ7.56公開まで。正確な終了時刻は公式メンテナンス情報をご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/e9959d0574984f0c6186e33e9a0539ee93e1e9de"
+    }
+  ]
+}
