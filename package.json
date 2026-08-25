@@ -6,7 +6,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "next build"
+    "build": "next build",
+    "test:official": "node --test scripts/update-official-events.test.mjs",
+    "update:official": "node scripts/update-official-events.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
