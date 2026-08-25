@@ -11,6 +11,10 @@ import {
   type OfficialEvent,
 } from "./official-events";
 import {
+  formatCcRemaining,
+  getCrystallineConflictSchedule,
+} from "./cc-rotation";
+import {
   CC_SEASON,
   addDays,
   formatDateKey,
@@ -157,6 +161,60 @@ function Header() {
   );
 }
 
+const JST_TIME_FORMATTER = new Intl.DateTimeFormat("ja-JP", {
+  timeZone: "Asia/Tokyo",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
+
+function CrystallineConflictRotation() {
+  const [currentTime, setCurrentTime] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateTime = () => setCurrentTime(Date.now());
+    updateTime();
+    const timer = window.setInterval(updateTime, 1_000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  if (currentTime === null) {
+    return <article className="cc-rotation-card cc-loading" aria-label="クリスタルコンフリクトのマップを計算中">マップ情報を計算中…</article>;
+  }
+
+  const now = new Date(currentTime);
+  const schedule = getCrystallineConflictSchedule(now);
+  const [current, next] = schedule;
+
+  return (
+    <article className="cc-rotation-card">
+      <div className="cc-current">
+        <div className="cc-card-heading">
+          <div><p className="eyebrow">CRYSTALLINE CONFLICT MAP</p><h2>クリコン マップローテーション</h2></div>
+          <span className="calculated-chip">計算値・JST</span>
+        </div>
+        <p className="cc-now-label">現在のマップ</p>
+        <strong className="cc-map-name">{current.map.name}</strong>
+        <div className="cc-countdown"><span>切り替えまで</span><strong>{formatCcRemaining(now, current.endsAt)}</strong></div>
+        <p className="cc-next-map">次は <strong>{next.map.name}</strong>（{JST_TIME_FORMATTER.format(next.startsAt)}〜）</p>
+      </div>
+      <div className="cc-timeline" aria-label="今後7時間のマップ予定">
+        <div className="cc-timeline-heading"><strong>今後7時間</strong><span>60分ごとに切り替え</span></div>
+        <ol>
+          {schedule.map((slot, index) => (
+            <li className={index === 0 ? "active" : ""} key={`${slot.startsAt.toISOString()}-${slot.map.id}`}>
+              <time>{JST_TIME_FORMATTER.format(slot.startsAt)}</time>
+              <span>{slot.map.shortName}</span>
+              {index === 0 && <small>NOW</small>}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <p className="cc-calculation-note">※ 公式の順番と60分周期を、確認済みの基準時刻から計算しています。メンテナンス後などはゲーム内のコンテンツファインダーもご確認ください。</p>
+    </article>
+  );
+}
+
 function TodayPanel({ today }: { today: CalendarDate }) {
   const frontline = getFrontlineForDate(today);
   const nextFrontline = getFrontlineForDate(addDays(today, 1));
@@ -200,6 +258,8 @@ function TodayPanel({ today }: { today: CalendarDate }) {
           </div>
         </article>
       </div>
+
+      <CrystallineConflictRotation />
 
       <article className="season-card">
         <div className="season-emblem"><span>CC</span><small>21</small></div>
@@ -278,6 +338,7 @@ function Sources() {
   const sources = [
     ["フロントライン周期", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/072b03a01b057707a9b9b6476c898c9ed3c7c4a4"],
     ["ハウジング抽選", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ffe05674f919dad5f4f13d443f2fd7067a3dc2b0"],
+    ["クリコンマップ周期", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/072b03a01b057707a9b9b6476c898c9ed3c7c4a4"],
     ["クリコンSeason 21", CC_SEASON.officialUrl],
   ];
   return (
