@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "next build",
+    "test:cc": "node --experimental-strip-types --test app/cc-rotation.test.ts",
     "test:official": "node --test scripts/update-official-events.test.mjs",
     "update:official": "node scripts/update-official-events.mjs"
   },
