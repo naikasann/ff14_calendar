@@ -49,7 +49,7 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .live-pill span { width: 7px; height: 7px; border-radius: 50%; background: #63e6b2; box-shadow: 0 0 12px #63e6b2; }
 
 .overview-grid { display: grid; grid-template-columns: 1.16fr .84fr; gap: 18px; margin-top: 28px; }
-.feature-card, .season-card, .pvp-series-card, .calendar-section, .sources-section { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(18,29,53,.84), rgba(8,15,31,.88)); box-shadow: 0 22px 80px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.025); }
+.feature-card, .cc-rotation-card, .season-card, .pvp-series-card, .calendar-section, .sources-section { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(18,29,53,.84), rgba(8,15,31,.88)); box-shadow: 0 22px 80px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.025); }
 .feature-card { position: relative; overflow: hidden; min-height: 272px; padding: 25px 26px 20px; border-radius: 13px; }
 .frontline-card::after { content: ""; position: absolute; width: 260px; height: 260px; right: -65px; bottom: -90px; border: 1px solid rgba(125,226,240,.12); border-radius: 50%; box-shadow: 0 0 0 24px rgba(125,226,240,.018), 0 0 0 65px rgba(125,226,240,.012); }
 .card-glow { position: absolute; left: -80px; bottom: -80px; width: 260px; height: 190px; filter: blur(55px); background: rgba(45,175,190,.12); }
@@ -62,6 +62,33 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .feature-card h2 { margin: 0; font-size: clamp(23px, 3vw, 32px); font-weight: 560; letter-spacing: .02em; }
 .map-subtitle, .housing-status p { margin: 7px 0 0; color: #99a7bd; font-size: 12px; }
 .card-footer-row { position: absolute; z-index: 2; left: 26px; right: 26px; bottom: 18px; display: flex; justify-content: space-between; color: #68758c; font-size: 10px; border-top: 1px solid var(--line); padding-top: 13px; }
+
+.cc-rotation-card { position: relative; display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; margin-top: 18px; padding: 24px 26px 18px; border-radius: 13px; overflow: hidden; }
+.cc-rotation-card::before { content: ""; position: absolute; width: 330px; height: 190px; left: -90px; top: -100px; border-radius: 50%; background: rgba(164,94,219,.1); filter: blur(50px); pointer-events: none; }
+.cc-current, .cc-timeline, .cc-calculation-note { position: relative; z-index: 1; }
+.cc-card-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.cc-card-heading h2 { margin: 0; font-size: 17px; font-weight: 560; }
+.calculated-chip { flex: 0 0 auto; padding: 6px 8px; border: 1px solid rgba(190,139,237,.2); border-radius: 5px; color: #c7a4e9; background: rgba(151,83,208,.08); font: 9px var(--font-geist-mono), monospace; }
+.cc-now-label { margin: 27px 0 4px; color: #88739e; font-size: 10px; }
+.cc-map-name { display: block; color: #ebddfa; font-size: clamp(22px, 3vw, 31px); font-weight: 570; line-height: 1.35; }
+.cc-countdown { display: flex; align-items: baseline; gap: 9px; margin-top: 13px; color: #8d7ba2; font-size: 10px; }
+.cc-countdown strong { color: #d6b6f3; font: 500 18px var(--font-geist-mono), monospace; }
+.cc-next-map { margin: 9px 0 0; color: #7f8ba0; font-size: 10px; }
+.cc-next-map strong { color: #b9c5d6; font-weight: 550; }
+.cc-timeline { padding-left: 28px; border-left: 1px solid var(--line); }
+.cc-timeline-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.cc-timeline-heading strong { color: #c1cce0; font-size: 11px; }
+.cc-timeline-heading span { color: #68768d; font-size: 9px; }
+.cc-timeline ol { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; margin: 0; padding: 0; list-style: none; }
+.cc-timeline li { position: relative; min-width: 0; min-height: 95px; padding: 11px 8px; border: 1px solid rgba(153,176,222,.1); border-radius: 6px; background: rgba(4,9,20,.24); }
+.cc-timeline li.active { border-color: rgba(196,135,237,.35); background: rgba(143,77,191,.1); box-shadow: inset 0 0 18px rgba(162,93,213,.05); }
+.cc-timeline time, .cc-timeline li > span { display: block; }
+.cc-timeline time { color: #77869d; font: 9px var(--font-geist-mono), monospace; }
+.cc-timeline li > span { margin-top: 11px; color: #9daabe; font-size: 10px; line-height: 1.45; overflow-wrap: anywhere; }
+.cc-timeline li.active > span { color: #e1caf5; }
+.cc-timeline small { position: absolute; right: 6px; bottom: 6px; color: #c996ef; font: 7px var(--font-geist-mono), monospace; letter-spacing: .08em; }
+.cc-calculation-note { grid-column: 1 / -1; margin: 0; padding-top: 13px; border-top: 1px solid rgba(153,176,222,.08); color: #58667c; font-size: 9px; line-height: 1.65; }
+.cc-loading { display: grid; min-height: 190px; place-items: center; color: #78879d; font-size: 11px; }
 
 .housing-card { background: linear-gradient(145deg, rgba(25,25,55,.9), rgba(13,17,35,.92)); }
 .housing-card .icon-box, .housing-card .map-label { color: #bda9ff; }
@@ -190,7 +217,7 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .sources-section { scroll-margin-top: 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; margin-top: 18px; padding: 28px 30px; border-radius: 13px; }
 .sources-section h2 { margin: 0 0 7px; font-size: 16px; font-weight: 560; }
 .sources-section p:last-child { margin: 0; color: #748199; font-size: 10px; }
-.source-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.source-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .source-links a { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 12px; border: 1px solid var(--line); border-radius: 6px; color: #91a0b7; font-size: 9px; transition: .18s ease; }
 .source-links a:hover { color: var(--cyan-bright); border-color: rgba(88,216,231,.25); background: rgba(88,216,231,.03); }
 .source-links svg { width: 13px; height: 13px; }
@@ -207,6 +234,9 @@ footer small { grid-column: 2; }
   .overview-grid { grid-template-columns: 1fr; }
   .details-grid { grid-template-columns: 1fr; }
   .feature-card { min-height: 255px; }
+  .cc-rotation-card { grid-template-columns: 1fr; }
+  .cc-timeline { padding: 20px 0 0; border-top: 1px solid var(--line); border-left: 0; }
+  .cc-timeline ol { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .season-card { grid-template-columns: auto 1fr; }
   .pvp-series-card { grid-template-columns: 1fr auto; }
   .pvp-series-card .official-link { grid-column: 2; }
@@ -230,6 +260,11 @@ footer small { grid-column: 2; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
   .live-pill { padding: 0; }
   .feature-card { padding-left: 18px; padding-right: 18px; }
+  .cc-rotation-card { padding: 20px 18px 16px; }
+  .cc-card-heading { align-items: flex-start; flex-direction: column; gap: 9px; }
+  .cc-now-label { margin-top: 22px; }
+  .cc-timeline ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cc-timeline li { min-height: 70px; }
   .detail-card { grid-template-columns: 1fr; padding: 19px 18px; }
   .next-schedule { min-width: 0; padding: 14px 0 0; border-top: 1px solid var(--line); border-left: 0; }
   .feature-content { margin-top: 42px; }
