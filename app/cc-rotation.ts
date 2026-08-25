@@ -22,9 +22,10 @@ export const CC_MAPS: CrystallineConflictMap[] = [
 
 export const CC_ROTATION_INTERVAL_MS = 60 * 60 * 1000;
 
-// Patch 7.5 maintenance day: the 18:00 JST slot was confirmed as Palaistra.
+// Calibrated from the in-game Duty Finder on 2026-08-25: 20:00 JST was Harmonia,
+// which places the next Palaistra slot at 22:00 JST.
 // The official notes define the order and 60-minute interval but do not expose a live-map API.
-export const CC_ROTATION_ANCHOR_MS = Date.parse("2026-04-28T18:00:00+09:00");
+export const CC_ROTATION_ANCHOR_MS = Date.parse("2026-08-25T22:00:00+09:00");
 
 function modulo(value: number, divisor: number): number {
   return ((value % divisor) + divisor) % divisor;
@@ -55,4 +56,3 @@ export function formatCcRemaining(now: Date, endsAt: Date): string {
   const minutes = Math.floor(seconds / 60);
   return `${minutes}分 ${String(seconds % 60).padStart(2, "0")}秒`;
 }
-
