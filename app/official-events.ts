@@ -2,7 +2,7 @@ import officialEventData from "../public/data/official-events.json";
 
 import { formatDateKey, type CalendarDate } from "./schedule";
 
-export type OfficialEventType = "maintenance" | "patch" | "pvp" | "season";
+export type OfficialEventType = "maintenance" | "patch" | "pvp" | "season" | "event" | "broadcast" | "campaign";
 
 export type OfficialEvent = {
   id: string;
@@ -34,7 +34,13 @@ export const OFFICIAL_EVENTS_UPDATED_AT = data.generatedAt;
 
 export function getOfficialEventsForDate(date: CalendarDate): OfficialEvent[] {
   const dateKey = formatDateKey(date);
-  return OFFICIAL_EVENTS.filter((event) => event.start.slice(0, 10) === dateKey);
+  return OFFICIAL_EVENTS.filter((event) => {
+    const startDate = event.start.slice(0, 10);
+    const endDate = event.end.slice(0, 10);
+    return event.allDay
+      ? dateKey >= startDate && dateKey < endDate
+      : dateKey >= startDate && dateKey <= endDate;
+  });
 }
 
 function getCompactEventTitle(event: OfficialEvent): string {
@@ -96,6 +102,9 @@ export function getOfficialEventTypeLabel(type: OfficialEventType): string {
     patch: "パッチ",
     pvp: "PvP",
     season: "クリコン",
+    event: "イベント",
+    broadcast: "放送",
+    campaign: "企画",
   };
   return labels[type];
 }
