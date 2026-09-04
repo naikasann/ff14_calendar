@@ -15,6 +15,13 @@ export type OfficialEvent = {
   url: string;
 };
 
+export type OfficialEventSummary = {
+  label: string;
+  title: string;
+  type: OfficialEventType | "update";
+  combinedCount: number;
+};
+
 type OfficialEventFile = {
   generatedAt: string | null;
   events: OfficialEvent[];
@@ -28,6 +35,46 @@ export const OFFICIAL_EVENTS_UPDATED_AT = data.generatedAt;
 export function getOfficialEventsForDate(date: CalendarDate): OfficialEvent[] {
   const dateKey = formatDateKey(date);
   return OFFICIAL_EVENTS.filter((event) => event.start.slice(0, 10) === dateKey);
+}
+
+function getCompactEventTitle(event: OfficialEvent): string {
+  if (event.type === "pvp") {
+    return event.title.replace(/^PvPシリーズ/, "PvP").replace(/予定$/, "");
+  }
+  if (event.type === "season") {
+    return event.title.replace(/^クリコン\s*/, "").replace(/予定$/, "");
+  }
+  return event.title;
+}
+
+export function summarizeOfficialEvents(events: OfficialEvent[]): OfficialEventSummary | undefined {
+  if (events.length === 0) return undefined;
+
+  const maintenance = events.find((event) => event.type === "maintenance");
+  const patch = events.find((event) => event.type === "patch");
+  const pvpEvents = events.filter((event) => event.type === "pvp" || event.type === "season");
+
+  if (maintenance && (patch || pvpEvents.length > 0)) {
+    const versionSource = [patch?.title, ...pvpEvents.map((event) => `${event.title} ${event.description}`)]
+      .filter(Boolean)
+      .join(" ");
+    const version = versionSource.match(/(?:パッチ)?(\d+\.\d+)/)?.[1];
+    const parts = [version ? `${version}更新・メンテ` : "更新メンテ", ...pvpEvents.map(getCompactEventTitle)];
+    return {
+      label: "更新",
+      title: parts.join(" / "),
+      type: "update",
+      combinedCount: events.length,
+    };
+  }
+
+  const first = events[0];
+  return {
+    label: getOfficialEventTypeLabel(first.type),
+    title: getCompactEventTitle(first),
+    type: first.type,
+    combinedCount: 1,
+  };
 }
 
 export function getUpcomingOfficialEvents(today: CalendarDate, limit = 6): OfficialEvent[] {
