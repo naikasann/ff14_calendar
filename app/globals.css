@@ -138,6 +138,9 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .official-type { padding: 5px 7px; border-radius: 4px; background: rgba(230,120,92,.1); color: #efa18c; font: 600 9px var(--font-geist-mono), monospace; text-align: center; }
 .official-schedule-item.patch .official-type { color: #82d9c2; background: rgba(68,190,158,.1); }
 .official-schedule-item.pvp .official-type, .official-schedule-item.season .official-type { color: #d9b2ff; background: rgba(165,101,220,.11); }
+.official-schedule-item.event .official-type { color: #f0c879; background: rgba(207,154,58,.1); }
+.official-schedule-item.broadcast .official-type { color: #8fc8ff; background: rgba(68,137,203,.11); }
+.official-schedule-item.campaign .official-type { color: #f2a9c5; background: rgba(196,76,124,.1); }
 .official-event-copy { min-width: 0; }
 .official-event-copy strong, .official-event-copy span { display: block; }
 .official-event-copy strong { overflow: hidden; color: #b8c7db; font-size: 11px; white-space: nowrap; text-overflow: ellipsis; }
@@ -207,13 +210,36 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .housing-event { color: #b8a3f3; background: rgba(135,107,207,.085); border-left: 2px solid #9479df; }
 .housing-event span { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
 .housing-event.result { color: #d6ad68; background: rgba(176,126,51,.08); border-left-color: #c2934b; }
-.official-event { color: #efa18c; background: rgba(202,89,59,.09); border-left: 2px solid #df795e; }
+.official-event { width: 100%; color: #efa18c; background: rgba(202,89,59,.09); border: 0; border-left: 2px solid #df795e; text-align: left; cursor: pointer; font-family: inherit; }
+.official-event:hover, .official-event:focus-visible { filter: brightness(1.28); outline: 1px solid currentColor; outline-offset: -1px; }
 .official-event > span { flex: 0 0 auto; font-size: 8px; }
 .official-event.patch { color: #82d9c2; background: rgba(50,156,128,.09); border-left-color: #55bfa3; }
 .official-event.update { color: #8be2c7; background: linear-gradient(90deg, rgba(50,156,128,.13), rgba(202,89,59,.08)); border-left-color: #63d3b3; }
 .official-event.pvp, .official-event.season { color: #d9b2ff; background: rgba(143,78,194,.1); border-left-color: #b173df; }
+.official-event.event { color: #f0c879; background: rgba(207,154,58,.1); border-left-color: #daa94f; }
+.official-event.broadcast { color: #8fc8ff; background: rgba(68,137,203,.11); border-left-color: #68aee9; }
+.official-event.campaign { color: #f2a9c5; background: rgba(196,76,124,.1); border-left-color: #dc7ba1; }
 .more-events { display: block; margin: 4px 0 0 7px; color: #66758b; font-size: 8px; }
 .calendar-note { margin: 13px 0 0; color: #59667c; font-size: 10px; }
+
+.event-modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(1,5,14,.78); backdrop-filter: blur(7px); }
+.event-modal { width: min(660px, 100%); max-height: min(760px, calc(100vh - 40px)); overflow: auto; padding: 26px; border: 1px solid rgba(127,181,215,.24); border-radius: 14px; background: linear-gradient(145deg, #111c32, #080f20); box-shadow: 0 24px 80px rgba(0,0,0,.55); }
+.event-modal-heading { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.event-modal-heading h2 { margin: 0 0 5px; color: #dbe7f7; font-size: 20px; font-weight: 580; line-height: 1.45; }
+.event-modal-heading p:last-child { margin: 0; color: #8090a8; font: 11px var(--font-geist-mono), monospace; }
+.event-modal-close { flex: 0 0 auto; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.03); color: #91a2b9; cursor: pointer; font-size: 22px; line-height: 1; }
+.event-modal-close:hover, .event-modal-close:focus-visible { color: #effcff; border-color: rgba(88,216,231,.42); outline: none; }
+.event-modal-list { display: grid; gap: 12px; margin-top: 16px; }
+.event-modal-item { padding: 16px; border: 1px solid var(--line); border-radius: 9px; background: rgba(4,10,23,.36); }
+.event-modal-item-heading { display: flex; align-items: flex-start; gap: 10px; }
+.event-modal-item-heading span { flex: 0 0 auto; padding: 5px 7px; border-radius: 4px; color: #9fe5ec; background: rgba(65,177,191,.1); font: 600 9px var(--font-geist-mono), monospace; }
+.event-modal-item-heading strong { color: #c8d5e7; font-size: 14px; font-weight: 570; line-height: 1.55; }
+.event-modal-item time { display: block; margin: 10px 0 8px; color: #8aa0bc; font: 11px var(--font-geist-mono), monospace; }
+.event-modal-item p { margin: 0; color: #91a0b7; font-size: 13px; line-height: 1.75; }
+.event-modal-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.event-modal-actions a, .event-modal-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 36px; padding: 0 12px; border: 1px solid rgba(105,167,204,.22); border-radius: 5px; background: rgba(54,116,153,.08); color: #a9cfe7; cursor: pointer; font-family: inherit; font-size: 10px; }
+.event-modal-actions a:hover, .event-modal-actions button:hover { color: #e4fbff; border-color: rgba(88,216,231,.42); }
+.event-modal-actions svg { width: 12px; height: 12px; }
 
 .sources-section { scroll-margin-top: 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; margin-top: 18px; padding: 28px 30px; border-radius: 13px; }
 .sources-section h2 { margin: 0 0 7px; font-size: 16px; font-weight: 560; }
@@ -281,6 +307,10 @@ footer small { grid-column: 2; }
   .event-pill { height: 24px; font-size: 9px; }
   .housing-event span { display: none; }
   .official-event > span { display: none; }
+  .event-modal-backdrop { align-items: end; padding: 10px; }
+  .event-modal { max-height: calc(100vh - 20px); padding: 20px 16px; border-radius: 14px 14px 9px 9px; }
+  .event-modal-heading h2 { font-size: 17px; }
+  .event-modal-actions { display: grid; grid-template-columns: 1fr; }
   .official-schedule-heading { align-items: start; flex-direction: column; gap: 5px; }
   .official-schedule-item { grid-template-columns: 48px minmax(0, 1fr); padding: 12px 0; }
   .official-schedule-item .compact-calendar-button { min-height: 34px; }
