@@ -6,6 +6,7 @@ const LODESTONE_BASE_URL = "https://jp.finalfantasyxiv.com";
 const MAINTENANCE_URL = `${LODESTONE_BASE_URL}/lodestone/news/category/2`;
 const TOPICS_URL = `${LODESTONE_BASE_URL}/lodestone/topics/`;
 const OUTPUT_PATH = fileURLToPath(new URL("../public/data/official-events.json", import.meta.url));
+const CURATED_PATH = fileURLToPath(new URL("../public/data/curated-official-events.json", import.meta.url));
 const JST_OFFSET_MS = 9 * 60 * 60 * 1000;
 
 function decodeHtml(value) {
@@ -338,6 +339,20 @@ function deduplicateAndSort(events) {
   return [...unique.values()].sort((left, right) => left.start.localeCompare(right.start));
 }
 
+export function applyCuratedData(events, curated = {}) {
+  const excludedIds = new Set(Array.isArray(curated.excludedIds) ? curated.excludedIds : []);
+  const summaryOverrides = curated.summaryOverrides && typeof curated.summaryOverrides === "object"
+    ? curated.summaryOverrides
+    : {};
+  const extraEvents = Array.isArray(curated.extraEvents) ? curated.extraEvents : [];
+  const selected = events
+    .filter((event) => !excludedIds.has(event.id))
+    .map((event) => summaryOverrides[event.id]
+      ? { ...event, description: summaryOverrides[event.id] }
+      : event);
+  return deduplicateAndSort([...selected, ...extraEvents.filter((event) => !excludedIds.has(event.id))]);
+}
+
 async function readExistingData() {
   try {
     return JSON.parse(await readFile(OUTPUT_PATH, "utf8"));
@@ -346,20 +361,28 @@ async function readExistingData() {
   }
 }
 
+async function readCuratedData() {
+  try {
+    return JSON.parse(await readFile(CURATED_PATH, "utf8"));
+  } catch {
+    return { reviewedAt: null, summaryOverrides: {}, excludedIds: [], extraEvents: [] };
+  }
+}
+
 async function main() {
   console.log("[INFO] FF14公式スケジュールの取得を開始します");
   const existing = await readExistingData();
+  const curated = await readCuratedData();
   const results = await Promise.allSettled([collectMaintenanceEvents(), collectTopicEvents()]);
   const fetchedEvents = results.flatMap((result) => result.status === "fulfilled" ? result.value : []);
   for (const result of results) {
     if (result.status === "rejected") console.warn("[WARN] 公式情報の取得に失敗しました", result.reason);
   }
+  const sourceEvents = fetchedEvents.length > 0 ? fetchedEvents : (existing.events ?? []);
   if (fetchedEvents.length === 0) {
-    console.warn("[WARN] 新しいデータを取得できなかったため、既存データを保持します");
-    return;
+    console.warn("[WARN] 新しいデータを取得できなかったため、既存データに週次選別を適用します");
   }
-
-  const events = deduplicateAndSort(fetchedEvents);
+  const events = applyCuratedData(sourceEvents, curated);
   if (JSON.stringify(events) === JSON.stringify(existing.events ?? [])) {
     console.log(`[INFO] 変更なし（${events.length}件）`);
     return;
