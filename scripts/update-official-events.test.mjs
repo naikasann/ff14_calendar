@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  applyCuratedData,
   htmlToText,
   isRelevantScheduledTopic,
   parseMaintenanceList,
@@ -103,4 +104,20 @@ test("プレイヤー向け予定を残し、物販や予告だけの記事を�
   assert.equal(isRelevantScheduledTopic("オプションアイテム追加＆セール開始！", "販売期間"), false);
   assert.equal(isRelevantScheduledTopic("ブランドとのコラボレーションプロジェクトが始動！", "開催概要"), false);
   assert.equal(isRelevantScheduledTopic("スクリーンショットキャンペーン開催！", "応募期間\n投稿すると報酬をプレゼント"), true);
+});
+
+test("週次選別の要約・除外・追加予定を反映する", () => {
+  const events = [
+    { id: "keep", start: "2026-09-09", description: "取得時の説明" },
+    { id: "remove", start: "2026-09-10", description: "除外する説明" },
+  ];
+  const actual = applyCuratedData(events, {
+    summaryOverrides: { keep: "週次で要約した説明" },
+    excludedIds: ["remove"],
+    extraEvents: [{ id: "extra", start: "2026-09-08", description: "追加予定" }],
+  });
+  assert.deepEqual(actual, [
+    { id: "extra", start: "2026-09-08", description: "追加予定" },
+    { id: "keep", start: "2026-09-09", description: "週次で要約した説明" },
+  ]);
 });
