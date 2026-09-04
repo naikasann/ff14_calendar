@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T13:35:24.719Z",
+  "generatedAt": "2026-09-04T14:10:51.577Z",
   "events": [
     {
       "id": "maintenance-2026-07-28T15:00",
@@ -38,7 +38,7 @@
       "start": "2026-08-27",
       "end": "2026-08-28",
       "allDay": true,
-      "description": "ファイナルファンタジーXIVは、今年の 8月27日（木） で新生して13周年を迎えます！ これを記念して、シーズナルイベント「新生祭」を開催します。",
+      "description": "FFXIV新生13周年を記念するシーズナルイベント「新生祭」が8月27日から開催。期間限定クエストや報酬の詳細は公式特設ページで確認できます。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/63f326f825b5c6e3bb8071d2e6d5903ca9a5e078"
     },
     {
@@ -48,7 +48,7 @@
       "start": "2026-09-08",
       "end": "2026-09-09",
       "allDay": true,
-      "description": "PvPシリーズ11まもなく終了！ パッチ7.56公開まで。正確な終了時刻は公式メンテナンス情報をご確認ください。",
+      "description": "PvPシリーズ11はパッチ7.56公開に伴う9月8日のメンテナンス開始まで。未受取のシリーズ報酬やシリーズレベルを事前に確認してください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/e9959d0574984f0c6186e33e9a0539ee93e1e9de"
     },
     {
@@ -58,7 +58,7 @@
       "start": "2026-09-08T15:00:00+09:00",
       "end": "2026-09-08T19:00:00+09:00",
       "allDay": false,
-      "description": "[メンテナンス] 全ワールド メンテナンス作業のお知らせ(9/8)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "description": "パッチ7.56公開に伴う全ワールドメンテナンス。9月8日15:00～19:00予定で、期間中はゲームを利用できません。終了時刻は変更される場合があります。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/d9b7f2d833224ca0f205ebc4f295f22fae21fa52"
     },
     {
@@ -68,7 +68,7 @@
       "start": "2026-09-09",
       "end": "2026-09-10",
       "allDay": true,
-      "description": "2026年9月9日（水） より、「モグモグ★コレクション ～天文に至る路 Part1～」を開催します。",
+      "description": "9月9日から「モグモグ★コレクション ～天文に至る路 Part1～」開催。チャレンジで交換手形を集め、特別報酬「ウォロン・ホルン」を目指せます。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/05926d81dc0cd7b3ba5d39db148a3e98db4ad44f"
     },
     {
@@ -78,7 +78,7 @@
       "start": "2026-09-17",
       "end": "2026-09-22",
       "allDay": true,
-      "description": "9月17日（木） から幕張メッセで開催される東京ゲームショウ2026に出展します。",
+      "description": "9月17日～21日の東京ゲームショウ2026にFFXIVが出展。最新映像の上映、キャラクターグリーティング、会場グッズ販売などが予定されています。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ae0caabcfeb32c5f503100419189d7de93f70a78"
     },
     {
@@ -88,7 +88,7 @@
       "start": "2026-10-31T11:00:00+09:00",
       "end": "2026-11-01T19:00:00+09:00",
       "allDay": false,
-      "description": "「ファンフェスティバル 2026 in 東京」のステージプログラム「基調講演」、「スペシャルライブ - THE PRIMALS」のライブビューイング開催が決定しました！",
+      "description": "ファンフェス東京のライブビューイングを実施。10月31日11:00から基調講演、11月1日19:00からTHE PRIMALSライブを映画館で上映します。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/35d881d22728101355344b8a775e1560684e0bab"
     }
   ]
