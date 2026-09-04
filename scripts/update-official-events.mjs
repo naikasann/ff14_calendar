@@ -192,6 +192,29 @@ function classifyTopic(title) {
   return "event";
 }
 
+export function isRelevantScheduledTopic(title, articleText) {
+  if (/モグモグ[★☆]コレクション|新生祭|紅蓮祭|降神祭|ヴァレンティオンデー|プリンセスデー|エッグハント|ゴールドソーサー・フェスティバル|守護天節|星芒祭/.test(title)) {
+    return true;
+  }
+  if (/FFXIV\s*PLL|プロデューサーレターLIVE|14時間生放送|東京ゲームショウ/i.test(title)) {
+    return true;
+  }
+  if (/ファンフェスティバル/i.test(title)) {
+    if (/ライブビューイング|タイムスケジュール|開催決定|放送/i.test(title)) return true;
+    return !/チケット|リセール|グッズ|商品|予約|販売/i.test(title);
+  }
+  if (/オプションアイテム|グッズ|商品|チケット|リセール|予約|セール/i.test(title)) {
+    return false;
+  }
+  if (/キャンペーン|コラボ/i.test(title)) {
+    if (/始動|発表|続報/i.test(title) && !/キャンペーン/i.test(title)) return false;
+    const hasPeriod = /開催期間|実施期間|応募期間|キャンペーン期間|販売期間/.test(articleText);
+    const hasPlayerAction = /応募|参加|視聴|投稿|報酬|プレゼント|もらえ|インゲーム|ゲーム内/.test(articleText);
+    return hasPeriod && hasPlayerAction;
+  }
+  return false;
+}
+
 function dateFromMonthDay(text, publishedDate) {
   const explicit = text.match(/(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日/);
   if (!explicit) return publishedDate;
@@ -239,6 +262,7 @@ function createTopicEvent(entry) {
 
 function createScheduledTopicEvent(entry, articleHtml) {
   const articleText = extractArticleText(articleHtml);
+  if (!isRelevantScheduledTopic(entry.title, articleText)) return null;
   const schedule = parseTopicSchedule(entry.title, articleText, entry.publishedDate);
   if (!schedule) return null;
   const type = classifyTopic(entry.title);
