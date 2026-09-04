@@ -356,6 +356,9 @@ function MonthCalendar({ today }: { today: CalendarDate }) {
   const [month, setMonth] = useState<CalendarDate>({ year: today.year, month: today.month, day: 1 });
   const [filter, setFilter] = useState<CalendarFilter>("all");
   const [selectedOfficialEvents, setSelectedOfficialEvents] = useState<OfficialEvent[] | null>(null);
+  useEffect(() => {
+    setMonth({ year: today.year, month: today.month, day: 1 });
+  }, [today.year, today.month]);
   const days = useMemo(() => getCalendarDays(month), [month]);
   const moveMonth = (amount: number) => {
     const next = new Date(Date.UTC(month.year, month.month - 1 + amount, 1));
