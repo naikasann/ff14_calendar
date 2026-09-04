@@ -6,6 +6,7 @@ on:
       - ".github/workflows/update-official-events.yml"
       - "scripts/update-official-events.mjs"
       - "scripts/update-official-events.test.mjs"
+      - "public/data/curated-official-events.json"
   schedule:
     - cron: "17 */3 * * *"
   workflow_dispatch:
