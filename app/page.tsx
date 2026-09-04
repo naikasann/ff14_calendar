@@ -7,6 +7,7 @@ import {
   getCurrentPvpSeriesEvent,
   getOfficialEventsForDate,
   getOfficialEventTypeLabel,
+  summarizeOfficialEvents,
   getUpcomingOfficialEvents,
   type OfficialEvent,
 } from "./official-events";
@@ -282,6 +283,7 @@ function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDat
   const frontline = getFrontlineForDate(date);
   const housing = getHousingCycle(date);
   const officialEvents = getOfficialEventsForDate(date);
+  const officialSummary = summarizeOfficialEvents(officialEvents);
   const outside = date.month !== displayMonth.month;
   const current = isSameDate(date, today);
 
@@ -290,8 +292,12 @@ function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDat
       <div className="date-line"><span>{date.day}</span>{current && <small>TODAY</small>}</div>
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
-      {(filter === "all" || filter === "official") && officialEvents.slice(0, 1).map((event) => <div key={event.id} className={`event-pill official-event ${event.type}`} title={event.title}><span>{getOfficialEventTypeLabel(event.type)}</span><strong>{event.title}</strong></div>)}
-      {(filter === "all" || filter === "official") && officialEvents.length > 1 && <small className="more-events">ほか{officialEvents.length - 1}件</small>}
+      {(filter === "all" || filter === "official") && officialSummary && (
+        <div className={`event-pill official-event ${officialSummary.type}`} title={officialEvents.map((event) => event.title).join(" / ")}>
+          <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
+        </div>
+      )}
+      {(filter === "all" || filter === "official") && officialSummary && officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
     </div>
   );
 }
