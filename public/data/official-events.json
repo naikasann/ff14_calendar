@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T13:05:25.211Z",
+  "generatedAt": "2026-09-04T13:35:24.719Z",
   "events": [
     {
       "id": "maintenance-2026-07-28T15:00",
@@ -32,16 +32,6 @@
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/1711a3b2809c42b04bcd2570b92d5e11f0796c90"
     },
     {
-      "id": "broadcast-deb1fc04c004",
-      "type": "broadcast",
-      "title": "「ファンフェスティバル 2026 in 東京」2日通し券 チケットリセール開始！",
-      "start": "2026-08-19T12:15:00+09:00",
-      "end": "2026-10-18T23:59:00+09:00",
-      "allDay": false,
-      "description": "本日より、「ファンフェスティバル 2026 in 東京」の2日通し券のチケットリセールが開始しました。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/deb1fc04c004c959dfa49597636b59253f8e5f97"
-    },
-    {
       "id": "event-63f326f825b5",
       "type": "event",
       "title": "「新生祭」8月27日（木）より開催！",
@@ -50,16 +40,6 @@
       "allDay": true,
       "description": "ファイナルファンタジーXIVは、今年の 8月27日（木） で新生して13周年を迎えます！ これを記念して、シーズナルイベント「新生祭」を開催します。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/63f326f825b5c6e3bb8071d2e6d5903ca9a5e078"
-    },
-    {
-      "id": "campaign-20d2e650948e",
-      "type": "campaign",
-      "title": "オプションアイテム追加＆新生記念セール スタート！",
-      "start": "2026-08-27T18:30:00+09:00",
-      "end": "2026-08-27T19:30:00+09:00",
-      "allDay": false,
-      "description": "8月27日（木）18:30頃 より、オプションアイテムのラインナップに新たなアイテムが追加されます。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20d2e650948e8a3b3ce95a06a162dde4aaa58cd2"
     },
     {
       "id": "pvp-series-11",
@@ -90,16 +70,6 @@
       "allDay": true,
       "description": "2026年9月9日（水） より、「モグモグ★コレクション ～天文に至る路 Part1～」を開催します。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/05926d81dc0cd7b3ba5d39db148a3e98db4ad44f"
-    },
-    {
-      "id": "campaign-c1cf811f2082",
-      "type": "campaign",
-      "title": "「ディーゼル」 x 「ファイナルファンタジーXIV」コラボレーションプロジェクトが始動！",
-      "start": "2026-09-16",
-      "end": "2026-09-23",
-      "allDay": true,
-      "description": "インターナショナル・ライフスタイルブランド「ディーゼル」と「FFXIV」のコラボレーションが始動！",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/c1cf811f20826de17c6959577eaffca5d5185a6b"
     },
     {
       "id": "event-ae0caabcfeb3",
