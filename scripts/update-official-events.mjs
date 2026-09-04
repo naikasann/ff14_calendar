@@ -113,8 +113,83 @@ export function parseTopicList(html) {
     /<p class="news__list--title"><a href="(\/lodestone\/topics\/detail\/[^"]+)">([\s\S]*?)<\/a><\/p>[\s\S]*?ldst_strftime\((\d+)/g,
   );
   return entries.filter(({ title }) =>
-    /(?:PvPシリーズ\d+.*終了|クリスタルコンフリクト.*(?:閉幕|終了)|シーズン\d+.*(?:閉幕|終了)|\d+\.\d+.*パッチノート.*公開)/.test(title),
+    /(?:PvPシリーズ\d+.*終了|クリスタルコンフリクト.*(?:閉幕|終了)|シーズン\d+.*(?:閉幕|終了)|\d+\.\d+.*パッチノート.*公開|モグモグ[★☆]コレクション|新生祭|紅蓮祭|降神祭|ヴァレンティオンデー|プリンセスデー|エッグハント|ゴールドソーサー・フェスティバル|守護天節|星芒祭|FFXIV\s*PLL|プロデューサーレターLIVE|ファンフェスティバル|14時間生放送|ライブビューイング|キャンペーン|コラボ|セール|東京ゲームショウ)/i.test(title),
   );
+}
+
+function inferYear(month, referenceDate, previousDate) {
+  if (previousDate) {
+    const [previousYear, previousMonth] = previousDate.split("-").map(Number);
+    return previousYear + (month < previousMonth ? 1 : 0);
+  }
+  const referenceYear = Number(referenceDate.slice(0, 4));
+  const referenceMonth = Number(referenceDate.slice(5, 7));
+  if (month < referenceMonth - 6) return referenceYear + 1;
+  if (month > referenceMonth + 6) return referenceYear - 1;
+  return referenceYear;
+}
+
+function formatJstDateTime(date) {
+  const shifted = new Date(date.getTime() + JST_OFFSET_MS);
+  return `${toDateKey(shifted.getUTCFullYear(), shifted.getUTCMonth() + 1, shifted.getUTCDate())}T${pad(shifted.getUTCHours())}:${pad(shifted.getUTCMinutes())}:00+09:00`;
+}
+
+function addHours(dateTime, hours) {
+  return formatJstDateTime(new Date(new Date(dateTime).getTime() + hours * 60 * 60 * 1000));
+}
+
+export function parseTopicSchedule(title, articleText, publishedDate) {
+  const markerMatch = articleText.match(/(?:開催期間|実施期間|キャンペーン期間|販売期間|放送日時|日時|開催概要)/);
+  const source = markerMatch
+    ? articleText.slice(markerMatch.index).split(/\n※/)[0].slice(0, 1600)
+    : `${title}\n${articleText.slice(0, 1600)}`.split(/\n※/)[0];
+  const expression = /(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日(?:（[^）]+）|\([^)]*\))?(?:\s*(\d{1,2}):([0-5]\d)(?:頃)?)?/g;
+  const dates = [];
+  for (const match of source.matchAll(expression)) {
+    const month = Number(match[2]);
+    const previousDate = dates.at(-1)?.dateKey;
+    const year = match[1] ? Number(match[1]) : inferYear(month, publishedDate, previousDate);
+    const dateKey = toDateKey(year, month, Number(match[3]));
+    const time = match[4] ? { hour: Number(match[4]), minute: Number(match[5]) } : null;
+    if (!dates.some((date) => date.dateKey === dateKey && JSON.stringify(date.time) === JSON.stringify(time))) {
+      dates.push({ dateKey, time });
+    }
+  }
+  if (dates.length === 0) return null;
+
+  const start = dates[0];
+  const chronological = dates.filter((date) => date.dateKey >= start.dateKey);
+  const end = chronological.at(-1) ?? start;
+  if (chronological.length > 2) {
+    return { start: start.dateKey, end: addDays(end.dateKey, 1), allDay: true };
+  }
+  if (start.time) {
+    const startDateTime = `${start.dateKey}T${pad(start.time.hour)}:${pad(start.time.minute)}:00+09:00`;
+    const endDateTime = end !== start && end.time
+      ? `${end.dateKey}T${pad(end.time.hour)}:${pad(end.time.minute)}:00+09:00`
+      : addHours(startDateTime, 1);
+    return { start: startDateTime, end: endDateTime, allDay: false };
+  }
+  return { start: start.dateKey, end: addDays(end.dateKey, 1), allDay: true };
+}
+
+function extractArticleText(html) {
+  const wrapper = html.match(/<div class="news__detail__wrapper">([\s\S]*?)<div class="news__detail__social">/)?.[1] ?? html;
+  return htmlToText(wrapper);
+}
+
+function createTopicDescription(articleText, fallback) {
+  const firstParagraph = articleText.split(/\n{1,}/).find((line) => line.length >= 24) ?? fallback;
+  return firstParagraph.length > 190 ? `${firstParagraph.slice(0, 187)}...` : firstParagraph;
+}
+
+function classifyTopic(title) {
+  if (/パッチノート/.test(title)) return "patch";
+  if (/PvPシリーズ/.test(title)) return "pvp";
+  if (/クリスタルコンフリクト|シーズン\d+/.test(title)) return "season";
+  if (/FFXIV\s*PLL|プロデューサーレターLIVE|ファンフェスティバル|14時間生放送|ライブビューイング/i.test(title)) return "broadcast";
+  if (/キャンペーン|コラボ|セール/i.test(title)) return "campaign";
+  return "event";
 }
 
 function dateFromMonthDay(text, publishedDate) {
@@ -162,6 +237,22 @@ function createTopicEvent(entry) {
   };
 }
 
+function createScheduledTopicEvent(entry, articleHtml) {
+  const articleText = extractArticleText(articleHtml);
+  const schedule = parseTopicSchedule(entry.title, articleText, entry.publishedDate);
+  if (!schedule) return null;
+  const type = classifyTopic(entry.title);
+  const slug = entry.path.split("/").filter(Boolean).at(-1)?.slice(0, 12) ?? entry.publishedDate;
+  return {
+    id: `${type}-${slug}`,
+    type,
+    title: entry.title,
+    ...schedule,
+    description: createTopicDescription(articleText, `${entry.title}の公式情報です。`),
+    url: `${LODESTONE_BASE_URL}${entry.path}`,
+  };
+}
+
 async function fetchText(url) {
   const response = await fetch(url, {
     headers: { "user-agent": "ff14-calendar/1.0 (+https://naikasann.github.io/ff14_calendar/)" },
@@ -198,7 +289,21 @@ async function collectMaintenanceEvents() {
 }
 
 async function collectTopicEvents() {
-  return parseTopicList(await fetchText(TOPICS_URL)).map(createTopicEvent);
+  const entries = parseTopicList(await fetchText(TOPICS_URL)).slice(0, 24);
+  const events = [];
+  for (const entry of entries) {
+    if (/PvPシリーズ\d+.*終了|クリスタルコンフリクト.*(?:閉幕|終了)|シーズン\d+.*(?:閉幕|終了)|\d+\.\d+.*パッチノート.*公開/.test(entry.title)) {
+      events.push(createTopicEvent(entry));
+      continue;
+    }
+    try {
+      const event = createScheduledTopicEvent(entry, await fetchText(`${LODESTONE_BASE_URL}${entry.path}`));
+      if (event) events.push(event);
+    } catch (error) {
+      console.warn(`[WARN] 公式トピックス詳細の取得をスキップ: ${entry.title}`, error.message);
+    }
+  }
+  return events;
 }
 
 function deduplicateAndSort(events) {
