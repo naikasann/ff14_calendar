@@ -279,7 +279,13 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   );
 }
 
-function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDate; displayMonth: CalendarDate; filter: CalendarFilter; today: CalendarDate }) {
+function CalendarCell({ date, displayMonth, filter, today, onSelectOfficialEvents }: {
+  date: CalendarDate;
+  displayMonth: CalendarDate;
+  filter: CalendarFilter;
+  today: CalendarDate;
+  onSelectOfficialEvents: (events: OfficialEvent[]) => void;
+}) {
   const frontline = getFrontlineForDate(date);
   const housing = getHousingCycle(date);
   const officialEvents = getOfficialEventsForDate(date);
@@ -293,11 +299,55 @@ function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDat
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
       {(filter === "all" || filter === "official") && officialSummary && (
-        <div className={`event-pill official-event ${officialSummary.type}`} title={officialEvents.map((event) => event.title).join(" / ")}>
+        <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
           <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
-        </div>
+        </button>
       )}
       {(filter === "all" || filter === "official") && officialSummary && officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
+    </div>
+  );
+}
+
+function OfficialEventModal({ events, onClose }: { events: OfficialEvent[]; onClose: () => void }) {
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
+  const dateLabel = formatOfficialEventDate(events[0]);
+  return (
+    <div className="event-modal-backdrop" onMouseDown={onClose} role="presentation">
+      <section className="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title" onMouseDown={(event) => event.stopPropagation()}>
+        <div className="event-modal-heading">
+          <div><p className="eyebrow">OFFICIAL EVENT DETAILS</p><h2 id="event-modal-title">{events.length > 1 ? "この日の公式予定" : events[0].title}</h2><p>{dateLabel}</p></div>
+          <button type="button" className="event-modal-close" onClick={onClose} autoFocus aria-label="詳細を閉じる">×</button>
+        </div>
+        <div className="event-modal-list">
+          {events.map((event) => {
+            const calendarEvent = officialEventToCalendarEvent(event);
+            return (
+              <article className={`event-modal-item ${event.type}`} key={event.id}>
+                <div className="event-modal-item-heading"><span>{getOfficialEventTypeLabel(event.type)}</span><strong>{event.title}</strong></div>
+                <time>{formatOfficialEventDate(event)}</time>
+                <p>{event.description}</p>
+                <div className="event-modal-actions">
+                  <a href={event.url} target="_blank" rel="noreferrer">公式ページを見る <Icon name="external" /></a>
+                  <button type="button" onClick={() => downloadCalendarEvent(calendarEvent)}>.icsで追加</button>
+                  <a href={getGoogleCalendarUrl(calendarEvent)} target="_blank" rel="noreferrer">Googleカレンダー</a>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
@@ -305,6 +355,7 @@ function CalendarCell({ date, displayMonth, filter, today }: { date: CalendarDat
 function MonthCalendar({ today }: { today: CalendarDate }) {
   const [month, setMonth] = useState<CalendarDate>({ year: today.year, month: today.month, day: 1 });
   const [filter, setFilter] = useState<CalendarFilter>("all");
+  const [selectedOfficialEvents, setSelectedOfficialEvents] = useState<OfficialEvent[] | null>(null);
   const days = useMemo(() => getCalendarDays(month), [month]);
   const moveMonth = (amount: number) => {
     const next = new Date(Date.UTC(month.year, month.month - 1 + amount, 1));
@@ -332,10 +383,11 @@ function MonthCalendar({ today }: { today: CalendarDate }) {
       <div className="calendar-shell">
         <div className="weekday-row">{WEEKDAYS.map((day, index) => <div key={day} className={index === 0 ? "sunday" : index === 6 ? "saturday" : ""}>{day}</div>)}</div>
         <div className="calendar-grid">
-          {days.map((date) => <CalendarCell key={formatDateKey(date)} date={date} displayMonth={month} filter={filter} today={today} />)}
+          {days.map((date) => <CalendarCell key={formatDateKey(date)} date={date} displayMonth={month} filter={filter} today={today} onSelectOfficialEvents={setSelectedOfficialEvents} />)}
         </div>
       </div>
-      <p className="calendar-note">※ フロントラインはパッチ7.5以降の8日周期、ハウジングは5日＋4日の抽選周期をもとに算出しています。公式予定は約3時間ごとに確認します。</p>
+      <p className="calendar-note">※ 公式予定をクリックすると、概要と公式ページへのリンクを確認できます。フロントラインは8日周期、ハウジングは5日＋4日の抽選周期をもとに算出しています。</p>
+      {selectedOfficialEvents && <OfficialEventModal events={selectedOfficialEvents} onClose={() => setSelectedOfficialEvents(null)} />}
     </section>
   );
 }
