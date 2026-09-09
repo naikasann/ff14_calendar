@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T11:19:57.787Z",
+  "generatedAt": "2026-09-09T04:42:57.213Z",
   "events": [
     {
       "id": "maintenance-2026-07-28T15:00",
@@ -80,6 +80,16 @@
       "allDay": true,
       "description": "9月9日から「モグモグ★コレクション ～天文に至る路 Part1～」開催。チャレンジで交換手形を集め、特別報酬「ウォロン・ホルン」を目指せます。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/05926d81dc0cd7b3ba5d39db148a3e98db4ad44f"
+    },
+    {
+      "id": "maintenance-2026-09-09T15:00",
+      "type": "maintenance",
+      "title": "全ワールド 緊急メンテナンス作業のお知らせ(9/9)",
+      "start": "2026-09-09T15:00:00+09:00",
+      "end": "2026-09-09T19:00:00+09:00",
+      "allDay": false,
+      "description": "[メンテナンス] 全ワールド 緊急メンテナンス作業のお知らせ(9/9)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/72aac553109b297701627aa3d40a56c560b68482"
     },
     {
       "id": "event-ae0caabcfeb3",
