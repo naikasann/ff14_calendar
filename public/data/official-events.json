@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T11:24:25.018Z",
+  "generatedAt": "2026-09-10T04:43:40.788Z",
   "events": [
     {
       "id": "maintenance-2026-08-07T15:00",
@@ -80,6 +80,16 @@
       "allDay": false,
       "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/9)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/6ffe6184776fa6c69f70edd353daf6cad6a91be8"
+    },
+    {
+      "id": "campaign-08eed83e8433",
+      "type": "campaign",
+      "title": "「instax™“チェキ”」コラボレーションX投稿キャンペーン開始！",
+      "start": "2026-09-10T11:00:00+09:00",
+      "end": "2026-09-10T12:00:00+09:00",
+      "allDay": false,
+      "description": "本日より、富士フイルム株式会社の「instax™“チェキ”」とのコラボレーションで、X投稿キャンペーンを実施します。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/08eed83e8433f4cd25d88c18e2c0dc97ae5bc69f"
     },
     {
       "id": "event-ae0caabcfeb3",
