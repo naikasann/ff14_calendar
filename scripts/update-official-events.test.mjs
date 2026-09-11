@@ -78,6 +78,19 @@ test("開催期間を開始・終了日時へ変換する", () => {
   });
 });
 
+test("終了側が同月の日付だけでも開始・終了日時へ変換する", () => {
+  const actual = parseTopicSchedule(
+    "X投稿キャンペーン",
+    "キャンペーン開催期間\n2026年9月10日（木）11:00 ～ 30日（水）23:59頃まで",
+    "2026-09-10",
+  );
+  assert.deepEqual(actual, {
+    start: "2026-09-10T11:00:00+09:00",
+    end: "2026-09-30T23:59:00+09:00",
+    allDay: false,
+  });
+});
+
 test("終了日のない開始日は1日予定にする", () => {
   const actual = parseTopicSchedule(
     "モグモグ★コレクション 9月9日（水）スタート！",
@@ -112,12 +125,19 @@ test("週次選別の要約・除外・追加予定を反映する", () => {
     { id: "remove", start: "2026-09-10", description: "除外する説明" },
   ];
   const actual = applyCuratedData(events, {
+    eventOverrides: { keep: { end: "2026-09-30", allDay: true } },
     summaryOverrides: { keep: "週次で要約した説明" },
     excludedIds: ["remove"],
     extraEvents: [{ id: "extra", start: "2026-09-08", description: "追加予定" }],
   });
   assert.deepEqual(actual, [
     { id: "extra", start: "2026-09-08", description: "追加予定" },
-    { id: "keep", start: "2026-09-09", description: "週次で要約した説明" },
+    {
+      id: "keep",
+      start: "2026-09-09",
+      end: "2026-09-30",
+      allDay: true,
+      description: "週次で要約した説明",
+    },
   ]);
 });

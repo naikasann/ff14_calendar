@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-09-10T04:43:40.788Z",
+  "generatedAt": "2026-09-11T09:04:59.918Z",
   "events": [
-    {
-      "id": "maintenance-2026-08-07T15:00",
-      "type": "maintenance",
-      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/7)",
-      "start": "2026-08-07T15:00:00+09:00",
-      "end": "2026-08-07T18:55:00+09:00",
-      "allDay": false,
-      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/7)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/3120aae217186f31dbb00369e7490d6ad61eeb5c"
-    },
     {
       "id": "maintenance-2026-08-14T15:00",
       "type": "maintenance",
@@ -20,16 +10,6 @@
       "allDay": false,
       "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/14)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/1711a3b2809c42b04bcd2570b92d5e11f0796c90"
-    },
-    {
-      "id": "event-63f326f825b5",
-      "type": "event",
-      "title": "「新生祭」8月27日（木）より開催！",
-      "start": "2026-08-27",
-      "end": "2026-08-28",
-      "allDay": true,
-      "description": "FFXIV新生13周年を記念するシーズナルイベント「新生祭」が8月27日から開催。期間限定クエストや報酬の詳細は公式特設ページで確認できます。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/63f326f825b5c6e3bb8071d2e6d5903ca9a5e078"
     },
     {
       "id": "patch-7.56-2026-09-08",
@@ -86,9 +66,9 @@
       "type": "campaign",
       "title": "「instax™“チェキ”」コラボレーションX投稿キャンペーン開始！",
       "start": "2026-09-10T11:00:00+09:00",
-      "end": "2026-09-10T12:00:00+09:00",
+      "end": "2026-09-30T23:59:00+09:00",
       "allDay": false,
-      "description": "本日より、富士フイルム株式会社の「instax™“チェキ”」とのコラボレーションで、X投稿キャンペーンを実施します。",
+      "description": "FFXIVのスクリーンショットでチェキ風画像を作り、指定ハッシュタグと公式アカウントへのメンションを付けてXへ投稿する参加型企画。選出14作品は公式媒体や東京ファンフェス会場で紹介予定です。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/08eed83e8433f4cd25d88c18e2c0dc97ae5bc69f"
     },
     {

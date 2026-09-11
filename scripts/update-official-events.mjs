@@ -144,12 +144,16 @@ export function parseTopicSchedule(title, articleText, publishedDate) {
   const source = markerMatch
     ? articleText.slice(markerMatch.index).split(/\n※/)[0].slice(0, 1600)
     : `${title}\n${articleText.slice(0, 1600)}`.split(/\n※/)[0];
-  const expression = /(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日(?:（[^）]+）|\([^)]*\))?(?:\s*(\d{1,2}):([0-5]\d)(?:頃)?)?/g;
+  const expression = /(?:(\d{4})年)?(?:(\d{1,2})月)?(\d{1,2})日(?:（[^）]+）|\([^)]*\))?(?:\s*(\d{1,2}):([0-5]\d)(?:頃)?)?/g;
   const dates = [];
   for (const match of source.matchAll(expression)) {
-    const month = Number(match[2]);
     const previousDate = dates.at(-1)?.dateKey;
-    const year = match[1] ? Number(match[1]) : inferYear(month, publishedDate, previousDate);
+    if (!match[2] && !previousDate) continue;
+    const previousParts = previousDate?.split("-").map(Number);
+    const month = match[2] ? Number(match[2]) : previousParts[1];
+    const year = match[1]
+      ? Number(match[1])
+      : (match[2] ? inferYear(month, publishedDate, previousDate) : previousParts[0]);
     const dateKey = toDateKey(year, month, Number(match[3]));
     const time = match[4] ? { hour: Number(match[4]), minute: Number(match[5]) } : null;
     if (!dates.some((date) => date.dateKey === dateKey && JSON.stringify(date.time) === JSON.stringify(time))) {
@@ -341,15 +345,20 @@ function deduplicateAndSort(events) {
 
 export function applyCuratedData(events, curated = {}) {
   const excludedIds = new Set(Array.isArray(curated.excludedIds) ? curated.excludedIds : []);
+  const eventOverrides = curated.eventOverrides && typeof curated.eventOverrides === "object"
+    ? curated.eventOverrides
+    : {};
   const summaryOverrides = curated.summaryOverrides && typeof curated.summaryOverrides === "object"
     ? curated.summaryOverrides
     : {};
   const extraEvents = Array.isArray(curated.extraEvents) ? curated.extraEvents : [];
   const selected = events
     .filter((event) => !excludedIds.has(event.id))
-    .map((event) => summaryOverrides[event.id]
-      ? { ...event, description: summaryOverrides[event.id] }
-      : event);
+    .map((event) => ({
+      ...event,
+      ...(eventOverrides[event.id] ?? {}),
+      ...(summaryOverrides[event.id] ? { description: summaryOverrides[event.id] } : {}),
+    }));
   return deduplicateAndSort([...selected, ...extraEvents.filter((event) => !excludedIds.has(event.id))]);
 }
 
@@ -365,7 +374,7 @@ async function readCuratedData() {
   try {
     return JSON.parse(await readFile(CURATED_PATH, "utf8"));
   } catch {
-    return { reviewedAt: null, summaryOverrides: {}, excludedIds: [], extraEvents: [] };
+    return { reviewedAt: null, eventOverrides: {}, summaryOverrides: {}, excludedIds: [], extraEvents: [] };
   }
 }
 
