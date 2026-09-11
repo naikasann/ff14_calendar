@@ -125,8 +125,21 @@ test("週次選別の要約・除外・追加予定を反映する", () => {
     { id: "remove", start: "2026-09-10", description: "除外する説明" },
   ];
   const actual = applyCuratedData(events, {
-    eventOverrides: { keep: { end: "2026-09-30", allDay: true } },
-    summaryOverrides: { keep: "週次で要約した説明" },
+    eventOverrides: {
+      keep: { end: "2026-09-30", allDay: true },
+      retained: {
+        type: "campaign",
+        title: "取得一覧から外れても残す予定",
+        start: "2026-09-11",
+        end: "2026-09-30",
+        allDay: true,
+        url: "https://example.com/retained",
+      },
+    },
+    summaryOverrides: {
+      keep: "週次で要約した説明",
+      retained: "週次判断で保存した説明",
+    },
     excludedIds: ["remove"],
     extraEvents: [{ id: "extra", start: "2026-09-08", description: "追加予定" }],
   });
@@ -138,6 +151,16 @@ test("週次選別の要約・除外・追加予定を反映する", () => {
       end: "2026-09-30",
       allDay: true,
       description: "週次で要約した説明",
+    },
+    {
+      id: "retained",
+      type: "campaign",
+      title: "取得一覧から外れても残す予定",
+      start: "2026-09-11",
+      end: "2026-09-30",
+      allDay: true,
+      description: "週次判断で保存した説明",
+      url: "https://example.com/retained",
     },
   ]);
 });

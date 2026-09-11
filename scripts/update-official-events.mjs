@@ -359,7 +359,26 @@ export function applyCuratedData(events, curated = {}) {
       ...(eventOverrides[event.id] ?? {}),
       ...(summaryOverrides[event.id] ? { description: summaryOverrides[event.id] } : {}),
     }));
-  return deduplicateAndSort([...selected, ...extraEvents.filter((event) => !excludedIds.has(event.id))]);
+  const selectedIds = new Set(selected.map((event) => event.id));
+  const retainedOverrides = Object.entries(eventOverrides)
+    .filter(([id, override]) =>
+      !excludedIds.has(id)
+      && !selectedIds.has(id)
+      && override
+      && typeof override === "object"
+      && override.title
+      && override.start
+      && override.end)
+    .map(([id, override]) => ({
+      id,
+      ...override,
+      ...(summaryOverrides[id] ? { description: summaryOverrides[id] } : {}),
+    }));
+  return deduplicateAndSort([
+    ...selected,
+    ...retainedOverrides,
+    ...extraEvents.filter((event) => !excludedIds.has(event.id)),
+  ]);
 }
 
 async function readExistingData() {
