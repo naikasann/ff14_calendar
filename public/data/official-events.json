@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T09:04:59.918Z",
+  "generatedAt": "2026-09-15T11:45:01.718Z",
   "events": [
     {
       "id": "maintenance-2026-08-14T15:00",
@@ -20,16 +20,6 @@
       "allDay": true,
       "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/67caf3b6b5e0ee7569afb5ec8bdcae5113f9df49"
-    },
-    {
-      "id": "pvp-series-11",
-      "type": "pvp",
-      "title": "PvPシリーズ11 終了予定",
-      "start": "2026-09-08",
-      "end": "2026-09-09",
-      "allDay": true,
-      "description": "PvPシリーズ11はパッチ7.56公開に伴う9月8日のメンテナンス開始まで。未受取のシリーズ報酬やシリーズレベルを事前に確認してください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/e9959d0574984f0c6186e33e9a0539ee93e1e9de"
     },
     {
       "id": "maintenance-2026-09-08T15:00",
