@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-09-16T11:35:04.803Z",
+  "generatedAt": "2026-09-16T21:18:43.292Z",
   "events": [
-    {
-      "id": "maintenance-2026-08-14T15:00",
-      "type": "maintenance",
-      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/14)",
-      "start": "2026-08-14T15:00:00+09:00",
-      "end": "2026-08-14T17:50:00+09:00",
-      "allDay": false,
-      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(8/14)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/1711a3b2809c42b04bcd2570b92d5e11f0796c90"
-    },
     {
       "id": "patch-7.56-2026-09-08",
       "type": "patch",
