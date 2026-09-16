@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T11:45:01.718Z",
+  "generatedAt": "2026-09-16T11:35:04.803Z",
   "events": [
     {
       "id": "maintenance-2026-08-14T15:00",
@@ -70,6 +70,16 @@
       "allDay": true,
       "description": "9月17日～21日の東京ゲームショウ2026にFFXIVが出展。最新映像の上映、キャラクターグリーティング、会場グッズ販売などが予定されています。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ae0caabcfeb32c5f503100419189d7de93f70a78"
+    },
+    {
+      "id": "maintenance-2026-09-17T15:00",
+      "type": "maintenance",
+      "title": "全ワールド 緊急メンテナンス作業のお知らせ(9/17)",
+      "start": "2026-09-17T15:00:00+09:00",
+      "end": "2026-09-17T19:00:00+09:00",
+      "allDay": false,
+      "description": "[メンテナンス] 全ワールド 緊急メンテナンス作業のお知らせ(9/17)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/0d09f1ea075c0402138372be7ce07ea30035ccf8"
     },
     {
       "id": "broadcast-35d881d22728",
