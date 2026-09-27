@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T11:51:45.778Z",
+  "generatedAt": "2026-09-27T04:29:08.310Z",
   "events": [
     {
       "id": "patch-7.56-2026-09-08",
@@ -60,6 +60,36 @@
       "allDay": false,
       "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/17)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/620c6c6fa50b9c46645fc319a60a090e9e205950"
+    },
+    {
+      "id": "event-91075fd9255c",
+      "type": "event",
+      "title": "FFXIV×FFXVコラボイベント「英雄への夜想曲」再演",
+      "start": "2026-09-24T17:00:00+09:00",
+      "end": "2026-10-13T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/91075fd9255ca685b2ee8a237d4799f0aac3b917",
+      "description": "FFXVコラボイベント「英雄への夜想曲」を再演。期間限定クエストを進めると、4人乗りマウント「レガリア TYPE-G」や装備、髪形、オーケストリオン譜などの報酬を獲得できます。"
+    },
+    {
+      "id": "campaign-568092959f5e",
+      "type": "campaign",
+      "title": "「白銀のワンダラー」に向けた参加型プロモーション企画",
+      "start": "2026-09-25",
+      "end": "2026-10-06",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/568092959f5ef7b29ec0ba918b748d694bdb09dd",
+      "description": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。"
+    },
+    {
+      "id": "event-06c058689972",
+      "type": "event",
+      "title": "PAX Australia 2026 FFXIV出展",
+      "start": "2026-10-09",
+      "end": "2026-10-12",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
+      "description": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。"
     },
     {
       "id": "broadcast-35d881d22728",

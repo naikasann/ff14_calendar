@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-09-11T09:00:00Z",
+  "reviewedAt": "2026-09-27T04:24:43Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -8,9 +8,36 @@
       "end": "2026-09-30T23:59:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/08eed83e8433f4cd25d88c18e2c0dc97ae5bc69f"
+    },
+    "campaign-568092959f5e": {
+      "type": "campaign",
+      "title": "「白銀のワンダラー」に向けた参加型プロモーション企画",
+      "start": "2026-09-25",
+      "end": "2026-10-06",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/568092959f5ef7b29ec0ba918b748d694bdb09dd"
+    },
+    "event-91075fd9255c": {
+      "type": "event",
+      "title": "FFXIV×FFXVコラボイベント「英雄への夜想曲」再演",
+      "start": "2026-09-24T17:00:00+09:00",
+      "end": "2026-10-13T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/91075fd9255ca685b2ee8a237d4799f0aac3b917"
+    },
+    "event-06c058689972": {
+      "type": "event",
+      "title": "PAX Australia 2026 FFXIV出展",
+      "start": "2026-10-09",
+      "end": "2026-10-12",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d"
     }
   },
   "summaryOverrides": {
+    "campaign-568092959f5e": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。",
+    "event-91075fd9255c": "FFXVコラボイベント「英雄への夜想曲」を再演。期間限定クエストを進めると、4人乗りマウント「レガリア TYPE-G」や装備、髪形、オーケストリオン譜などの報酬を獲得できます。",
+    "event-06c058689972": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。",
     "campaign-08eed83e8433": "FFXIVのスクリーンショットでチェキ風画像を作り、指定ハッシュタグと公式アカウントへのメンションを付けてXへ投稿する参加型企画。選出14作品は公式媒体や東京ファンフェス会場で紹介予定です。",
     "event-63f326f825b5": "FFXIV新生13周年を記念するシーズナルイベント「新生祭」が8月27日から開催。期間限定クエストや報酬の詳細は公式特設ページで確認できます。",
     "pvp-series-11": "PvPシリーズ11はパッチ7.56公開に伴う9月8日のメンテナンス開始まで。未受取のシリーズ報酬やシリーズレベルを事前に確認してください。",
