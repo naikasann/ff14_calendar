@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T04:29:08.310Z",
+  "generatedAt": "2026-09-30T12:35:26.741Z",
   "events": [
     {
       "id": "patch-7.56-2026-09-08",
@@ -42,16 +42,6 @@
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/08eed83e8433f4cd25d88c18e2c0dc97ae5bc69f"
     },
     {
-      "id": "event-ae0caabcfeb3",
-      "type": "event",
-      "title": "東京ゲームショウ2026 出展情報&会場グッズ販売情報！",
-      "start": "2026-09-17",
-      "end": "2026-09-22",
-      "allDay": true,
-      "description": "9月17日～21日の東京ゲームショウ2026にFFXIVが出展。最新映像の上映、キャラクターグリーティング、会場グッズ販売などが予定されています。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ae0caabcfeb32c5f503100419189d7de93f70a78"
-    },
-    {
       "id": "maintenance-2026-09-17T15:00",
       "type": "maintenance",
       "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/17)",
@@ -80,6 +70,16 @@
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/568092959f5ef7b29ec0ba918b748d694bdb09dd",
       "description": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。"
+    },
+    {
+      "id": "campaign-cd121984d390",
+      "type": "campaign",
+      "title": "「Fall Guys」コラボイベント 10月7日（水）より再演！",
+      "start": "2026-10-07T17:00:00+09:00",
+      "end": "2026-10-27T23:59:00+09:00",
+      "allDay": false,
+      "description": "「Fall Guys」の世界観を存分に楽しめるコラボレーションイベントが再び開催されます。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673"
     },
     {
       "id": "event-06c058689972",
