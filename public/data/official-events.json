@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T12:35:26.741Z",
+  "generatedAt": "2026-10-02T09:07:10.534Z",
   "events": [
     {
       "id": "patch-7.56-2026-09-08",
@@ -74,11 +74,11 @@
     {
       "id": "campaign-cd121984d390",
       "type": "campaign",
-      "title": "「Fall Guys」コラボイベント 10月7日（水）より再演！",
+      "title": "「Fall Guys」コラボイベント再演",
       "start": "2026-10-07T17:00:00+09:00",
       "end": "2026-10-27T23:59:00+09:00",
       "allDay": false,
-      "description": "「Fall Guys」の世界観を存分に楽しめるコラボレーションイベントが再び開催されます。",
+      "description": "10月7日17:00からゴールドソーサーのコラボコンテンツ「ブランダーヴィル」が再登場。参加して、おしゃれ装備やマウント、ポートレート教材などの限定報酬を獲得できます。10月27日23:59頃まで。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673"
     },
     {
