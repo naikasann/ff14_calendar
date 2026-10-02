@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-09-27T04:24:43Z",
+  "reviewedAt": "2026-10-02T09:01:22Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -32,9 +32,18 @@
       "end": "2026-10-12",
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d"
+    },
+    "campaign-cd121984d390": {
+      "type": "campaign",
+      "title": "「Fall Guys」コラボイベント再演",
+      "start": "2026-10-07T17:00:00+09:00",
+      "end": "2026-10-27T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673"
     }
   },
   "summaryOverrides": {
+    "campaign-cd121984d390": "10月7日17:00からゴールドソーサーのコラボコンテンツ「ブランダーヴィル」が再登場。参加して、おしゃれ装備やマウント、ポートレート教材などの限定報酬を獲得できます。10月27日23:59頃まで。",
     "campaign-568092959f5e": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。",
     "event-91075fd9255c": "FFXVコラボイベント「英雄への夜想曲」を再演。期間限定クエストを進めると、4人乗りマウント「レガリア TYPE-G」や装備、髪形、オーケストリオン譜などの報酬を獲得できます。",
     "event-06c058689972": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。",
