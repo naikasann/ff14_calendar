@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T09:07:10.534Z",
+  "generatedAt": "2026-10-06T15:57:37.806Z",
   "events": [
     {
       "id": "patch-7.56-2026-09-08",
@@ -72,6 +72,16 @@
       "description": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。"
     },
     {
+      "id": "campaign-7b96c49068c4",
+      "type": "campaign",
+      "title": "マウント「マウンテンズー」が当たる！LINE友だちプレゼントキャンペーン実施",
+      "start": "2026-10-06T17:00:00+09:00",
+      "end": "2026-10-20T17:00:00+09:00",
+      "allDay": false,
+      "description": "ファイナルファンタジーXIVのLINE公式アカウントを友だちに追加して、LINEのトーク画面から応募できる「LINE友だちプレゼントキャンペーン」を開催します。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/7b96c49068c476dec65924df0ee1d5bdecb215fa"
+    },
+    {
       "id": "campaign-cd121984d390",
       "type": "campaign",
       "title": "「Fall Guys」コラボイベント再演",
@@ -90,16 +100,6 @@
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
       "description": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。"
-    },
-    {
-      "id": "broadcast-35d881d22728",
-      "type": "broadcast",
-      "title": "「ファンフェスティバル 2026 in 東京」ライブビューイング開催決定！ チケット販売は9月11日（金）から",
-      "start": "2026-10-31T11:00:00+09:00",
-      "end": "2026-11-01T19:00:00+09:00",
-      "allDay": false,
-      "description": "ファンフェス東京のライブビューイングを実施。10月31日11:00から基調講演、11月1日19:00からTHE PRIMALSライブを映画館で上映します。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/35d881d22728101355344b8a775e1560684e0bab"
     }
   ]
 }
