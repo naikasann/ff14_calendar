@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-10-06T15:57:37.806Z",
+  "generatedAt": "2026-10-08T10:35:46.221Z",
   "events": [
-    {
-      "id": "patch-7.56-2026-09-08",
-      "type": "patch",
-      "title": "パッチ7.56 パッチノート公開",
-      "start": "2026-09-08",
-      "end": "2026-09-09",
-      "allDay": true,
-      "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/67caf3b6b5e0ee7569afb5ec8bdcae5113f9df49"
-    },
     {
       "id": "maintenance-2026-09-08T15:00",
       "type": "maintenance",
@@ -100,6 +90,26 @@
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
       "description": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。"
+    },
+    {
+      "id": "maintenance-2026-10-12T19:00",
+      "type": "maintenance",
+      "title": "全ワールド メンテナンス作業のお知らせ(10/12-13)",
+      "start": "2026-10-12T19:00:00+09:00",
+      "end": "2026-10-13T19:00:00+09:00",
+      "allDay": false,
+      "description": "[メンテナンス] 全ワールド メンテナンス作業のお知らせ(10/12-13)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/a584484a93b34028d7cbb9faa2a4226d5f470d90"
+    },
+    {
+      "id": "event-761da1cee02b",
+      "type": "event",
+      "title": "「守護天節」10月15日（木）より開催！",
+      "start": "2026-10-15",
+      "end": "2026-10-16",
+      "allDay": true,
+      "description": "エオルゼアでは、もうすぐ「守護天節」が開催されます！ 各都市や冒険者居住区はカボチャやコウモリなどの装飾で彩られ、魔物たちが人々を楽しませようとやってきます。 詳しくは『 こちら 』をご覧ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/761da1cee02b58025385ad225d3cea885498ad97"
     }
   ]
 }
