@@ -1,46 +1,6 @@
 {
-  "generatedAt": "2026-10-08T10:35:46.221Z",
+  "generatedAt": "2026-10-09T09:08:57.330Z",
   "events": [
-    {
-      "id": "maintenance-2026-09-08T15:00",
-      "type": "maintenance",
-      "title": "全ワールド メンテナンス作業 終了時間変更のお知らせ(9/8)",
-      "start": "2026-09-08T15:00:00+09:00",
-      "end": "2026-09-08T18:25:00+09:00",
-      "allDay": false,
-      "description": "パッチ7.56公開に伴う全ワールドメンテナンス。9月8日15:00～19:00予定で、期間中はゲームを利用できません。終了時刻は変更される場合があります。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/e7bd8349da50338f40ba8fa330c3bebf30b751cb"
-    },
-    {
-      "id": "maintenance-2026-09-09T15:00",
-      "type": "maintenance",
-      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/9)",
-      "start": "2026-09-09T15:00:00+09:00",
-      "end": "2026-09-09T17:40:00+09:00",
-      "allDay": false,
-      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/9)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/6ffe6184776fa6c69f70edd353daf6cad6a91be8"
-    },
-    {
-      "id": "campaign-08eed83e8433",
-      "type": "campaign",
-      "title": "「instax™“チェキ”」コラボレーションX投稿キャンペーン開始！",
-      "start": "2026-09-10T11:00:00+09:00",
-      "end": "2026-09-30T23:59:00+09:00",
-      "allDay": false,
-      "description": "FFXIVのスクリーンショットでチェキ風画像を作り、指定ハッシュタグと公式アカウントへのメンションを付けてXへ投稿する参加型企画。選出14作品は公式媒体や東京ファンフェス会場で紹介予定です。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/08eed83e8433f4cd25d88c18e2c0dc97ae5bc69f"
-    },
-    {
-      "id": "maintenance-2026-09-17T15:00",
-      "type": "maintenance",
-      "title": "全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/17)",
-      "start": "2026-09-17T15:00:00+09:00",
-      "end": "2026-09-17T18:25:00+09:00",
-      "allDay": false,
-      "description": "[続報] 全ワールド 緊急メンテナンス作業 終了時間変更のお知らせ(9/17)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/620c6c6fa50b9c46645fc319a60a090e9e205950"
-    },
     {
       "id": "event-91075fd9255c",
       "type": "event",
@@ -52,23 +12,13 @@
       "description": "FFXVコラボイベント「英雄への夜想曲」を再演。期間限定クエストを進めると、4人乗りマウント「レガリア TYPE-G」や装備、髪形、オーケストリオン譜などの報酬を獲得できます。"
     },
     {
-      "id": "campaign-568092959f5e",
-      "type": "campaign",
-      "title": "「白銀のワンダラー」に向けた参加型プロモーション企画",
-      "start": "2026-09-25",
-      "end": "2026-10-06",
-      "allDay": true,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/568092959f5ef7b29ec0ba918b748d694bdb09dd",
-      "description": "『白銀のワンダラー』に向け、FFXIVへの思いを表す「あなたの言葉」と、都内近郊で行う新プロモーションCM撮影の参加者を募集。いずれも10月5日23:59頃が応募期限です。"
-    },
-    {
       "id": "campaign-7b96c49068c4",
       "type": "campaign",
-      "title": "マウント「マウンテンズー」が当たる！LINE友だちプレゼントキャンペーン実施",
+      "title": "LINE友だちプレゼントキャンペーン",
       "start": "2026-10-06T17:00:00+09:00",
       "end": "2026-10-20T17:00:00+09:00",
       "allDay": false,
-      "description": "ファイナルファンタジーXIVのLINE公式アカウントを友だちに追加して、LINEのトーク画面から応募できる「LINE友だちプレゼントキャンペーン」を開催します。",
+      "description": "FFXIV公式LINEを友だちに追加し、トーク画面のメニューから応募すると、抽選で300名にマウント「マウンテンズー」のアイテムコードが当たります。すでに友だち登録済みの方も応募できます。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/7b96c49068c476dec65924df0ee1d5bdecb215fa"
     },
     {
@@ -92,24 +42,94 @@
       "description": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。"
     },
     {
+      "id": "broadcast-06c058689972",
+      "type": "broadcast",
+      "title": "PAX Australia コージ＆室内トークステージ（英語配信）",
+      "start": "2026-10-10T11:00:00+09:00",
+      "end": "2026-10-10T12:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
+      "description": "コージ・フォックスと室内俊夫が、激辛ソースに挑みながら仕事やさまざまな質問について語るPAX Australiaのステージ。FFXIV公式およびPAX公式のTwitchチャンネルで英語配信されます。"
+    },
+    {
+      "id": "campaign-97e3f71f76b3-deadline",
+      "type": "campaign",
+      "title": "吉田Pの一問一答タイムアタック！ 質問応募締切",
+      "start": "2026-10-12",
+      "end": "2026-10-13",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38",
+      "description": "質問を30文字以内で指定テンプレート画像に記入し、公開Xアカウントから「#答えて吉P」を付けて投稿する企画。選考を通過した質問は日本ファンフェスのステージで使用されます。応募は10月12日23:59頃まで。"
+    },
+    {
       "id": "maintenance-2026-10-12T19:00",
       "type": "maintenance",
       "title": "全ワールド メンテナンス作業のお知らせ(10/12-13)",
       "start": "2026-10-12T19:00:00+09:00",
       "end": "2026-10-13T19:00:00+09:00",
       "allDay": false,
-      "description": "[メンテナンス] 全ワールド メンテナンス作業のお知らせ(10/12-13)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "description": "パッチ7.57公開と日本データセンターへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了時刻は変更される場合があります。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/a584484a93b34028d7cbb9faa2a4226d5f470d90"
     },
     {
       "id": "event-761da1cee02b",
       "type": "event",
-      "title": "「守護天節」10月15日（木）より開催！",
-      "start": "2026-10-15",
-      "end": "2026-10-16",
+      "title": "守護天節2026",
+      "start": "2026-10-15T17:00:00+09:00",
+      "end": "2026-11-02T23:59:00+09:00",
+      "allDay": false,
+      "description": "期間限定クエスト「守護天節と面妖な着ぐるみたち」を開催。レベル15からグリダニア旧市街のパンプキンヘッドの女に話しかけて参加でき、防具や調度品を入手できます。終了は11月2日23:59頃です。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/special/2026/All_Saints_Wake/tfrx2rkv52"
+    },
+    {
+      "id": "event-9aa135968177",
+      "type": "event",
+      "title": "エオルゼアカフェ 守護天節イベント",
+      "start": "2026-10-27",
+      "end": "2026-12-15",
       "allDay": true,
-      "description": "エオルゼアでは、もうすぐ「守護天節」が開催されます！ 各都市や冒険者居住区はカボチャやコウモリなどの装飾で彩られ、魔物たちが人々を楽しませようとやってきます。 詳しくは『 こちら 』をご覧ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/761da1cee02b58025385ad225d3cea885498ad97"
+      "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a"
+    },
+    {
+      "id": "event-64dc9432bb16-day1",
+      "type": "event",
+      "title": "ファンフェスティバル2026 in 東京 DAY 1",
+      "start": "2026-10-31T09:00:00+09:00",
+      "end": "2026-10-31T21:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/",
+      "description": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-keynote",
+      "type": "broadcast",
+      "title": "日本ファンフェス 基調講演",
+      "start": "2026-10-31T11:00:00+09:00",
+      "end": "2026-10-31T13:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "ファンフェスティバル2026 in 東京の基調講演で、プロデューサー兼ディレクターの吉田直樹がFFXIVの今後の新展開について紹介します。ステージは無料配信対象で、予定時刻が変更される場合があります。"
+    },
+    {
+      "id": "broadcast-97e3f71f76b3",
+      "type": "broadcast",
+      "title": "日本ファンフェス 吉田Pの一問一答タイムアタック！",
+      "start": "2026-10-31T16:30:00+09:00",
+      "end": "2026-10-31T17:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38",
+      "description": "日本ファンフェスで、Xを通じて事前募集した質問に吉田Pが一問一答形式で答えるステージを実施。音楽ステージ以外の無料配信対象です。進行で時刻が前後する場合があり、翌日のLive Q&Aとは別企画です。"
+    },
+    {
+      "id": "event-64dc9432bb16-day2",
+      "type": "event",
+      "title": "ファンフェスティバル2026 in 東京 DAY 2",
+      "start": "2026-11-01T09:00:00+09:00",
+      "end": "2026-11-01T21:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/",
+      "description": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-02T09:07:56Z",
+  "reviewedAt": "2026-10-09T09:08:39.468Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -40,6 +40,78 @@
       "end": "2026-10-27T23:59:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673"
+    },
+    "event-761da1cee02b": {
+      "type": "event",
+      "title": "守護天節2026",
+      "start": "2026-10-15T17:00:00+09:00",
+      "end": "2026-11-02T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/special/2026/All_Saints_Wake/tfrx2rkv52"
+    },
+    "campaign-7b96c49068c4": {
+      "type": "campaign",
+      "title": "LINE友だちプレゼントキャンペーン",
+      "start": "2026-10-06T17:00:00+09:00",
+      "end": "2026-10-20T17:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/7b96c49068c476dec65924df0ee1d5bdecb215fa"
+    },
+    "campaign-97e3f71f76b3-deadline": {
+      "type": "campaign",
+      "title": "吉田Pの一問一答タイムアタック！ 質問応募締切",
+      "start": "2026-10-12",
+      "end": "2026-10-13",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38"
+    },
+    "broadcast-97e3f71f76b3": {
+      "type": "broadcast",
+      "title": "日本ファンフェス 吉田Pの一問一答タイムアタック！",
+      "start": "2026-10-31T16:30:00+09:00",
+      "end": "2026-10-31T17:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38"
+    },
+    "broadcast-06c058689972": {
+      "type": "broadcast",
+      "title": "PAX Australia コージ＆室内トークステージ（英語配信）",
+      "start": "2026-10-10T11:00:00+09:00",
+      "end": "2026-10-10T12:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d"
+    },
+    "event-9aa135968177": {
+      "type": "event",
+      "title": "エオルゼアカフェ 守護天節イベント",
+      "start": "2026-10-27",
+      "end": "2026-12-15",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a"
+    },
+    "event-64dc9432bb16-day1": {
+      "type": "event",
+      "title": "ファンフェスティバル2026 in 東京 DAY 1",
+      "start": "2026-10-31T09:00:00+09:00",
+      "end": "2026-10-31T21:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/"
+    },
+    "event-64dc9432bb16-day2": {
+      "type": "event",
+      "title": "ファンフェスティバル2026 in 東京 DAY 2",
+      "start": "2026-11-01T09:00:00+09:00",
+      "end": "2026-11-01T21:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/"
+    },
+    "broadcast-fanfest2026-jp-keynote": {
+      "type": "broadcast",
+      "title": "日本ファンフェス 基調講演",
+      "start": "2026-10-31T11:00:00+09:00",
+      "end": "2026-10-31T13:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/"
     }
   },
   "summaryOverrides": {
@@ -53,8 +125,45 @@
     "maintenance-2026-09-08T15:00": "パッチ7.56公開に伴う全ワールドメンテナンス。9月8日15:00～19:00予定で、期間中はゲームを利用できません。終了時刻は変更される場合があります。",
     "event-05926d81dc0c": "9月9日から「モグモグ★コレクション ～天文に至る路 Part1～」開催。チャレンジで交換手形を集め、特別報酬「ウォロン・ホルン」を目指せます。",
     "event-ae0caabcfeb3": "9月17日～21日の東京ゲームショウ2026にFFXIVが出展。最新映像の上映、キャラクターグリーティング、会場グッズ販売などが予定されています。",
-    "broadcast-35d881d22728": "ファンフェス東京のライブビューイングを実施。10月31日11:00から基調講演、11月1日19:00からTHE PRIMALSライブを映画館で上映します。"
+    "broadcast-35d881d22728": "ファンフェス東京のライブビューイングを実施。10月31日11:00から基調講演、11月1日19:00からTHE PRIMALSライブを映画館で上映します。",
+    "event-761da1cee02b": "期間限定クエスト「守護天節と面妖な着ぐるみたち」を開催。レベル15からグリダニア旧市街のパンプキンヘッドの女に話しかけて参加でき、防具や調度品を入手できます。終了は11月2日23:59頃です。",
+    "campaign-7b96c49068c4": "FFXIV公式LINEを友だちに追加し、トーク画面のメニューから応募すると、抽選で300名にマウント「マウンテンズー」のアイテムコードが当たります。すでに友だち登録済みの方も応募できます。",
+    "campaign-97e3f71f76b3-deadline": "質問を30文字以内で指定テンプレート画像に記入し、公開Xアカウントから「#答えて吉P」を付けて投稿する企画。選考を通過した質問は日本ファンフェスのステージで使用されます。応募は10月12日23:59頃まで。",
+    "broadcast-97e3f71f76b3": "日本ファンフェスで、Xを通じて事前募集した質問に吉田Pが一問一答形式で答えるステージを実施。音楽ステージ以外の無料配信対象です。進行で時刻が前後する場合があり、翌日のLive Q&Aとは別企画です。",
+    "broadcast-06c058689972": "コージ・フォックスと室内俊夫が、激辛ソースに挑みながら仕事やさまざまな質問について語るPAX Australiaのステージ。FFXIV公式およびPAX公式のTwitchチャンネルで英語配信されます。",
+    "event-9aa135968177": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。",
+    "event-64dc9432bb16-day1": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。",
+    "event-64dc9432bb16-day2": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。",
+    "broadcast-fanfest2026-jp-keynote": "ファンフェスティバル2026 in 東京の基調講演で、プロデューサー兼ディレクターの吉田直樹がFFXIVの今後の新展開について紹介します。ステージは無料配信対象で、予定時刻が変更される場合があります。",
+    "maintenance-2026-10-12T19:00": "パッチ7.57公開と日本データセンターへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了時刻は変更される場合があります。"
   },
-  "excludedIds": [],
-  "extraEvents": []
+  "excludedIds": [
+    "maintenance-2026-09-08T15:00",
+    "maintenance-2026-09-09T15:00",
+    "campaign-08eed83e8433",
+    "maintenance-2026-09-17T15:00",
+    "campaign-568092959f5e",
+    "broadcast-64dc9432bb16",
+    "broadcast-e1d953ff889d",
+    "broadcast-35d881d22728"
+  ],
+  "extraEvents": [],
+  "reviewNotes": {
+    "2026-10-09": {
+      "excludedEndedIds": [
+        "maintenance-2026-09-08T15:00",
+        "maintenance-2026-09-09T15:00",
+        "campaign-08eed83e8433",
+        "maintenance-2026-09-17T15:00",
+        "campaign-568092959f5e"
+      ],
+      "broadcast-64dc9432bb16": "開催概要の確定時刻に基づくDAY 1・DAY 2と個別放送へ分離。自動解析による重複や予約開始日との混同を除外。",
+      "broadcast-e1d953ff889d": "更衣室・クロークの予約情報はファンフェス開催概要へ集約。",
+      "broadcast-35d881d22728": "旧ライブビューイングの複数日連続予定は不正確。上映終了時刻が記事で確定できないため復元しない。",
+      "campaign-97e3f71f76b3-deadline": "応募開始時刻は推定しない。終日の締切日マーカーとして10月12日に掲載し、本文に23:59頃と明記。",
+      "event-9aa135968177": "実店舗参加イベントのみ採用。スタンプカード刷新告知や販売情報を開催期間に混ぜない。終日予定のendは翌日排他。",
+      "maintenance-2026-10-12T19:00": "メンテナンス日時は公式自動取得に追従し、要約のみ固定。",
+      "policy": "グッズ販売、チケット再販、アイテムセール、日程のみの予告は不採用。終了済み企画はexcludedIdsで再追加を防止。"
+    }
+  }
 }
