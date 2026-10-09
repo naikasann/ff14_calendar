@@ -195,40 +195,38 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .weekday-row .saturday { color: #668ec7; }
 .calendar-cell { min-width: 0; min-height: 153px; padding: 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: rgba(7,13,27,.26); }
 .calendar-cell:nth-child(7n) { border-right: 0; }
-.calendar-cell.outside { opacity: .55; background: rgba(0,0,0,.14); }
+.calendar-cell.outside { opacity: .8; background: rgba(0,0,0,.14); }
 .calendar-cell.past { background: rgba(3,8,18,.5); }
-.calendar-cell.past .date-line { color: #718098; }
-.calendar-cell.past .event-pill { filter: saturate(.45); opacity: .72; }
+.calendar-cell.past .date-line { color: #a6b5cc; }
 .calendar-cell.past .official-event:hover, .calendar-cell.past .official-event:focus-visible { opacity: 1; }
 .calendar-cell.current { background: linear-gradient(145deg, rgba(34,75,91,.28), rgba(7,13,27,.2)); box-shadow: inset 0 0 0 2px #5ab8c4; }
-.date-line { height: 26px; display: flex; justify-content: space-between; align-items: flex-start; color: #98a8bf; font: 500 13px var(--font-geist-mono), monospace; }
+.date-line { height: 26px; display: flex; justify-content: space-between; align-items: flex-start; color: #d2dff2; font: 500 13px var(--font-geist-mono), monospace; }
 .date-line small { color: var(--cyan); font-size: 12px; }
 .event-pill { min-width: 0; display: flex; align-items: center; gap: 6px; height: 30px; margin-top: 5px; padding: 0 7px; border-radius: 4px; font-size: 14px; overflow: hidden; }
 .event-pill strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 500; }
-.frontline-event { color: #8bdce5; background: rgba(48,160,176,.075); border-left: 2px solid #4cc5d2; }
+.frontline-event { color: #a8f3fb; background: rgba(48,160,176,.2); border-left: 3px solid #4cc5d2; }
 .event-dot { flex: 0 0 auto; width: 5px; height: 5px; border-radius: 50%; background: currentColor; box-shadow: 0 0 6px currentColor; }
-.map-shatter.frontline-event { color: #91bdf6; background: rgba(78,127,197,.08); border-left-color: #6b9fe7; }
-.map-onsal.frontline-event { color: #d89ee8; background: rgba(157,80,181,.08); border-left-color: #be78d1; }
-.map-worqor.frontline-event { color: #f1b77d; background: rgba(183,107,44,.08); border-left-color: #dd9b5d; }
-.map-secure.frontline-event { color: #9ece9c; background: rgba(82,150,79,.08); border-left-color: #7fbc7c; }
-.housing-event { color: #b8a3f3; background: rgba(135,107,207,.085); border-left: 2px solid #9479df; }
+.map-shatter.frontline-event { color: #b8d8ff; background: rgba(78,127,197,.22); border-left-color: #6b9fe7; }
+.map-onsal.frontline-event { color: #f0c2ff; background: rgba(157,80,181,.22); border-left-color: #be78d1; }
+.map-worqor.frontline-event { color: #ffd2a5; background: rgba(183,107,44,.22); border-left-color: #dd9b5d; }
+.map-secure.frontline-event { color: #c1efb9; background: rgba(82,150,79,.22); border-left-color: #7fbc7c; }
+.housing-event { color: #e0d3ff; background: rgba(135,107,207,.22); border-left: 3px solid #bca0ff; }
 .housing-event span { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
-.housing-event.result { color: #d6ad68; background: rgba(176,126,51,.08); border-left-color: #c2934b; }
+.housing-event.result { color: #ffe0a2; background: rgba(176,126,51,.22); border-left-color: #e8b75f; }
 .official-event { width: 100%; color: #efa18c; background: rgba(202,89,59,.09); border: 0; border-left: 2px solid #df795e; text-align: left; cursor: pointer; font-family: inherit; }
 .official-event:hover, .official-event:focus-visible { filter: brightness(1.28); outline: 1px solid currentColor; outline-offset: -1px; }
 .official-event > span { flex: 0 0 auto; font-size: 12px; }
 .official-event.patch { color: #82d9c2; background: rgba(50,156,128,.09); border-left-color: #55bfa3; }
 .official-event.update { color: #8be2c7; background: linear-gradient(90deg, rgba(50,156,128,.13), rgba(202,89,59,.08)); border-left-color: #63d3b3; }
 .official-event.pvp, .official-event.season { color: #d9b2ff; background: rgba(143,78,194,.1); border-left-color: #b173df; }
-.official-event.maintenance, .official-event.update { color: #ffc1c1; background: rgba(224,78,86,.18); border-left: 3px solid #f18b94; font-weight: 600; }
-.official-event.event { color: #d9c2ff; background: rgba(151,97,215,.16); border-left-color: #bc8ce9; }
-.official-event.broadcast { color: #8fc8ff; background: rgba(68,137,203,.11); border-left-color: #68aee9; }
-.official-event.campaign { color: #f5d58e; background: rgba(207,154,58,.15); border-left-color: #daa94f; }
-.calendar-cell .frontline-event, .calendar-cell .housing-event { background: rgba(255,255,255,.025); border-left-color: #59687d; color: #a4b2c6; }
+.official-event.maintenance, .official-event.update { color: #ffd1d1; background: rgba(224,78,86,.28); border-left: 3px solid #ff969f; font-weight: 600; }
+.official-event.event { color: #e8d8ff; background: rgba(151,97,215,.25); border-left-color: #bc8ce9; }
+.official-event.broadcast { color: #c1e0ff; background: rgba(68,137,203,.25); border-left-color: #68aee9; }
+.official-event.campaign { color: #ffe4a9; background: rgba(207,154,58,.24); border-left-color: #daa94f; }
 .calendar-cell .event-dot { box-shadow: none; }
 .calendar-cell .housing-event { min-height: 30px; height: auto; padding-top: 5px; padding-bottom: 5px; }
 .calendar-cell .housing-event strong { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; }
-.period-events-button { display: block; margin: 6px 0 0; padding: 3px 5px; border: 1px solid #34425a; border-radius: 4px; background: rgba(255,255,255,.025); color: #a6b6cd; font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
+.period-events-button { display: block; margin: 6px 0 0; padding: 3px 5px; border: 1px solid #596d8c; border-radius: 4px; background: rgba(100,137,191,.12); color: #d0ddf0; font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
 .period-events-button:hover, .period-events-button:focus-visible { color: #e1eafa; border-color: #91adc7; outline: 1px solid #91adc7; }
 .calendar-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: -3px 0 14px; font-size: 14px; color: #b0bfd2; }
 .calendar-legend span { display: inline-flex; align-items: center; gap: 7px; }
