@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { getOfficialEventLastDate, getOfficialEventStatus } from "./official-event-status";
 
 import {
   OFFICIAL_EVENTS_UPDATED_AT,
@@ -279,11 +280,12 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   );
 }
 
-function CalendarCell({ date, displayMonth, filter, today, onSelectOfficialEvents }: {
+function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficialEvents }: {
   date: CalendarDate;
   displayMonth: CalendarDate;
   filter: CalendarFilter;
   today: CalendarDate;
+  now: number | null;
   onSelectOfficialEvents: (events: OfficialEvent[]) => void;
 }) {
   const frontline = getFrontlineForDate(date);
@@ -293,18 +295,22 @@ function CalendarCell({ date, displayMonth, filter, today, onSelectOfficialEvent
   const hasMaintenance = officialEvents.some((event) => event.type === "maintenance");
   const outside = date.month !== displayMonth.month;
   const current = isSameDate(date, today);
+  const past = formatDateKey(date) < formatDateKey(today);
+  const endingEvents = officialEvents.filter((event) =>
+    getOfficialEventLastDate(event) === formatDateKey(date) && getOfficialEventStatus(event, now) === "終了間近");
   const officialEntry = (filter === "all" || filter === "official") && officialSummary ? (
     <>
       <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
         <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
       </button>
       {officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
+      {endingEvents.length > 0 && <button type="button" className="ending-marker" title={endingEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(endingEvents)} aria-label={`終了間近の予定: ${endingEvents.map((event) => event.title).join("、")}`}>終了間近{endingEvents.length > 1 ? ` ${endingEvents.length}件` : ""}</button>}
     </>
   ) : null;
 
   return (
-    <div className={`calendar-cell${outside ? " outside" : ""}${current ? " current" : ""}`}>
-      <div className="date-line"><span>{date.day}</span>{current && <small>TODAY</small>}</div>
+    <div className={`calendar-cell${outside ? " outside" : ""}${current ? " current" : ""}${past ? " past" : ""}`}>
+      <div className="date-line"><span>{date.day}</span>{current && <small>今日</small>}</div>
       {hasMaintenance && officialEntry}
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
@@ -313,7 +319,7 @@ function CalendarCell({ date, displayMonth, filter, today, onSelectOfficialEvent
   );
 }
 
-function OfficialEventModal({ events, onClose }: { events: OfficialEvent[]; onClose: () => void }) {
+function OfficialEventModal({ events, now, onClose }: { events: OfficialEvent[]; now: number | null; onClose: () => void }) {
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -338,10 +344,12 @@ function OfficialEventModal({ events, onClose }: { events: OfficialEvent[]; onCl
         <div className="event-modal-list">
           {events.map((event) => {
             const calendarEvent = officialEventToCalendarEvent(event);
+            const status = getOfficialEventStatus(event, now);
             return (
               <article className={`event-modal-item ${event.type}`} key={event.id}>
                 <div className="event-modal-item-heading"><span>{getOfficialEventTypeLabel(event.type)}</span><strong>{event.title}</strong></div>
                 <time>{formatOfficialEventDate(event)}</time>
+                {status && <span className={`event-status ${status === "終了間近" ? "ending" : "active"}`}>{status}</span>}
                 <p>{event.description}</p>
                 <div className="event-modal-actions">
                   <a href={event.url} target="_blank" rel="noreferrer">公式ページを見る <Icon name="external" /></a>
@@ -357,7 +365,7 @@ function OfficialEventModal({ events, onClose }: { events: OfficialEvent[]; onCl
   );
 }
 
-function MonthCalendar({ today }: { today: CalendarDate }) {
+function MonthCalendar({ today, now }: { today: CalendarDate; now: number | null }) {
   const [month, setMonth] = useState<CalendarDate>({ year: today.year, month: today.month, day: 1 });
   const [filter, setFilter] = useState<CalendarFilter>("all");
   const [selectedOfficialEvents, setSelectedOfficialEvents] = useState<OfficialEvent[] | null>(null);
@@ -385,17 +393,17 @@ function MonthCalendar({ today }: { today: CalendarDate }) {
         {([["all", "すべて"], ["frontline", "フロントライン"], ["housing", "ハウジング"], ["official", "公式予定"]] as const).map(([value, label]) => (
           <button key={value} type="button" className={filter === value ? "active" : ""} onClick={() => setFilter(value)} aria-pressed={filter === value}>{label}</button>
         ))}
-        <div className="legend"><span><i className="legend-entry" />応募期間</span><span><i className="legend-result" />結果期間</span><span><i className="legend-official" />公式予定</span></div>
       </div>
+      <div className="calendar-legend" aria-label="予定の色分け"><span className="maintenance">メンテ</span><span className="event">イベント</span><span className="broadcast">放送</span><span className="campaign">企画</span></div>
 
       <div className="calendar-shell">
         <div className="weekday-row">{WEEKDAYS.map((day, index) => <div key={day} className={index === 0 ? "sunday" : index === 6 ? "saturday" : ""}>{day}</div>)}</div>
         <div className="calendar-grid">
-          {days.map((date) => <CalendarCell key={formatDateKey(date)} date={date} displayMonth={month} filter={filter} today={today} onSelectOfficialEvents={setSelectedOfficialEvents} />)}
+          {days.map((date) => <CalendarCell key={formatDateKey(date)} date={date} displayMonth={month} filter={filter} today={today} now={now} onSelectOfficialEvents={setSelectedOfficialEvents} />)}
         </div>
       </div>
       <p className="calendar-note">※ 公式予定をクリックすると、概要と公式ページへのリンクを確認できます。フロントラインは8日周期、ハウジングは5日＋4日の抽選周期をもとに算出しています。</p>
-      {selectedOfficialEvents && <OfficialEventModal events={selectedOfficialEvents} onClose={() => setSelectedOfficialEvents(null)} />}
+      {selectedOfficialEvents && <OfficialEventModal events={selectedOfficialEvents} now={now} onClose={() => setSelectedOfficialEvents(null)} />}
     </section>
   );
 }
@@ -529,8 +537,9 @@ function CalendarExport({ today }: { today: CalendarDate }) {
 
 export default function Home() {
   const [today, setToday] = useState<CalendarDate>({ year: 2026, month: 8, day: 14 });
+  const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
-    const updateToday = () => setToday(getJstToday());
+    const updateToday = () => { setToday(getJstToday()); setNow(Date.now()); };
     updateToday();
     const timer = window.setInterval(updateToday, 60_000);
     return () => window.clearInterval(timer);
@@ -540,7 +549,7 @@ export default function Home() {
     <main id="top">
       <div className="aurora aurora-one" /><div className="aurora aurora-two" />
       <div className="page-shell">
-        <Header /><TodayPanel today={today} /><MonthCalendar today={today} /><CalendarExport today={today} /><Sources /><ScheduleGuides today={today} />
+        <Header /><TodayPanel today={today} /><MonthCalendar today={today} now={now} /><CalendarExport today={today} /><Sources /><ScheduleGuides today={today} />
         <footer><span>EORZEA SCHEDULE</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
       </div>
     </main>
