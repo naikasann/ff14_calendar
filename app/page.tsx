@@ -303,16 +303,12 @@ function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficial
   const past = formatDateKey(date) < formatDateKey(today);
   const endingEvents = officialEvents.filter((event) =>
     getOfficialEventLastDate(event) === formatDateKey(date) && getOfficialEventStatus(event, now) === "終了間近");
-  const officialEntry = (filter === "all" || filter === "official") && officialEvents.length > 0 ? (
-    <>
-      {officialSummary && (
+  const showOfficialEvents = (filter === "all" || filter === "official") && officialEvents.length > 0;
+  const showEventCount = showOfficialEvents && (!officialSummary || officialEvents.length > officialSummary.combinedCount);
+  const officialEntry = showOfficialEvents && officialSummary ? (
       <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
         <span>{boundaryLabel ?? officialSummary.label}</span><strong>{officialSummary.title}</strong>
       </button>
-      )}
-      {(!officialSummary || officialEvents.length > officialSummary.combinedCount) && <button type="button" className="period-events-button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`この日の公式予定${officialEvents.length}件を確認`}>{officialSummary ? `全${officialEvents.length}件を見る` : `期間中 ${officialEvents.length}件`}</button>}
-      {endingEvents.length > 0 && <button type="button" className="ending-marker" title={endingEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(endingEvents)} aria-label={`終了間近の予定: ${endingEvents.map((event) => event.title).join("、")}`}>終了間近</button>}
-    </>
   ) : null;
 
   return (
@@ -322,6 +318,12 @@ function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficial
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><strong>ハウジング<wbr />{housing.phase === "entry" ? "応募" : "抽選結果"}</strong></div>}
       {!hasMaintenance && officialEntry}
+      {showOfficialEvents && (showEventCount || endingEvents.length > 0) && (
+        <div className="calendar-cell-footer">
+          {endingEvents.length > 0 && <button type="button" className="ending-marker" title={endingEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(endingEvents)} aria-label={`終了間近の予定: ${endingEvents.map((event) => event.title).join("、")}`}>終了間近</button>}
+          {showEventCount && <button type="button" className="period-events-button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`この日の公式予定${officialEvents.length}件を確認`}>{officialSummary ? `全${officialEvents.length}件を見る` : `期間中 ${officialEvents.length}件`}</button>}
+        </div>
+      )}
     </div>
   );
 }

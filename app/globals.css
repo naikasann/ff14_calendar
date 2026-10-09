@@ -193,7 +193,10 @@ main::before { content: ""; position: fixed; inset: 0; pointer-events: none; opa
 .weekday-row div:last-child { border-right: 0; }
 .weekday-row .sunday { color: #b87987; }
 .weekday-row .saturday { color: #668ec7; }
-.calendar-cell { min-width: 0; min-height: 153px; padding: 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: rgba(7,13,27,.26); }
+.calendar-cell { display: flex; flex-direction: column; min-width: 0; min-height: 153px; padding: 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); background: rgba(7,13,27,.26); }
+.calendar-cell > .date-line, .calendar-cell > .event-pill { flex-shrink: 0; }
+.calendar-cell-footer { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: auto; padding-top: 8px; }
+.calendar-cell-footer > button { margin-top: 0; max-width: 100%; }
 .calendar-cell:nth-child(7n) { border-right: 0; }
 .calendar-cell.outside { opacity: .8; background: rgba(0,0,0,.14); }
 .calendar-cell.past { background: rgba(3,8,18,.5); }
