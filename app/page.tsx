@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { getOfficialEventLastDate, getOfficialEventStatus } from "./official-event-status";
+import { getCalendarBoundaryLabel, getFeaturedCalendarEvents, getOfficialEventLastDate, getOfficialEventStatus } from "./official-event-status";
 
 import {
   OFFICIAL_EVENTS_UPDATED_AT,
@@ -74,7 +74,10 @@ function officialEventToCalendarEvent(event: OfficialEvent): CalendarEvent {
 
 function formatOfficialEventDate(event: OfficialEvent): string {
   const start = parseDateKey(event.start);
-  if (event.allDay) return `${start.month}/${start.day}`;
+  if (event.allDay) {
+    const last = parseDateKey(getOfficialEventLastDate(event));
+    return `${start.month}/${start.day}${isSameDate(start, last) ? "" : `～${last.month}/${last.day}`}`;
+  }
   const end = parseDateKey(event.end);
   const startTime = event.start.slice(11, 16);
   const endTime = event.end.slice(11, 16);
@@ -291,20 +294,24 @@ function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficial
   const frontline = getFrontlineForDate(date);
   const housing = getHousingCycle(date);
   const officialEvents = getOfficialEventsForDate(date);
-  const officialSummary = summarizeOfficialEvents(officialEvents);
+  const featuredEvents = getFeaturedCalendarEvents(officialEvents, formatDateKey(date));
+  const officialSummary = summarizeOfficialEvents(featuredEvents);
+  const boundaryLabel = featuredEvents[0] ? getCalendarBoundaryLabel(featuredEvents[0], formatDateKey(date)) : undefined;
   const hasMaintenance = officialEvents.some((event) => event.type === "maintenance");
   const outside = date.month !== displayMonth.month;
   const current = isSameDate(date, today);
   const past = formatDateKey(date) < formatDateKey(today);
   const endingEvents = officialEvents.filter((event) =>
     getOfficialEventLastDate(event) === formatDateKey(date) && getOfficialEventStatus(event, now) === "終了間近");
-  const officialEntry = (filter === "all" || filter === "official") && officialSummary ? (
+  const officialEntry = (filter === "all" || filter === "official") && officialEvents.length > 0 ? (
     <>
+      {officialSummary && (
       <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
-        <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
+        <span>{boundaryLabel ?? officialSummary.label}</span><strong>{officialSummary.title}</strong>
       </button>
-      {officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
-      {endingEvents.length > 0 && <button type="button" className="ending-marker" title={endingEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(endingEvents)} aria-label={`終了間近の予定: ${endingEvents.map((event) => event.title).join("、")}`}>終了間近{endingEvents.length > 1 ? ` ${endingEvents.length}件` : ""}</button>}
+      )}
+      {(!officialSummary || officialEvents.length > officialSummary.combinedCount) && <button type="button" className="period-events-button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`この日の公式予定${officialEvents.length}件を確認`}>{officialSummary ? `全${officialEvents.length}件を見る` : `期間中 ${officialEvents.length}件`}</button>}
+      {endingEvents.length > 0 && <button type="button" className="ending-marker" title={endingEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(endingEvents)} aria-label={`終了間近の予定: ${endingEvents.map((event) => event.title).join("、")}`}>終了間近</button>}
     </>
   ) : null;
 
@@ -313,7 +320,7 @@ function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficial
       <div className="date-line"><span>{date.day}</span>{current && <small>今日</small>}</div>
       {hasMaintenance && officialEntry}
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
-      {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
+      {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><strong>ハウジング<wbr />{housing.phase === "entry" ? "応募" : "抽選結果"}</strong></div>}
       {!hasMaintenance && officialEntry}
     </div>
   );

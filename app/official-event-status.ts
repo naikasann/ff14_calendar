@@ -16,3 +16,19 @@ export function getOfficialEventLastDate(event: OfficialEvent): string {
   // All-day events use an exclusive end; show the marker on the previous JST date.
   return new Date(Date.parse(`${event.end}T00:00:00Z`) - 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
+
+export function getFeaturedCalendarEvents(events: OfficialEvent[], dateKey: string): OfficialEvent[] {
+  const priority = (event: OfficialEvent) => event.type === "maintenance" ? 0 : event.type === "broadcast" ? 1 : 2;
+  return events.filter((event) =>
+    event.type === "maintenance" || event.type === "broadcast" || event.type === "patch"
+    || event.start.slice(0, 10) === dateKey || getOfficialEventLastDate(event) === dateKey)
+    .sort((left, right) => priority(left) - priority(right));
+}
+
+export function getCalendarBoundaryLabel(event: OfficialEvent, dateKey: string): "開始" | "終了" | undefined {
+  if (["maintenance", "broadcast", "patch"].includes(event.type)) return undefined;
+  const startDate = event.start.slice(0, 10);
+  const lastDate = getOfficialEventLastDate(event);
+  if (startDate === lastDate) return undefined;
+  return dateKey === startDate ? "開始" : dateKey === lastDate ? "終了" : undefined;
+}
