@@ -1,5 +1,6 @@
 import officialEventData from "../public/data/official-events.json";
 
+import { compareOfficialEventsForCalendar } from "./official-event-order";
 import { formatDateKey, type CalendarDate } from "./schedule";
 
 export type OfficialEventType = "maintenance" | "patch" | "pvp" | "season" | "event" | "broadcast" | "campaign";
@@ -34,13 +35,15 @@ export const OFFICIAL_EVENTS_UPDATED_AT = data.generatedAt;
 
 export function getOfficialEventsForDate(date: CalendarDate): OfficialEvent[] {
   const dateKey = formatDateKey(date);
-  return OFFICIAL_EVENTS.filter((event) => {
-    const startDate = event.start.slice(0, 10);
-    const endDate = event.end.slice(0, 10);
-    return event.allDay
-      ? dateKey >= startDate && dateKey < endDate
-      : dateKey >= startDate && dateKey <= endDate;
-  });
+  return OFFICIAL_EVENTS
+    .filter((event) => {
+      const startDate = event.start.slice(0, 10);
+      const endDate = event.end.slice(0, 10);
+      return event.allDay
+        ? dateKey >= startDate && dateKey < endDate
+        : dateKey >= startDate && dateKey <= endDate;
+    })
+    .sort(compareOfficialEventsForCalendar);
 }
 
 function getCompactEventTitle(event: OfficialEvent): string {

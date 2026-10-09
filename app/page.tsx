@@ -290,20 +290,25 @@ function CalendarCell({ date, displayMonth, filter, today, onSelectOfficialEvent
   const housing = getHousingCycle(date);
   const officialEvents = getOfficialEventsForDate(date);
   const officialSummary = summarizeOfficialEvents(officialEvents);
+  const hasMaintenance = officialEvents.some((event) => event.type === "maintenance");
   const outside = date.month !== displayMonth.month;
   const current = isSameDate(date, today);
+  const officialEntry = (filter === "all" || filter === "official") && officialSummary ? (
+    <>
+      <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
+        <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
+      </button>
+      {officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
+    </>
+  ) : null;
 
   return (
     <div className={`calendar-cell${outside ? " outside" : ""}${current ? " current" : ""}`}>
       <div className="date-line"><span>{date.day}</span>{current && <small>TODAY</small>}</div>
+      {hasMaintenance && officialEntry}
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
       {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><span>{housing.phase === "entry" ? "家" : "抽"}</span><strong>{housing.phase === "entry" ? "応募" : "結果"}</strong></div>}
-      {(filter === "all" || filter === "official") && officialSummary && (
-        <button className={`event-pill official-event ${officialSummary.type}`} type="button" title={officialEvents.map((event) => event.title).join(" / ")} onClick={() => onSelectOfficialEvents(officialEvents)} aria-label={`${officialSummary.title}の詳細を開く`}>
-          <span>{officialSummary.label}</span><strong>{officialSummary.title}</strong>
-        </button>
-      )}
-      {(filter === "all" || filter === "official") && officialSummary && officialEvents.length > officialSummary.combinedCount && <small className="more-events">ほか{officialEvents.length - officialSummary.combinedCount}件</small>}
+      {!hasMaintenance && officialEntry}
     </div>
   );
 }
