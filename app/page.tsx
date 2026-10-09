@@ -155,13 +155,13 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="ページ上部へ">
-        <span className="brand-mark">XIV</span>
-        <span><strong>EORZEA SCHEDULE</strong><small>PvP &amp; Housing Calendar</small></span>
+        <span className="brand-mark"><Icon name="calendar" /></span>
+        <span><strong>エオルゼア予定表</strong><small>FF14 PvP・ハウジング・公式イベント</small></span>
       </a>
       <nav aria-label="ページ内ナビゲーション">
         <a href="#today">今日</a><a href="#calendar">カレンダー</a><a href="#sources">公式情報</a>
       </nav>
-      <span className="timezone-badge">JST</span>
+      <span className="timezone-badge">日本時間</span>
     </header>
   );
 }
@@ -195,7 +195,7 @@ function CrystallineConflictRotation() {
     <article className="cc-rotation-card">
       <div className="cc-current">
         <div className="cc-card-heading">
-          <div><p className="eyebrow">CRYSTALLINE CONFLICT MAP</p><h2>クリコン マップローテーション</h2></div>
+          <div><p className="eyebrow">クリスタルコンフリクト</p><h2>クリコン マップローテーション</h2></div>
           <span className="calculated-chip">計算値・JST</span>
         </div>
         <p className="cc-now-label">現在のマップ</p>
@@ -210,7 +210,7 @@ function CrystallineConflictRotation() {
             <li className={index === 0 ? "active" : ""} key={`${slot.startsAt.toISOString()}-${slot.map.id}`}>
               <time>{JST_TIME_FORMATTER.format(slot.startsAt)}</time>
               <span>{slot.map.shortName}</span>
-              {index === 0 && <small>NOW</small>}
+              {index === 0 && <small>現在</small>}
             </li>
           ))}
         </ol>
@@ -229,18 +229,16 @@ function TodayPanel({ today }: { today: CalendarDate }) {
   return (
     <section className="today-section" id="today">
       <div className="section-heading">
-        <div><p className="eyebrow">TODAY&apos;S OVERVIEW</p><h1>{formatJapaneseDate(today)}</h1></div>
+        <div><p className="eyebrow">今日の予定</p><h1>{formatJapaneseDate(today)}</h1></div>
         <div className="live-pill"><span />日本時間で自動更新</div>
       </div>
 
       <div className="overview-grid">
         <article className={`feature-card frontline-card map-${frontline.id}`}>
-          <div className="card-glow" />
           <div className="card-topline">
-            <span className="icon-box"><Icon name="sword" /></span><span>FRONTLINE</span><span className="status-chip">本日のルール</span>
+            <span className="icon-box"><Icon name="sword" /></span><span>フロントライン</span><span className="status-chip">本日のルール</span>
           </div>
           <div className="feature-content">
-            <p className="map-number">{String(frontline.cyclePosition).padStart(2, "0")}</p>
             <div><p className="map-label">{frontline.shortName}</p><h2>{frontline.name}</h2><p className="map-subtitle">{frontline.subtitle}</p></div>
           </div>
           <div className="card-footer-row"><span>毎日 0:00 切り替え</span><span>次回：{nextFrontline.shortName}</span></div>
@@ -248,11 +246,10 @@ function TodayPanel({ today }: { today: CalendarDate }) {
 
         <article className={`feature-card housing-card ${housing.phase}`}>
           <div className="card-topline">
-            <span className="icon-box"><Icon name="home" /></span><span>HOUSING LOTTERY</span>
+            <span className="icon-box"><Icon name="home" /></span><span>ハウジング抽選</span>
             <span className="status-chip">{housing.phase === "entry" ? "応募受付中" : "結果発表中"}</span>
           </div>
           <div className="housing-status">
-            <span className="housing-symbol">{housing.phase === "entry" ? "ENTRY" : "RESULT"}</span>
             <div><p className="map-label">現在の期間</p><h2>{housing.phaseLabel}</h2><p>{housing.rangeLabel}</p></div>
           </div>
           <div className="progress-track" aria-label={`${housing.phaseDay}日目、全${housing.phaseLength}日`}>
@@ -268,13 +265,13 @@ function TodayPanel({ today }: { today: CalendarDate }) {
 
       <article className="season-card">
         <div className="season-emblem"><span>CC</span><small>21</small></div>
-        <div className="season-copy"><p className="eyebrow">CRYSTALLINE CONFLICT</p><h2>シーズン {CC_SEASON.number} 開催中</h2><p>{CC_SEASON.startedLabel} 開幕・終了日は公式発表待ち</p></div>
+        <div className="season-copy"><p className="eyebrow">クリスタルコンフリクト</p><h2>シーズン {CC_SEASON.number} 開催中</h2><p>{CC_SEASON.startedLabel} 開幕・終了日は公式発表待ち</p></div>
         <div className="season-dc"><span>日本ランクマッチ</span><strong>{CC_SEASON.jpDataCenter}</strong></div>
         <a className="official-link" href={CC_SEASON.officialUrl} target="_blank" rel="noreferrer">公式発表 <Icon name="external" /></a>
       </article>
       {pvpSeries && (
         <article className="pvp-series-card">
-          <div><p className="eyebrow">PVP SERIES</p><h2>{pvpSeries.title}</h2><p>シリーズ報酬の進行期間です。クリスタルコンフリクトのランクシーズンとは別の周期です。</p></div>
+          <div><p className="eyebrow">PvPシリーズ</p><h2>{pvpSeries.title}</h2><p>シリーズ報酬の進行期間です。クリスタルコンフリクトのランクシーズンとは別の周期です。</p></div>
           <strong>{formatOfficialEventDate(pvpSeries)}まで</strong>
           <a className="official-link" href={pvpSeries.url} target="_blank" rel="noreferrer">公式発表 <Icon name="external" /></a>
         </article>
@@ -347,7 +344,7 @@ function OfficialEventModal({ events, now, onClose }: { events: OfficialEvent[];
     <div className="event-modal-backdrop" onMouseDown={onClose} role="presentation">
       <section className="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title" onMouseDown={(event) => event.stopPropagation()}>
         <div className="event-modal-heading">
-          <div><p className="eyebrow">OFFICIAL EVENT DETAILS</p><h2 id="event-modal-title">{events.length > 1 ? "この日の公式予定" : events[0].title}</h2><p>{dateLabel}</p></div>
+          <div><p className="eyebrow">公式予定の詳細</p><h2 id="event-modal-title">{events.length > 1 ? "この日の公式予定" : events[0].title}</h2><p>{dateLabel}</p></div>
           <button type="button" className="event-modal-close" onClick={onClose} autoFocus aria-label="詳細を閉じる">×</button>
         </div>
         <div className="event-modal-list">
@@ -390,7 +387,7 @@ function MonthCalendar({ today, now }: { today: CalendarDate; now: number | null
   return (
     <section className="calendar-section" id="calendar">
       <div className="calendar-toolbar">
-        <div><p className="eyebrow">MONTHLY SCHEDULE</p><h2><Icon name="calendar" /> {getMonthTitle(month)}</h2></div>
+        <div><p className="eyebrow">月間カレンダー</p><h2><Icon name="calendar" /> {getMonthTitle(month)}</h2></div>
         <div className="calendar-controls">
           <button type="button" className="month-button" onClick={() => moveMonth(-1)} aria-label="前の月"><Icon name="left" /></button>
           <button type="button" className="today-button" onClick={() => setMonth({ year: today.year, month: today.month, day: 1 })}>今月</button>
@@ -426,7 +423,7 @@ function Sources() {
   ];
   return (
     <section className="sources-section" id="sources">
-      <div><p className="eyebrow">OFFICIAL SOURCES</p><h2>正確な予定はゲーム内・公式情報もご確認ください</h2><p>メンテナンスやパッチにより、通常の周期が変更される場合があります。</p></div>
+      <div><p className="eyebrow">公式情報</p><h2>正確な予定はゲーム内・公式情報もご確認ください</h2><p>メンテナンスやパッチにより、通常の周期が変更される場合があります。</p></div>
       <div className="source-links">{sources.map(([label, url]) => <a key={label} href={url} target="_blank" rel="noreferrer">{label}<Icon name="external" /></a>)}</div>
     </section>
   );
@@ -450,7 +447,7 @@ function ScheduleGuides({ today }: { today: CalendarDate }) {
     <section className="details-grid" aria-label="スケジュールガイド">
       <article className="detail-card">
         <div>
-          <p className="eyebrow">FRONTLINE GUIDE</p>
+          <p className="eyebrow">フロントライン</p>
           <h3>フロントラインについて</h3>
           <p className="detail-description">大規模PvP「フロントライン」の本日のルールです。対象コンテンツは日本時間の毎日0:00に切り替わります。</p>
         </div>
@@ -462,7 +459,7 @@ function ScheduleGuides({ today }: { today: CalendarDate }) {
 
       <article className="detail-card housing-detail">
         <div>
-          <p className="eyebrow">HOUSING GUIDE</p>
+          <p className="eyebrow">ハウジング抽選</p>
           <h3>ハウジング抽選について</h3>
           <p className="detail-description">土地抽選は「応募5日間」と「結果発表4日間」の周期です。応募後は結果発表期間中に土地のサインボードで結果を確認します。</p>
         </div>
@@ -497,7 +494,7 @@ function CalendarExport({ today }: { today: CalendarDate }) {
   return (
     <section className="calendar-export-section" id="calendar-export">
       <div>
-        <p className="eyebrow">ADD TO YOUR CALENDAR</p>
+        <p className="eyebrow">カレンダーへの登録</p>
         <h2>予定をカレンダーに追加</h2>
         <p>今日のフロントライン、または現在のハウジング抽選期間を登録できます。</p>
       </div>
@@ -521,7 +518,7 @@ function CalendarExport({ today }: { today: CalendarDate }) {
       </div>
       <div className="official-schedule-list">
         <div className="official-schedule-heading">
-          <div><p className="eyebrow">OFFICIAL AUTO UPDATE</p><h3>パッチ・PvP・メンテナンス予定</h3></div>
+          <div><p className="eyebrow">公式予定</p><h3>パッチ・PvP・メンテナンス予定</h3></div>
           <small>最終確認：{formatUpdatedAt(OFFICIAL_EVENTS_UPDATED_AT)} JST</small>
         </div>
         {officialEvents.length > 0 ? officialEvents.map((event) => {
@@ -556,10 +553,9 @@ export default function Home() {
 
   return (
     <main id="top">
-      <div className="aurora aurora-one" /><div className="aurora aurora-two" />
       <div className="page-shell">
         <Header /><TodayPanel today={today} /><MonthCalendar today={today} now={now} /><CalendarExport today={today} /><Sources /><ScheduleGuides today={today} />
-        <footer><span>EORZEA SCHEDULE</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
+        <footer><span>エオルゼア予定表</span><p>FINAL FANTASY XIV 非公式ファンサイト</p><small>© SQUARE ENIX / 記載されている会社名・製品名は各社の商標または登録商標です。</small></footer>
       </div>
     </main>
   );
