@@ -204,7 +204,6 @@ main {
 .map-worqor.frontline-event { color: #ffd2a5; background: rgba(183,107,44,.22); border-left-color: #dd9b5d; }
 .map-secure.frontline-event { color: #c1efb9; background: rgba(82,150,79,.22); border-left-color: #7fbc7c; }
 .housing-event { color: #e0d3ff; background: rgba(135,107,207,.22); border-left: 3px solid #bca0ff; }
-.housing-event span { display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
 .housing-event.result { color: #ffe0a2; background: rgba(176,126,51,.22); border-left-color: #e8b75f; }
 .official-event { width: 100%; color: #efa18c; background: rgba(202,89,59,.09); border: 0; border-left: 2px solid #df795e; text-align: left; cursor: pointer; font-family: inherit; }
 .official-event:hover, .official-event:focus-visible { filter: brightness(1.28); outline: 1px solid currentColor; outline-offset: -1px; }
@@ -216,7 +215,9 @@ main {
 .official-event.broadcast { color: #c1e0ff; background: rgba(68,137,203,.25); border-left-color: #68aee9; }
 .official-event.campaign { color: #ffe4a9; background: rgba(207,154,58,.24); border-left-color: #daa94f; }
 .calendar-cell .housing-event { min-height: 30px; height: auto; padding-top: 5px; padding-bottom: 5px; }
-.calendar-cell .housing-event strong { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; }
+.calendar-cell .housing-event strong { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 6px; row-gap: 2px; width: 100%; white-space: normal; overflow-wrap: anywhere; line-height: 1.4; }
+.housing-category { min-width: 0; font-size: 11px; }
+.housing-phase { min-width: 0; font-size: 12px; font-weight: 600; }
 .period-events-button { display: block; margin: 6px 0 0; padding: 3px 5px; border: 1px solid #596d8c; border-radius: 4px; background: rgba(100,137,191,.12); color: #d0ddf0; font: inherit; font-size: 12px; text-align: left; cursor: pointer; }
 .period-events-button:hover, .period-events-button:focus-visible { color: #e1eafa; border-color: #91adc7; outline: 1px solid #91adc7; }
 .calendar-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: -3px 0 14px; font-size: 14px; color: #b0bfd2; }
@@ -317,7 +318,6 @@ footer small { grid-column: 2; }
   .date-line small { font-size: 10px; }
   .event-pill { height: 28px; font-size: 12px; }
   .ending-marker { padding: 2px; font-size: 11px; }
-  .housing-event span { display: none; }
   .official-event > span { display: none; }
   .event-modal-backdrop { align-items: end; padding: 10px; }
   .event-modal { max-height: calc(100vh - 20px); padding: 20px 16px; border-radius: 14px 14px 9px 9px; }

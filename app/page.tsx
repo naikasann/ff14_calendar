@@ -313,7 +313,7 @@ function CalendarCell({ date, displayMonth, filter, today, now, onSelectOfficial
       <div className="date-line"><span>{date.day}</span>{current && <small>今日</small>}</div>
       {hasMaintenance && officialEntry}
       {(filter === "all" || filter === "frontline") && <div className={`event-pill frontline-event map-${frontline.id}`}><span className="event-dot" /><strong>{frontline.shortName}</strong></div>}
-      {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><strong>ハウジング<wbr />{housing.phase === "entry" ? "応募" : "抽選結果"}</strong></div>}
+      {(filter === "all" || filter === "housing") && <div className={`event-pill housing-event ${housing.phase}`}><strong><span className="housing-category">ハウジング</span><span className="housing-phase">{housing.phase === "entry" ? "応募" : "抽選結果"}</span></strong></div>}
       {!hasMaintenance && officialEntry}
       {showOfficialEvents && (showEventCount || endingEvents.length > 0) && (
         <div className="calendar-cell-footer">
