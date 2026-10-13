@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T09:08:57.330Z",
+  "generatedAt": "2026-10-13T10:36:46.119Z",
   "events": [
     {
       "id": "event-91075fd9255c",
@@ -64,12 +64,22 @@
     {
       "id": "maintenance-2026-10-12T19:00",
       "type": "maintenance",
-      "title": "全ワールド メンテナンス作業のお知らせ(10/12-13)",
+      "title": "全ワールド メンテナンス作業 終了時間変更のお知らせ(10/12-13)",
       "start": "2026-10-12T19:00:00+09:00",
-      "end": "2026-10-13T19:00:00+09:00",
+      "end": "2026-10-13T18:25:00+09:00",
       "allDay": false,
       "description": "パッチ7.57公開と日本データセンターへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了時刻は変更される場合があります。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/a584484a93b34028d7cbb9faa2a4226d5f470d90"
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/a583942da5da9926a762d636d19353d24217aaae"
+    },
+    {
+      "id": "patch-7.57-2026-10-13",
+      "type": "patch",
+      "title": "パッチ7.57 パッチノート公開",
+      "start": "2026-10-13",
+      "end": "2026-10-14",
+      "allDay": true,
+      "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/a2f39b00b7c38bee37fb169ac916f8e70c5b3dea"
     },
     {
       "id": "event-761da1cee02b",
