@@ -6,6 +6,7 @@
     "node": ">=22"
   },
   "scripts": {
+    "test:calendar": "node --experimental-strip-types --test app/schedule.test.ts",
     "build": "next build",
     "test:cc": "node --experimental-strip-types --test app/cc-rotation.test.ts",
     "test:official": "node --test scripts/update-official-events.test.mjs",

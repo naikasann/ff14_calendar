@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Test calendar dates
+        run: npm run test:calendar
+
       - name: Build static site
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}

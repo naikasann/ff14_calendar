@@ -108,7 +108,10 @@ export function getCalendarDays(month: CalendarDate): CalendarDate[] {
   const first = new Date(Date.UTC(month.year, month.month - 1, 1));
   const start = new Date(first);
   start.setUTCDate(start.getUTCDate() - start.getUTCDay());
-  return Array.from({ length: 42 }, (_, index) => {
+  const daysInMonth = new Date(Date.UTC(month.year, month.month, 0)).getUTCDate();
+  // Include only complete Sunday–Saturday weeks that intersect this month.
+  const dayCount = Math.ceil((first.getUTCDay() + daysInMonth) / 7) * 7;
+  return Array.from({ length: dayCount }, (_, index) => {
     const date = new Date(start);
     date.setUTCDate(date.getUTCDate() + index);
     return fromUtcDate(date);
