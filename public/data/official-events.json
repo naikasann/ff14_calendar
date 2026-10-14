@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T10:36:46.119Z",
+  "generatedAt": "2026-10-14T14:31:12.589Z",
   "events": [
     {
       "id": "event-91075fd9255c",
@@ -80,6 +80,16 @@
       "allDay": true,
       "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/a2f39b00b7c38bee37fb169ac916f8e70c5b3dea"
+    },
+    {
+      "id": "maintenance-2026-10-15T11:00",
+      "type": "maintenance",
+      "title": "日本データセンター クロスワールド機能 緊急メンテナンス作業のお知らせ(10/15)",
+      "start": "2026-10-15T11:00:00+09:00",
+      "end": "2026-10-15T11:15:00+09:00",
+      "allDay": false,
+      "description": "[メンテナンス] 日本データセンター クロスワールド機能 緊急メンテナンス作業のお知らせ(10/15)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/ce298a7deacb30494e08b2128f9c63e3b3ddaccd"
     },
     {
       "id": "event-761da1cee02b",
