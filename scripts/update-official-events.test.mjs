@@ -15,6 +15,50 @@ test("HTMLを表示用テキストへ変換する", () => {
   assert.equal(htmlToText("全ワールド<br>メンテ&amp;更新"), "全ワールド\nメンテ&更新");
 });
 
+const { readFileSync } = await import("node:fs");
+const curatedFixture = JSON.parse(readFileSync(
+  new URL("../public/data/curated-official-events.json", import.meta.url), "utf8",
+));
+const officialFixture = JSON.parse(readFileSync(
+  new URL("../public/data/official-events.json", import.meta.url), "utf8",
+));
+
+test("追跡済みの除外判断は自動再取得と保存済み期間指定より優先する", () => {
+  const refetched = curatedFixture.excludedIds.map((id) => ({
+    id, title: "再取得された除外予定", start: "2026-01-01", end: "2026-01-02",
+  }));
+  const selected = applyCuratedData(refetched, curatedFixture);
+  assert.equal(selected.some(({ id }) => curatedFixture.excludedIds.includes(id)), false);
+  assert.deepEqual(applyCuratedData(selected, curatedFixture), selected);
+});
+
+test("一覧から消えた採用予定も確定期間と要約を維持する", () => {
+  const selected = applyCuratedData([], curatedFixture);
+  for (const [id, override] of Object.entries(curatedFixture.eventOverrides)) {
+    if (curatedFixture.excludedIds.includes(id)) continue;
+    const actual = selected.find((event) => event.id === id);
+    assert.ok(actual, id);
+    assert.equal(actual.start, override.start);
+    assert.equal(actual.end, override.end);
+    assert.equal(actual.description, curatedFixture.summaryOverrides[id]);
+  }
+});
+
+test("公開用データに除外済み予定や要約の上書きがない", () => {
+  const ids = officialFixture.events.map(({ id }) => id);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const event of officialFixture.events) {
+    assert.equal(curatedFixture.excludedIds.includes(event.id), false, event.id);
+    assert.ok(new Date(event.end) > new Date(event.start), event.id);
+    assert.match(event.url, /^https:\/\//);
+    if (curatedFixture.summaryOverrides[event.id]) {
+      assert.equal(event.description, curatedFixture.summaryOverrides[event.id]);
+      assert.ok(event.description.length >= 80 && event.description.length <= 120, event.id);
+    }
+  }
+});
+
+
 test("同日内のメンテナンス時間を抽出する", () => {
   const actual = parseMaintenanceRange("日　時：2026年9月8日(火) 15:00より19:00頃まで");
   assert.deepEqual(actual, {
@@ -164,3 +208,4 @@ test("週次選別の要約・除外・追加予定を反映する", () => {
     },
   ]);
 });
+

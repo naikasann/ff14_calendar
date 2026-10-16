@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-10-14T14:31:12.589Z",
+  "generatedAt": "2026-10-16T09:00:00.000Z",
   "events": [
-    {
-      "id": "event-91075fd9255c",
-      "type": "event",
-      "title": "FFXIV×FFXVコラボイベント「英雄への夜想曲」再演",
-      "start": "2026-09-24T17:00:00+09:00",
-      "end": "2026-10-13T23:59:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/91075fd9255ca685b2ee8a237d4799f0aac3b917",
-      "description": "FFXVコラボイベント「英雄への夜想曲」を再演。期間限定クエストを進めると、4人乗りマウント「レガリア TYPE-G」や装備、髪形、オーケストリオン譜などの報酬を獲得できます。"
-    },
     {
       "id": "campaign-7b96c49068c4",
       "type": "campaign",
@@ -30,66 +20,6 @@
       "allDay": false,
       "description": "10月7日17:00からゴールドソーサーのコラボコンテンツ「ブランダーヴィル」が再登場。参加して、おしゃれ装備やマウント、ポートレート教材などの限定報酬を獲得できます。10月27日23:59頃まで。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673"
-    },
-    {
-      "id": "event-06c058689972",
-      "type": "event",
-      "title": "PAX Australia 2026 FFXIV出展",
-      "start": "2026-10-09",
-      "end": "2026-10-12",
-      "allDay": true,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
-      "description": "10月9日～11日に豪州メルボルンでPAX Australia 2026を開催。FFXIV出展ブースではSwitch 2版の試遊やクラフト体験、フォトスポットなどを楽しめます。"
-    },
-    {
-      "id": "broadcast-06c058689972",
-      "type": "broadcast",
-      "title": "PAX Australia コージ＆室内トークステージ（英語配信）",
-      "start": "2026-10-10T11:00:00+09:00",
-      "end": "2026-10-10T12:00:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/06c05868997287ccdb33c177488c64989f761d1d",
-      "description": "コージ・フォックスと室内俊夫が、激辛ソースに挑みながら仕事やさまざまな質問について語るPAX Australiaのステージ。FFXIV公式およびPAX公式のTwitchチャンネルで英語配信されます。"
-    },
-    {
-      "id": "campaign-97e3f71f76b3-deadline",
-      "type": "campaign",
-      "title": "吉田Pの一問一答タイムアタック！ 質問応募締切",
-      "start": "2026-10-12",
-      "end": "2026-10-13",
-      "allDay": true,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38",
-      "description": "質問を30文字以内で指定テンプレート画像に記入し、公開Xアカウントから「#答えて吉P」を付けて投稿する企画。選考を通過した質問は日本ファンフェスのステージで使用されます。応募は10月12日23:59頃まで。"
-    },
-    {
-      "id": "maintenance-2026-10-12T19:00",
-      "type": "maintenance",
-      "title": "全ワールド メンテナンス作業 終了時間変更のお知らせ(10/12-13)",
-      "start": "2026-10-12T19:00:00+09:00",
-      "end": "2026-10-13T18:25:00+09:00",
-      "allDay": false,
-      "description": "パッチ7.57公開と日本データセンターへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了時刻は変更される場合があります。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/a583942da5da9926a762d636d19353d24217aaae"
-    },
-    {
-      "id": "patch-7.57-2026-10-13",
-      "type": "patch",
-      "title": "パッチ7.57 パッチノート公開",
-      "start": "2026-10-13",
-      "end": "2026-10-14",
-      "allDay": true,
-      "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/a2f39b00b7c38bee37fb169ac916f8e70c5b3dea"
-    },
-    {
-      "id": "maintenance-2026-10-15T11:00",
-      "type": "maintenance",
-      "title": "日本データセンター クロスワールド機能 緊急メンテナンス作業のお知らせ(10/15)",
-      "start": "2026-10-15T11:00:00+09:00",
-      "end": "2026-10-15T11:15:00+09:00",
-      "allDay": false,
-      "description": "[メンテナンス] 日本データセンター クロスワールド機能 緊急メンテナンス作業のお知らせ(10/15)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/ce298a7deacb30494e08b2128f9c63e3b3ddaccd"
     },
     {
       "id": "event-761da1cee02b",
@@ -132,6 +62,16 @@
       "description": "ファンフェスティバル2026 in 東京の基調講演で、プロデューサー兼ディレクターの吉田直樹がFFXIVの今後の新展開について紹介します。ステージは無料配信対象で、予定時刻が変更される場合があります。"
     },
     {
+      "id": "broadcast-fanfest2026-jp-crc-semifinal",
+      "type": "broadcast",
+      "title": "日本ファンフェス クリコン日本大会セミファイナル",
+      "start": "2026-10-31T15:00:00+09:00",
+      "end": "2026-10-31T16:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "日本ファンフェスのクリスタルコンフリクト公式大会セミファイナル。予選を通過した4チームが日本王者を目指して対戦します。実況・解説付きのステージで、音楽以外の無料配信対象です。時刻は変更の場合があります。"
+    },
+    {
       "id": "broadcast-97e3f71f76b3",
       "type": "broadcast",
       "title": "日本ファンフェス 吉田Pの一問一答タイムアタック！",
@@ -142,6 +82,26 @@
       "description": "日本ファンフェスで、Xを通じて事前募集した質問に吉田Pが一問一答形式で答えるステージを実施。音楽ステージ以外の無料配信対象です。進行で時刻が前後する場合があり、翌日のLive Q&Aとは別企画です。"
     },
     {
+      "id": "broadcast-fanfest2026-jp-crc-final",
+      "type": "broadcast",
+      "title": "日本ファンフェス クリコン日本大会ファイナル",
+      "start": "2026-10-31T17:00:00+09:00",
+      "end": "2026-10-31T18:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "日本ファンフェスでクリスタルコンフリクトの日本王者を決める公式大会ファイナルを開催。実況と解説を交えて決勝の戦いを届けます。音楽以外の無料配信対象で、ステージの内容・時間は変更になる場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-piano",
+      "type": "broadcast",
+      "title": "日本ファンフェス ピアノコンサート",
+      "start": "2026-10-31T19:30:00+09:00",
+      "end": "2026-10-31T20:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "日本ファンフェス初日の音楽ステージで、KeikoさんがピアノアレンジされたFFXIVの楽曲を演奏。ゲストにAmanda Achenさんが出演します。配信は有料対象です。公演内容・時間は変更の場合があります。"
+    },
+    {
       "id": "event-64dc9432bb16-day2",
       "type": "event",
       "title": "ファンフェスティバル2026 in 東京 DAY 2",
@@ -150,6 +110,56 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/",
       "description": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-dev-panel",
+      "type": "broadcast",
+      "title": "日本ファンフェス 開発パネル",
+      "start": "2026-11-01T10:30:00+09:00",
+      "end": "2026-11-01T12:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "今村貴文さんと石川大樹さんが、サウンドディレクターの祖堅正慶さんとともにFFXIVのBGM制作方法や制作中のエピソードを紹介する開発パネル。無料配信対象です。ステージ内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-live-qa",
+      "type": "broadcast",
+      "title": "日本ファンフェス LIVE Q&A",
+      "start": "2026-11-01T12:30:00+09:00",
+      "end": "2026-11-01T13:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "日本ファンフェスのLIVE Q&Aで吉田直樹さんが来場者の質問に回答。出演は吉田直樹さんと室内俊夫さん。前日の一問一答タイムアタックとは別企画です。無料配信対象で、内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-glamour",
+      "type": "broadcast",
+      "title": "日本ファンフェス ミラプリコレクション",
+      "start": "2026-11-01T13:50:00+09:00",
+      "end": "2026-11-01T15:00:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "日本ファンフェスで光の戦士と作り上げるファッションショーを開催。リアル部門とインゲーム部門の装いを紹介し、ゆいPさんと室内俊夫さんが出演します。無料配信対象です。内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-naoki-room",
+      "type": "broadcast",
+      "title": "日本ファンフェス 直樹の部屋",
+      "start": "2026-11-01T15:30:00+09:00",
+      "end": "2026-11-01T17:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "吉田直樹さんと室内俊夫さんが豪華ゲストを迎え、さまざまな話題を語る日本ファンフェスのトークステージ。濱田龍臣さんやk4senさんらが出演予定です。無料配信対象で、内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-fanfest2026-jp-primals",
+      "type": "broadcast",
+      "title": "日本ファンフェス THE PRIMALSライブ",
+      "start": "2026-11-01T19:30:00+09:00",
+      "end": "2026-11-01T20:30:00+09:00",
+      "allDay": false,
+      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
+      "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
     }
   ]
 }
