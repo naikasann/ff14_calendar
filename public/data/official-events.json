@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:00:00.000Z",
+  "generatedAt": "2026-10-16T11:25:14.428Z",
   "events": [
     {
       "id": "campaign-7b96c49068c4",
@@ -160,6 +160,16 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-20b0ea43233b",
+      "type": "broadcast",
+      "title": "「ファンフェスティバル 2026 in 東京」最新情報公開 第2弾！",
+      "start": "2026-11-21",
+      "end": "2027-11-23",
+      "allDay": true,
+      "description": "今月末に開催が迫る「ファンフェスティバル 2026 in 東京」について、最新情報をお知らせします。 特設サイト更新（フロアマップ公開、ほか） 音楽ステージ 有料ライブストリーミング情報 「LIVE Q&A」質問募集 クリスタルコンフリクト リージョンチャンピオンシップ 2026 Japan Powered by Logicool G™ 「第48回 FFXIVコミュニティ...",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348"
     }
   ]
 }
