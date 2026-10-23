@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-10-21T04:48:33.175Z",
+  "generatedAt": "2026-10-23T09:04:54.000Z",
   "events": [
-    {
-      "id": "campaign-7b96c49068c4",
-      "type": "campaign",
-      "title": "LINE友だちプレゼントキャンペーン",
-      "start": "2026-10-06T17:00:00+09:00",
-      "end": "2026-10-20T17:00:00+09:00",
-      "allDay": false,
-      "description": "FFXIV公式LINEを友だちに追加し、トーク画面のメニューから応募すると、抽選で300名にマウント「マウンテンズー」のアイテムコードが当たります。すでに友だち登録済みの方も応募できます。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/7b96c49068c476dec65924df0ee1d5bdecb215fa"
-    },
     {
       "id": "campaign-cd121984d390",
       "type": "campaign",
@@ -32,14 +22,14 @@
       "url": "https://jp.finalfantasyxiv.com/lodestone/special/2026/All_Saints_Wake/tfrx2rkv52"
     },
     {
-      "id": "maintenance-2026-10-20T13:00",
-      "type": "maintenance",
-      "title": "全ワールド メンテナンス作業 終了時間変更のお知らせ(10/20)",
-      "start": "2026-10-20T13:00:00+09:00",
-      "end": "2026-10-20T18:05:00+09:00",
-      "allDay": false,
-      "description": "[続報] 全ワールド メンテナンス作業 終了時間変更のお知らせ(10/20)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/e84e65187672b87708961399878c9d484320e8ad"
+      "id": "campaign-fanfest2026-content-reservation-deadline",
+      "type": "campaign",
+      "title": "日本ファンフェス コンテンツ事前予約 抽選応募締切",
+      "start": "2026-10-25",
+      "end": "2026-10-26",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/857cdf80b686a7999ab2e9b03fe613fb1f86ab69",
+      "description": "日本ファンフェス会場で体験するコンテンツ事前予約の抽選応募締切。対象コンテンツを体験する本人がスクウェア・エニックス アプリから応募します。締切は10月25日23:59で、2日通し券を複数持つ場合は事前のチケット分配が必要です。"
     },
     {
       "id": "event-9aa135968177",
@@ -70,6 +60,16 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "ファンフェスティバル2026 in 東京の基調講演で、プロデューサー兼ディレクターの吉田直樹がFFXIVの今後の新展開について紹介します。ステージは無料配信対象で、予定時刻が変更される場合があります。"
+    },
+    {
+      "id": "campaign-fanfest2026-live-qa-questions",
+      "type": "campaign",
+      "title": "日本ファンフェス LIVE Q&A 質問受付",
+      "start": "2026-10-31T13:00:00+09:00",
+      "end": "2026-10-31T15:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348",
+      "description": "日本ファンフェスのLIVE Q&Aで吉田Pに聞きたい質問を、会場チケット所持者からスクウェア・エニックス アプリで募集。受付は10月31日13:00～15:00頃で、応募方法の詳細は前日に公式Xから案内されます。"
     },
     {
       "id": "broadcast-fanfest2026-jp-crc-semifinal",
@@ -170,16 +170,6 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
-    },
-    {
-      "id": "broadcast-20b0ea43233b",
-      "type": "broadcast",
-      "title": "「ファンフェスティバル 2026 in 東京」最新情報公開 第2弾！",
-      "start": "2026-11-21",
-      "end": "2027-11-03",
-      "allDay": true,
-      "description": "今月末に開催が迫る「ファンフェスティバル 2026 in 東京」について、最新情報をお知らせします。 特設サイト更新（フロアマップ公開、ほか） 音楽ステージ 有料ライブストリーミング情報 「LIVE Q&A」質問募集 クリスタルコンフリクト リージョンチャンピオンシップ 2026 Japan Powered by Logicool G™ 「第48回 FFXIVコミュニティ...",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348"
     }
   ]
 }

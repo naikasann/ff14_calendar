@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-16T09:00:00.000Z",
+  "reviewedAt": "2026-10-23T09:04:54.000Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -176,6 +176,22 @@
       "end": "2026-11-01T20:30:00+09:00",
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/"
+    },
+    "campaign-fanfest2026-content-reservation-deadline": {
+      "type": "campaign",
+      "title": "日本ファンフェス コンテンツ事前予約 抽選応募締切",
+      "start": "2026-10-25",
+      "end": "2026-10-26",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/857cdf80b686a7999ab2e9b03fe613fb1f86ab69"
+    },
+    "campaign-fanfest2026-live-qa-questions": {
+      "type": "campaign",
+      "title": "日本ファンフェス LIVE Q&A 質問受付",
+      "start": "2026-10-31T13:00:00+09:00",
+      "end": "2026-10-31T15:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348"
     }
   },
   "summaryOverrides": {
@@ -207,7 +223,9 @@
     "broadcast-fanfest2026-jp-live-qa": "日本ファンフェスのLIVE Q&Aで吉田直樹さんが来場者の質問に回答。出演は吉田直樹さんと室内俊夫さん。前日の一問一答タイムアタックとは別企画です。無料配信対象で、内容・時間は変更の場合があります。",
     "broadcast-fanfest2026-jp-glamour": "日本ファンフェスで光の戦士と作り上げるファッションショーを開催。リアル部門とインゲーム部門の装いを紹介し、ゆいPさんと室内俊夫さんが出演します。無料配信対象です。内容・時間は変更の場合があります。",
     "broadcast-fanfest2026-jp-naoki-room": "吉田直樹さんと室内俊夫さんが豪華ゲストを迎え、さまざまな話題を語る日本ファンフェスのトークステージ。濱田龍臣さんやk4senさんらが出演予定です。無料配信対象で、内容・時間は変更の場合があります。",
-    "broadcast-fanfest2026-jp-primals": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
+    "broadcast-fanfest2026-jp-primals": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。",
+    "campaign-fanfest2026-content-reservation-deadline": "日本ファンフェス会場で体験するコンテンツ事前予約の抽選応募締切。対象コンテンツを体験する本人がスクウェア・エニックス アプリから応募します。締切は10月25日23:59で、2日通し券を複数持つ場合は事前のチケット分配が必要です。",
+    "campaign-fanfest2026-live-qa-questions": "日本ファンフェスのLIVE Q&Aで吉田Pに聞きたい質問を、会場チケット所持者からスクウェア・エニックス アプリで募集。受付は10月31日13:00～15:00頃で、応募方法の詳細は前日に公式Xから案内されます。"
   },
   "excludedIds": [
     "maintenance-2026-09-08T15:00",
@@ -225,7 +243,10 @@
     "maintenance-2026-10-12T19:00",
     "patch-7.57-2026-10-13",
     "maintenance-2026-10-15T11:00",
-    "season-4bc6e1a950c9"
+    "season-4bc6e1a950c9",
+    "campaign-7b96c49068c4",
+    "maintenance-2026-10-20T13:00",
+    "broadcast-20b0ea43233b"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -261,6 +282,19 @@
       "fanfestStages": "公式ステージ表と開催概要を再確認し、未登録の8ステージを追加。音楽ステージは有料配信と明記。会場中継は開始・終了時刻未掲載のため追加しない。映画館ライブビューイングの終了時刻は推定しない。",
       "maintenance": "10月16日確認時点で今後のゲーム関連メンテナンス新規告知なし。10月15日日本DCクロスワールド緊急メンテナンスは11:02頃終了済み。",
       "policy": "既存の要約・期間を維持し、終了済み7件と不採用判断を永続化。自動再取得時もexcludedIdsとeventOverrides/summaryOverridesで保持。"
+    },
+    "2026-10-23": {
+      "excludedEndedIds": [
+        "campaign-7b96c49068c4",
+        "maintenance-2026-10-20T13:00"
+      ],
+      "broadcast-20b0ea43233b": "複数情報を含むまとめ記事を自動解析し、販売期限やアーカイブ期間を単一イベント期間として結合した誤登録。個別の確定予定へ分離して除外。",
+      "event-ca90665e1a04": "「キーバウンド・ブロウラー」は2026年10月28日17:00開始だが、終了がパッチ8.0公開メンテナンスまでで確定日時がないため不採用。",
+      "broadcast-community-48": "第48回FFXIVコミュニティ放送は2026年10月23日20:00頃開始だが終了時刻が掲載されていないため、推定せず不採用。",
+      "857cdf80b686": "コンテンツ事前予約は開始時刻を推定せず、2026年10月25日23:59の締切日マーカーとして採用。",
+      "20b0ea43233b-live-qa": "会場チケット所持者向けの参加型質問募集。2026年10月31日13:00～15:00頃の確定枠を採用。",
+      "6670913fa02f": "ライブビューイングの記事は上映スクリーン追加、チケット販売、グッズ情報が中心。新しい上映日時の追加がなく不採用。",
+      "policy": "グッズ・記念アイテム・クラフトビール・機器販売、チケット販売のみの記事は不採用。まとめ記事は自動登録せず、確定日時のある個別予定だけを採用。"
     }
   }
 }

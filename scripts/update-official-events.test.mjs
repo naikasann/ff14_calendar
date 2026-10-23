@@ -158,6 +158,7 @@ test("プレイヤー向け予定を残し、物販や予告だけの記事を�
   assert.equal(isRelevantScheduledTopic("第94回 FFXIV PLL 放送決定！", "日時"), true);
   assert.equal(isRelevantScheduledTopic("ファンフェスティバル ライブビューイング開催決定！ チケット販売開始", "開催概要"), true);
   assert.equal(isRelevantScheduledTopic("ファンフェスティバル オフィシャルグッズ予約開始！", "販売期間"), false);
+  assert.equal(isRelevantScheduledTopic("「ファンフェスティバル 2026 in 東京」最新情報公開 第2弾！", "販売期間 配信スケジュール 応募期間"), false);
   assert.equal(isRelevantScheduledTopic("オプションアイテム追加＆セール開始！", "販売期間"), false);
   assert.equal(isRelevantScheduledTopic("ブランドとのコラボレーションプロジェクトが始動！", "開催概要"), false);
   assert.equal(isRelevantScheduledTopic("スクリーンショットキャンペーン開催！", "応募期間\n投稿すると報酬をプレゼント"), true);

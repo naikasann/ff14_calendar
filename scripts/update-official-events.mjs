@@ -205,6 +205,7 @@ export function isRelevantScheduledTopic(title, articleText) {
     return true;
   }
   if (/ファンフェスティバル/i.test(title)) {
+    if (/最新情報公開/i.test(title)) return false;
     if (/ライブビューイング|タイムスケジュール|開催決定|放送/i.test(title)) return true;
     return !/チケット|リセール|グッズ|商品|予約|販売/i.test(title);
   }
