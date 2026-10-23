@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T09:08:03.499Z",
+  "generatedAt": "2026-10-23T09:10:00.000Z",
   "events": [
     {
       "id": "campaign-cd121984d390",
@@ -20,16 +20,6 @@
       "allDay": false,
       "description": "期間限定クエスト「守護天節と面妖な着ぐるみたち」を開催。レベル15からグリダニア旧市街のパンプキンヘッドの女に話しかけて参加でき、防具や調度品を入手できます。終了は11月2日23:59頃です。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/special/2026/All_Saints_Wake/tfrx2rkv52"
-    },
-    {
-      "id": "broadcast-f4ee84a657f6",
-      "type": "broadcast",
-      "title": "「ファンフェスティバル 2026」記念アイテム 第3弾 発売＆セール開始！",
-      "start": "2026-10-23T17:00:00+09:00",
-      "end": "2026-11-02T15:59:00+09:00",
-      "allDay": false,
-      "description": "10月23日（金）17:00頃より 、「FINAL FANTASY XIV FAN FESTIVAL 2026」の開催を記念したオプションアイテム 第3弾が追加されます。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/f4ee84a657f6298b50a5d9622091a64584fe7802"
     },
     {
       "id": "campaign-fanfest2026-content-reservation-deadline",
