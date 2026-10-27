@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T13:04:07.383Z",
+  "generatedAt": "2026-10-27T09:00:19.258Z",
   "events": [
     {
       "id": "campaign-cd121984d390",
@@ -170,6 +170,16 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "pvp-season-21",
+      "type": "season",
+      "title": "クリコン シーズン21 終了予定",
+      "start": "2026-11-10",
+      "end": "2026-11-11",
+      "allDay": true,
+      "description": "クリスタルコンフリクト シーズン21 閉幕迫る！。正確な終了時刻は公式メンテナンス情報をご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4f18fc0716e7ba6e84c532f4be6ed70d38a5d185"
     }
   ]
 }
