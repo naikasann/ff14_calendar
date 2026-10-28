@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T09:00:19.258Z",
+  "generatedAt": "2026-10-28T12:55:08.228Z",
   "events": [
     {
       "id": "campaign-cd121984d390",
@@ -40,6 +40,16 @@
       "allDay": true,
       "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a"
+    },
+    {
+      "id": "broadcast-ce72e6daf759",
+      "type": "broadcast",
+      "title": "いよいよ10月31日開幕！「ファンフェスティバル 2026 in 東京」 ストリーミング情報おさらい",
+      "start": "2026-10-31",
+      "end": "2026-11-01",
+      "allDay": true,
+      "description": "日本での「ファンフェスティバル 2026 in 東京」の開催が、いよいよ今週末に迫りました！ 新情報が発表される「基調講演」をはじめ、各ステージイベントはストリーミング配信でリアルタイム視聴が可能です。現地でも、配信でも、ライブビューイングでも、みなさんで一緒にファンフェスを楽しみましょう！",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ce72e6daf7597640e1e4ff52cb8e64c4e464c4ed"
     },
     {
       "id": "event-64dc9432bb16-day1",
