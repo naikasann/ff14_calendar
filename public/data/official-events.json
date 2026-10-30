@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-10-29T09:58:38.342Z",
+  "generatedAt": "2026-10-30T09:02:01.030Z",
   "events": [
-    {
-      "id": "campaign-cd121984d390",
-      "type": "campaign",
-      "title": "「Fall Guys」コラボイベント再演",
-      "start": "2026-10-07T17:00:00+09:00",
-      "end": "2026-10-27T23:59:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd121984d390aad591c7a2050372b31c39962673",
-      "description": "10月7日17:00からゴールドソーサーのコラボコンテンツ「ブランダーヴィル」が再登場。参加して、おしゃれ装備やマウント、ポートレート教材などの限定報酬を獲得できます。10月27日23:59頃まで。"
-    },
     {
       "id": "event-761da1cee02b",
       "type": "event",
@@ -22,34 +12,24 @@
       "description": "期間限定クエスト「守護天節と面妖な着ぐるみたち」を開催。レベル15からグリダニア旧市街のパンプキンヘッドの女に話しかけて参加でき、防具や調度品を入手できます。終了は11月2日23:59頃です。"
     },
     {
-      "id": "campaign-fanfest2026-content-reservation-deadline",
-      "type": "campaign",
-      "title": "日本ファンフェス コンテンツ事前予約 抽選応募締切",
-      "start": "2026-10-25",
-      "end": "2026-10-26",
-      "allDay": true,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/857cdf80b686a7999ab2e9b03fe613fb1f86ab69",
-      "description": "日本ファンフェス会場で体験するコンテンツ事前予約の抽選応募締切。対象コンテンツを体験する本人がスクウェア・エニックス アプリから応募します。締切は10月25日23:59で、2日通し券を複数持つ場合は事前のチケット分配が必要です。"
-    },
-    {
       "id": "event-9aa135968177",
       "type": "event",
       "title": "エオルゼアカフェ 守護天節イベント",
       "start": "2026-10-27",
       "end": "2026-12-15",
       "allDay": true,
-      "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a"
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a",
+      "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。"
     },
     {
-      "id": "broadcast-ce72e6daf759",
-      "type": "broadcast",
-      "title": "いよいよ10月31日開幕！「ファンフェスティバル 2026 in 東京」 ストリーミング情報おさらい",
-      "start": "2026-10-31",
-      "end": "2026-11-01",
-      "allDay": true,
-      "description": "日本での「ファンフェスティバル 2026 in 東京」の開催が、いよいよ今週末に迫りました！ 新情報が発表される「基調講演」をはじめ、各ステージイベントはストリーミング配信でリアルタイム視聴が可能です。現地でも、配信でも、ライブビューイングでも、みなさんで一緒にファンフェスを楽しみましょう！",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ce72e6daf7597640e1e4ff52cb8e64c4e464c4ed"
+      "id": "campaign-cd9f9f6616ed",
+      "type": "campaign",
+      "title": "日本ファンフェス Twitch視聴キャンペーン第3弾",
+      "start": "2026-10-31T00:01:00+09:00",
+      "end": "2026-11-01T23:59:00+09:00",
+      "allDay": false,
+      "description": "日本ファンフェスに合わせたTwitch視聴キャンペーン。Drops有効のFFXIV配信を1時間見るとアルファ、公式チャンネルを1時間見るとクエスト目標達成のチャットバッジを獲得できます。Twitchへのログインが必要です。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd9f9f6616ede73ac0e760706ab0226062b7f246"
     },
     {
       "id": "event-64dc9432bb16-day1",
@@ -172,24 +152,44 @@
       "description": "吉田直樹さんと室内俊夫さんが豪華ゲストを迎え、さまざまな話題を語る日本ファンフェスのトークステージ。濱田龍臣さんやk4senさんらが出演予定です。無料配信対象で、内容・時間は変更の場合があります。"
     },
     {
+      "id": "broadcast-fanfest2026-piano-archive",
+      "type": "broadcast",
+      "title": "日本ファンフェス ピアノコンサート アーカイブ配信",
+      "start": "2026-11-01T18:00:00+09:00",
+      "end": "2026-11-22T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf",
+      "description": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
+    },
+    {
       "id": "broadcast-fanfest2026-jp-primals",
       "type": "broadcast",
       "title": "日本ファンフェス THE PRIMALSライブ",
-      "start": "2026-11-01T19:30:00+09:00",
+      "start": "2026-11-01T19:00:00+09:00",
       "end": "2026-11-01T20:30:00+09:00",
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
     },
     {
-      "id": "pvp-season-21",
-      "type": "season",
-      "title": "クリコン シーズン21 終了予定",
-      "start": "2026-11-10",
-      "end": "2026-11-11",
+      "id": "broadcast-fanfest2026-primals-archive",
+      "type": "broadcast",
+      "title": "日本ファンフェス THE PRIMALSライブ アーカイブ配信",
+      "start": "2026-11-02T18:00:00+09:00",
+      "end": "2026-11-22T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf",
+      "description": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
+    },
+    {
+      "id": "campaign-fanart2026-vote-deadline",
+      "type": "campaign",
+      "title": "ファンアートコンテスト2026 最終選考 投票締切",
+      "start": "2026-11-03",
+      "end": "2026-11-04",
       "allDay": true,
-      "description": "クリスタルコンフリクト シーズン21 閉幕迫る！。正確な終了時刻は公式メンテナンス情報をご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4f18fc0716e7ba6e84c532f4be6ed70d38a5d185"
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/3ffbcc488fb631ed8c184873e769c08b8de46a27",
+      "description": "ファンアートコンテスト最終選考の投票締切。一次選考を通過した全400作品を対象に、プレイヤーの投票で入賞作品を決定します。投票は10月29日から11月3日23:59頃まで。作品や投票方法は公式案内で確認できます。"
     }
   ]
 }

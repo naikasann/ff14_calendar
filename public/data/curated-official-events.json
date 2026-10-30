@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-23T09:04:54.000Z",
+  "reviewedAt": "2026-10-30T09:01:31.260Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -172,7 +172,7 @@
     "broadcast-fanfest2026-jp-primals": {
       "type": "broadcast",
       "title": "日本ファンフェス THE PRIMALSライブ",
-      "start": "2026-11-01T19:30:00+09:00",
+      "start": "2026-11-01T19:00:00+09:00",
       "end": "2026-11-01T20:30:00+09:00",
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/"
@@ -192,6 +192,38 @@
       "end": "2026-10-31T15:00:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348"
+    },
+    "campaign-cd9f9f6616ed": {
+      "type": "campaign",
+      "title": "日本ファンフェス Twitch視聴キャンペーン第3弾",
+      "start": "2026-10-31T00:01:00+09:00",
+      "end": "2026-11-01T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd9f9f6616ede73ac0e760706ab0226062b7f246"
+    },
+    "campaign-fanart2026-vote-deadline": {
+      "type": "campaign",
+      "title": "ファンアートコンテスト2026 最終選考 投票締切",
+      "start": "2026-11-03",
+      "end": "2026-11-04",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/3ffbcc488fb631ed8c184873e769c08b8de46a27"
+    },
+    "broadcast-fanfest2026-piano-archive": {
+      "type": "broadcast",
+      "title": "日本ファンフェス ピアノコンサート アーカイブ配信",
+      "start": "2026-11-01T18:00:00+09:00",
+      "end": "2026-11-22T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf"
+    },
+    "broadcast-fanfest2026-primals-archive": {
+      "type": "broadcast",
+      "title": "日本ファンフェス THE PRIMALSライブ アーカイブ配信",
+      "start": "2026-11-02T18:00:00+09:00",
+      "end": "2026-11-22T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf"
     }
   },
   "summaryOverrides": {
@@ -225,7 +257,11 @@
     "broadcast-fanfest2026-jp-naoki-room": "吉田直樹さんと室内俊夫さんが豪華ゲストを迎え、さまざまな話題を語る日本ファンフェスのトークステージ。濱田龍臣さんやk4senさんらが出演予定です。無料配信対象で、内容・時間は変更の場合があります。",
     "broadcast-fanfest2026-jp-primals": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。",
     "campaign-fanfest2026-content-reservation-deadline": "日本ファンフェス会場で体験するコンテンツ事前予約の抽選応募締切。対象コンテンツを体験する本人がスクウェア・エニックス アプリから応募します。締切は10月25日23:59で、2日通し券を複数持つ場合は事前のチケット分配が必要です。",
-    "campaign-fanfest2026-live-qa-questions": "日本ファンフェスのLIVE Q&Aで吉田Pに聞きたい質問を、会場チケット所持者からスクウェア・エニックス アプリで募集。受付は10月31日13:00～15:00頃で、応募方法の詳細は前日に公式Xから案内されます。"
+    "campaign-fanfest2026-live-qa-questions": "日本ファンフェスのLIVE Q&Aで吉田Pに聞きたい質問を、会場チケット所持者からスクウェア・エニックス アプリで募集。受付は10月31日13:00～15:00頃で、応募方法の詳細は前日に公式Xから案内されます。",
+    "campaign-cd9f9f6616ed": "日本ファンフェスに合わせたTwitch視聴キャンペーン。Drops有効のFFXIV配信を1時間見るとアルファ、公式チャンネルを1時間見るとクエスト目標達成のチャットバッジを獲得できます。Twitchへのログインが必要です。",
+    "campaign-fanart2026-vote-deadline": "ファンアートコンテスト最終選考の投票締切。一次選考を通過した全400作品を対象に、プレイヤーの投票で入賞作品を決定します。投票は10月29日から11月3日23:59頃まで。作品や投票方法は公式案内で確認できます。",
+    "broadcast-fanfest2026-piano-archive": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
+    "broadcast-fanfest2026-primals-archive": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
   },
   "excludedIds": [
     "maintenance-2026-09-08T15:00",
@@ -247,7 +283,15 @@
     "campaign-7b96c49068c4",
     "maintenance-2026-10-20T13:00",
     "broadcast-20b0ea43233b",
-    "broadcast-f4ee84a657f6"
+    "broadcast-f4ee84a657f6",
+    "campaign-cd121984d390",
+    "campaign-fanfest2026-content-reservation-deadline",
+    "broadcast-ce72e6daf759",
+    "broadcast-6bac301229dc",
+    "pvp-season-21",
+    "broadcast-ebbdb29bb90d",
+    "broadcast-9c258561582c",
+    "season-37d27f080565"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -297,6 +341,19 @@
       "6670913fa02f": "ライブビューイングの記事は上映スクリーン追加、チケット販売、グッズ情報が中心。新しい上映日時の追加がなく不採用。",
       "policy": "グッズ・記念アイテム・クラフトビール・機器販売、チケット販売のみの記事は不採用。まとめ記事は自動登録せず、確定日時のある個別予定だけを採用。",
       "broadcast-f4ee84a657f6": "ファンフェス記念オプションアイテム第3弾の発売・セール告知。物販・セールのため不採用。自動解析による再追加を除外。"
+    },
+    "2026-10-30": {
+      "excludedEndedIds": [
+        "campaign-cd121984d390",
+        "campaign-fanfest2026-content-reservation-deadline"
+      ],
+      "broadcast-ce72e6daf759": "配信おさらい記事は既存の各ステージと重複。自動解析による10月31日だけの登録を除外。",
+      "broadcast-6bac301229dc": "音楽配信まとめの単一イベント化を除外。公演は既存予定へ集約し、アーカイブ2期間を別登録。販売期限は不採用。",
+      "pvp-season-21": "11月10日のパッチ7.58メンテナンス開始までだが時刻は未確定。日付だけの予告として除外。公式メンテ告知後に再評価。",
+      "campaign-fanart2026-vote-deadline": "投票開始の時刻は推定せず11月3日締切の終日マーカーを採用。endは翌日排他。本文に10月29日～11月3日23:59頃の受付期間を明記。",
+      "broadcast-fanfest2026-jp-primals": "公式ステージ表に合わせ11月1日19:00～20:30へ修正。",
+      "otherExclusions": "来場案内・チケットなしで楽しめる会場案内は既存ファンフェスへ集約。ナインズ・キャッチャー、複製原画、クラフトビール、記念アイテムは物販。闘獣練シーズン1、キーバウンド・ブロウラーは終了日時未確定。",
+      "maintenance": "今後の全ワールド・日本DCゲーム関連メンテナンスの新規確定告知なし。"
     }
   }
 }
