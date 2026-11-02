@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T09:02:01.030Z",
+  "generatedAt": "2026-11-02T11:08:26.744Z",
   "events": [
     {
       "id": "event-761da1cee02b",
@@ -170,6 +170,16 @@
       "allDay": false,
       "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
       "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
+    },
+    {
+      "id": "broadcast-deb038f704ce",
+      "type": "broadcast",
+      "title": "「ファンフェスティバル 2026 in 東京」アンケート実施中！",
+      "start": "2026-11-02",
+      "end": "2026-11-09",
+      "allDay": true,
+      "description": "「ファンフェスティバル 2026 in 東京」へのご来場／ご視聴ありがとうございました！",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/deb038f704ce46d3955eea754453971b8141dcf4"
     },
     {
       "id": "broadcast-fanfest2026-primals-archive",
