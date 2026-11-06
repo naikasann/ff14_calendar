@@ -1,16 +1,6 @@
 {
-  "generatedAt": "2026-11-02T11:08:26.744Z",
+  "generatedAt": "2026-11-06T09:04:31.125Z",
   "events": [
-    {
-      "id": "event-761da1cee02b",
-      "type": "event",
-      "title": "守護天節2026",
-      "start": "2026-10-15T17:00:00+09:00",
-      "end": "2026-11-02T23:59:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/special/2026/All_Saints_Wake/tfrx2rkv52",
-      "description": "期間限定クエスト「守護天節と面妖な着ぐるみたち」を開催。レベル15からグリダニア旧市街のパンプキンヘッドの女に話しかけて参加でき、防具や調度品を入手できます。終了は11月2日23:59頃です。"
-    },
     {
       "id": "event-9aa135968177",
       "type": "event",
@@ -20,136 +10,6 @@
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a",
       "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。"
-    },
-    {
-      "id": "campaign-cd9f9f6616ed",
-      "type": "campaign",
-      "title": "日本ファンフェス Twitch視聴キャンペーン第3弾",
-      "start": "2026-10-31T00:01:00+09:00",
-      "end": "2026-11-01T23:59:00+09:00",
-      "allDay": false,
-      "description": "日本ファンフェスに合わせたTwitch視聴キャンペーン。Drops有効のFFXIV配信を1時間見るとアルファ、公式チャンネルを1時間見るとクエスト目標達成のチャットバッジを獲得できます。Twitchへのログインが必要です。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/cd9f9f6616ede73ac0e760706ab0226062b7f246"
-    },
-    {
-      "id": "event-64dc9432bb16-day1",
-      "type": "event",
-      "title": "ファンフェスティバル2026 in 東京 DAY 1",
-      "start": "2026-10-31T09:00:00+09:00",
-      "end": "2026-10-31T21:00:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/",
-      "description": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-keynote",
-      "type": "broadcast",
-      "title": "日本ファンフェス 基調講演",
-      "start": "2026-10-31T11:00:00+09:00",
-      "end": "2026-10-31T13:00:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "ファンフェスティバル2026 in 東京の基調講演で、プロデューサー兼ディレクターの吉田直樹がFFXIVの今後の新展開について紹介します。ステージは無料配信対象で、予定時刻が変更される場合があります。"
-    },
-    {
-      "id": "campaign-fanfest2026-live-qa-questions",
-      "type": "campaign",
-      "title": "日本ファンフェス LIVE Q&A 質問受付",
-      "start": "2026-10-31T13:00:00+09:00",
-      "end": "2026-10-31T15:00:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/20b0ea43233bb0895227cdfd001098461d611348",
-      "description": "日本ファンフェスのLIVE Q&Aで吉田Pに聞きたい質問を、会場チケット所持者からスクウェア・エニックス アプリで募集。受付は10月31日13:00～15:00頃で、応募方法の詳細は前日に公式Xから案内されます。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-crc-semifinal",
-      "type": "broadcast",
-      "title": "日本ファンフェス クリコン日本大会セミファイナル",
-      "start": "2026-10-31T15:00:00+09:00",
-      "end": "2026-10-31T16:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "日本ファンフェスのクリスタルコンフリクト公式大会セミファイナル。予選を通過した4チームが日本王者を目指して対戦します。実況・解説付きのステージで、音楽以外の無料配信対象です。時刻は変更の場合があります。"
-    },
-    {
-      "id": "broadcast-97e3f71f76b3",
-      "type": "broadcast",
-      "title": "日本ファンフェス 吉田Pの一問一答タイムアタック！",
-      "start": "2026-10-31T16:30:00+09:00",
-      "end": "2026-10-31T17:00:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/97e3f71f76b32c341872d3090a29c04ad6f35e38",
-      "description": "日本ファンフェスで、Xを通じて事前募集した質問に吉田Pが一問一答形式で答えるステージを実施。音楽ステージ以外の無料配信対象です。進行で時刻が前後する場合があり、翌日のLive Q&Aとは別企画です。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-crc-final",
-      "type": "broadcast",
-      "title": "日本ファンフェス クリコン日本大会ファイナル",
-      "start": "2026-10-31T17:00:00+09:00",
-      "end": "2026-10-31T18:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "日本ファンフェスでクリスタルコンフリクトの日本王者を決める公式大会ファイナルを開催。実況と解説を交えて決勝の戦いを届けます。音楽以外の無料配信対象で、ステージの内容・時間は変更になる場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-piano",
-      "type": "broadcast",
-      "title": "日本ファンフェス ピアノコンサート",
-      "start": "2026-10-31T19:30:00+09:00",
-      "end": "2026-10-31T20:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "日本ファンフェス初日の音楽ステージで、KeikoさんがピアノアレンジされたFFXIVの楽曲を演奏。ゲストにAmanda Achenさんが出演します。配信は有料対象です。公演内容・時間は変更の場合があります。"
-    },
-    {
-      "id": "event-64dc9432bb16-day2",
-      "type": "event",
-      "title": "ファンフェスティバル2026 in 東京 DAY 2",
-      "start": "2026-11-01T09:00:00+09:00",
-      "end": "2026-11-01T21:00:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/about/",
-      "description": "幕張メッセ1～7ホールを中心に、イオンモール幕張新都心や豊砂公園とも連動するファンフェス。各会場のアクティビティやステージを楽しめます。開場9:00、終了21:00予定で、時間は変更される場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-dev-panel",
-      "type": "broadcast",
-      "title": "日本ファンフェス 開発パネル",
-      "start": "2026-11-01T10:30:00+09:00",
-      "end": "2026-11-01T12:00:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "今村貴文さんと石川大樹さんが、サウンドディレクターの祖堅正慶さんとともにFFXIVのBGM制作方法や制作中のエピソードを紹介する開発パネル。無料配信対象です。ステージ内容・時間は変更の場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-live-qa",
-      "type": "broadcast",
-      "title": "日本ファンフェス LIVE Q&A",
-      "start": "2026-11-01T12:30:00+09:00",
-      "end": "2026-11-01T13:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "日本ファンフェスのLIVE Q&Aで吉田直樹さんが来場者の質問に回答。出演は吉田直樹さんと室内俊夫さん。前日の一問一答タイムアタックとは別企画です。無料配信対象で、内容・時間は変更の場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-glamour",
-      "type": "broadcast",
-      "title": "日本ファンフェス ミラプリコレクション",
-      "start": "2026-11-01T13:50:00+09:00",
-      "end": "2026-11-01T15:00:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "日本ファンフェスで光の戦士と作り上げるファッションショーを開催。リアル部門とインゲーム部門の装いを紹介し、ゆいPさんと室内俊夫さんが出演します。無料配信対象です。内容・時間は変更の場合があります。"
-    },
-    {
-      "id": "broadcast-fanfest2026-jp-naoki-room",
-      "type": "broadcast",
-      "title": "日本ファンフェス 直樹の部屋",
-      "start": "2026-11-01T15:30:00+09:00",
-      "end": "2026-11-01T17:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "吉田直樹さんと室内俊夫さんが豪華ゲストを迎え、さまざまな話題を語る日本ファンフェスのトークステージ。濱田龍臣さんやk4senさんらが出演予定です。無料配信対象で、内容・時間は変更の場合があります。"
     },
     {
       "id": "broadcast-fanfest2026-piano-archive",
@@ -162,23 +22,13 @@
       "description": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
     },
     {
-      "id": "broadcast-fanfest2026-jp-primals",
-      "type": "broadcast",
-      "title": "日本ファンフェス THE PRIMALSライブ",
-      "start": "2026-11-01T19:00:00+09:00",
-      "end": "2026-11-01T20:30:00+09:00",
-      "allDay": false,
-      "url": "https://fanfest.finalfantasyxiv.com/2026/jp/stages/",
-      "description": "祖堅正慶さん率いるTHE PRIMALSが、日本ファンフェスのスペシャルライブを開催。ゲストとしてAKINOさんと伊藤友馬さんが出演します。音楽ステージの配信は有料対象です。内容・時間は変更の場合があります。"
-    },
-    {
       "id": "broadcast-deb038f704ce",
-      "type": "broadcast",
-      "title": "「ファンフェスティバル 2026 in 東京」アンケート実施中！",
+      "type": "campaign",
+      "title": "日本ファンフェス 来場・視聴者アンケート",
       "start": "2026-11-02",
       "end": "2026-11-09",
       "allDay": true,
-      "description": "「ファンフェスティバル 2026 in 東京」へのご来場／ご視聴ありがとうございました！",
+      "description": "日本ファンフェスの来場者・視聴者を対象に、今後のイベントやサービスの参考とするアンケートを実施。回答にはスクウェア・エニックス アカウントでのログインが必要です。PCブラウザから11月8日23:59頃まで回答できます。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/deb038f704ce46d3955eea754453971b8141dcf4"
     },
     {
@@ -192,14 +42,14 @@
       "description": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
     },
     {
-      "id": "campaign-fanart2026-vote-deadline",
-      "type": "campaign",
-      "title": "ファンアートコンテスト2026 最終選考 投票締切",
-      "start": "2026-11-03",
-      "end": "2026-11-04",
-      "allDay": true,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/3ffbcc488fb631ed8c184873e769c08b8de46a27",
-      "description": "ファンアートコンテスト最終選考の投票締切。一次選考を通過した全400作品を対象に、プレイヤーの投票で入賞作品を決定します。投票は10月29日から11月3日23:59頃まで。作品や投票方法は公式案内で確認できます。"
+      "id": "maintenance-2026-11-09T19:00",
+      "type": "maintenance",
+      "title": "全ワールド メンテナンス（パッチ7.58）",
+      "start": "2026-11-09T19:00:00+09:00",
+      "end": "2026-11-10T19:00:00+09:00",
+      "allDay": false,
+      "description": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/c37f3c23df3ff03c7852805f20e227090d35b1b9"
     }
   ]
 }

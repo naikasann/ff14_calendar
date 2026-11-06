@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-30T09:01:31.260Z",
+  "reviewedAt": "2026-11-06T09:00:55Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -224,6 +224,22 @@
       "end": "2026-11-22T23:59:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf"
+    },
+    "broadcast-deb038f704ce": {
+      "type": "campaign",
+      "title": "日本ファンフェス 来場・視聴者アンケート",
+      "start": "2026-11-02",
+      "end": "2026-11-09",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/deb038f704ce46d3955eea754453971b8141dcf4"
+    },
+    "maintenance-2026-11-09T19:00": {
+      "type": "maintenance",
+      "title": "全ワールド メンテナンス（パッチ7.58）",
+      "start": "2026-11-09T19:00:00+09:00",
+      "end": "2026-11-10T19:00:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/c37f3c23df3ff03c7852805f20e227090d35b1b9"
     }
   },
   "summaryOverrides": {
@@ -261,7 +277,9 @@
     "campaign-cd9f9f6616ed": "日本ファンフェスに合わせたTwitch視聴キャンペーン。Drops有効のFFXIV配信を1時間見るとアルファ、公式チャンネルを1時間見るとクエスト目標達成のチャットバッジを獲得できます。Twitchへのログインが必要です。",
     "campaign-fanart2026-vote-deadline": "ファンアートコンテスト最終選考の投票締切。一次選考を通過した全400作品を対象に、プレイヤーの投票で入賞作品を決定します。投票は10月29日から11月3日23:59頃まで。作品や投票方法は公式案内で確認できます。",
     "broadcast-fanfest2026-piano-archive": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
-    "broadcast-fanfest2026-primals-archive": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
+    "broadcast-fanfest2026-primals-archive": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
+    "broadcast-deb038f704ce": "日本ファンフェスの来場者・視聴者を対象に、今後のイベントやサービスの参考とするアンケートを実施。回答にはスクウェア・エニックス アカウントでのログインが必要です。PCブラウザから11月8日23:59頃まで回答できます。",
+    "maintenance-2026-11-09T19:00": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。"
   },
   "excludedIds": [
     "maintenance-2026-09-08T15:00",
@@ -291,7 +309,35 @@
     "pvp-season-21",
     "broadcast-ebbdb29bb90d",
     "broadcast-9c258561582c",
-    "season-37d27f080565"
+    "season-37d27f080565",
+    "event-761da1cee02b",
+    "campaign-cd9f9f6616ed",
+    "event-64dc9432bb16-day1",
+    "broadcast-fanfest2026-jp-keynote",
+    "campaign-fanfest2026-live-qa-questions",
+    "broadcast-fanfest2026-jp-crc-semifinal",
+    "broadcast-97e3f71f76b3",
+    "broadcast-fanfest2026-jp-crc-final",
+    "broadcast-fanfest2026-jp-piano",
+    "event-64dc9432bb16-day2",
+    "broadcast-fanfest2026-jp-dev-panel",
+    "broadcast-fanfest2026-jp-live-qa",
+    "broadcast-fanfest2026-jp-glamour",
+    "broadcast-fanfest2026-jp-naoki-room",
+    "broadcast-fanfest2026-jp-primals",
+    "campaign-fanart2026-vote-deadline",
+    "event-c1863381795a",
+    "campaign-c1863381795a",
+    "broadcast-c1863381795a",
+    "event-be396c786945",
+    "campaign-be396c786945",
+    "broadcast-be396c786945",
+    "event-e69b69f86189",
+    "campaign-e69b69f86189",
+    "broadcast-e69b69f86189",
+    "event-4ec4498b511c",
+    "campaign-4ec4498b511c",
+    "broadcast-4ec4498b511c"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -354,6 +400,55 @@
       "broadcast-fanfest2026-jp-primals": "公式ステージ表に合わせ11月1日19:00～20:30へ修正。",
       "otherExclusions": "来場案内・チケットなしで楽しめる会場案内は既存ファンフェスへ集約。ナインズ・キャッチャー、複製原画、クラフトビール、記念アイテムは物販。闘獣練シーズン1、キーバウンド・ブロウラーは終了日時未確定。",
       "maintenance": "今後の全ワールド・日本DCゲーム関連メンテナンスの新規確定告知なし。"
+    },
+    "2026-11-06": {
+      "excludedEndedIds": [
+        "event-761da1cee02b",
+        "campaign-cd9f9f6616ed",
+        "event-64dc9432bb16-day1",
+        "broadcast-fanfest2026-jp-keynote",
+        "campaign-fanfest2026-live-qa-questions",
+        "broadcast-fanfest2026-jp-crc-semifinal",
+        "broadcast-97e3f71f76b3",
+        "broadcast-fanfest2026-jp-crc-final",
+        "broadcast-fanfest2026-jp-piano",
+        "event-64dc9432bb16-day2",
+        "broadcast-fanfest2026-jp-dev-panel",
+        "broadcast-fanfest2026-jp-live-qa",
+        "broadcast-fanfest2026-jp-glamour",
+        "broadcast-fanfest2026-jp-naoki-room",
+        "broadcast-fanfest2026-jp-primals",
+        "campaign-fanart2026-vote-deadline"
+      ],
+      "accepted": [
+        "maintenance-2026-11-09T19:00"
+      ],
+      "updated": [
+        "broadcast-deb038f704ce"
+      ],
+      "excludedArticles": [
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/c1863381795a3a0f35ba50cc2fa651b1a4572d3e",
+          "reason": "拡張パッケージ予約・販売告知。アーリーアクセスの終了日時も未確定。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/be396c78694558723d641c22474a18e56cd801fb",
+          "reason": "発売日の予告。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/e69b69f86189928a6d2491c67890e350994d474c",
+          "reason": "オプションアイテムセール。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4ec4498b511cae986002f873da50951c31d251cb",
+          "reason": "機能実装案内。全ワールドメンテナンスを別途採用。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4f18fc0716e7ba6e84c532f4be6ed70d38a5d185",
+          "reason": "閉幕告知は11月10日のメンテ開始と記載するが、メンテ詳細は11月9日19:00開始。矛盾があるためpvp-season-21の除外を継続。"
+        }
+      ],
+      "policy": "終了済み予定はexcludedIdsで再追加を防止。アンケートは開始時刻未記載のため公式の実施日範囲を終日表示し、概要に正確な締切を記載。"
     }
   }
 }
