@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T09:04:31.125Z",
+  "generatedAt": "2026-11-07T00:44:26.069Z",
   "events": [
     {
       "id": "event-9aa135968177",
@@ -10,36 +10,6 @@
       "allDay": true,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/9aa135968177d29528fff28a58604e3a0ddfdb6a",
       "description": "秋葉原と大阪のエオルゼアカフェで守護天節イベントを開催。期間限定メニューとイベントアートの特製ランチョンマットを用意します。ランチョンマットはなくなり次第配布終了。開催は12月14日までです。"
-    },
-    {
-      "id": "broadcast-fanfest2026-piano-archive",
-      "type": "broadcast",
-      "title": "日本ファンフェス ピアノコンサート アーカイブ配信",
-      "start": "2026-11-01T18:00:00+09:00",
-      "end": "2026-11-22T23:59:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf",
-      "description": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
-    },
-    {
-      "id": "broadcast-deb038f704ce",
-      "type": "campaign",
-      "title": "日本ファンフェス 来場・視聴者アンケート",
-      "start": "2026-11-02",
-      "end": "2026-11-09",
-      "allDay": true,
-      "description": "日本ファンフェスの来場者・視聴者を対象に、今後のイベントやサービスの参考とするアンケートを実施。回答にはスクウェア・エニックス アカウントでのログインが必要です。PCブラウザから11月8日23:59頃まで回答できます。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/deb038f704ce46d3955eea754453971b8141dcf4"
-    },
-    {
-      "id": "broadcast-fanfest2026-primals-archive",
-      "type": "broadcast",
-      "title": "日本ファンフェス THE PRIMALSライブ アーカイブ配信",
-      "start": "2026-11-02T18:00:00+09:00",
-      "end": "2026-11-22T23:59:00+09:00",
-      "allDay": false,
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/6bac301229dca8c167092e402c1d6d04605f4faf",
-      "description": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。"
     },
     {
       "id": "maintenance-2026-11-09T19:00",

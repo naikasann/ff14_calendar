@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-06T09:00:55Z",
+  "reviewedAt": "2026-11-07T00:44:26.069Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -337,7 +337,10 @@
     "broadcast-e69b69f86189",
     "event-4ec4498b511c",
     "campaign-4ec4498b511c",
-    "broadcast-4ec4498b511c"
+    "broadcast-4ec4498b511c",
+    "broadcast-fanfest2026-piano-archive",
+    "broadcast-deb038f704ce",
+    "broadcast-fanfest2026-primals-archive"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -449,6 +452,14 @@
         }
       ],
       "policy": "終了済み予定はexcludedIdsで再追加を防止。アンケートは開始時刻未記載のため公式の実施日範囲を終日表示し、概要に正確な締切を記載。"
+    },
+    "2026-11-07": {
+      "excludedByUserRequest": [
+        "broadcast-fanfest2026-piano-archive",
+        "broadcast-deb038f704ce",
+        "broadcast-fanfest2026-primals-archive"
+      ],
+      "reason": "ユーザーの依頼により、残っている日本ファンフェス関連（来場・視聴者アンケート、音楽アーカイブ配信2件）を削除。終了済みの関連予定の除外も維持し、これらの予定を自動再取得・週次更新で復元しない。"
     }
   }
 }
