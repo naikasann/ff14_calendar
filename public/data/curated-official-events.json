@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-07T00:44:26.069Z",
+  "reviewedAt": "2026-11-07T14:27:31.133Z",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -340,7 +340,8 @@
     "broadcast-4ec4498b511c",
     "broadcast-fanfest2026-piano-archive",
     "broadcast-deb038f704ce",
-    "broadcast-fanfest2026-primals-archive"
+    "broadcast-fanfest2026-primals-archive",
+    "event-9aa135968177"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -459,7 +460,11 @@
         "broadcast-deb038f704ce",
         "broadcast-fanfest2026-primals-archive"
       ],
-      "reason": "ユーザーの依頼により、残っている日本ファンフェス関連（来場・視聴者アンケート、音楽アーカイブ配信2件）を削除。終了済みの関連予定の除外も維持し、これらの予定を自動再取得・週次更新で復元しない。"
+      "reason": "ユーザーの依頼により、残っている日本ファンフェス関連（来場・視聴者アンケート、音楽アーカイブ配信2件）を削除。終了済みの関連予定の除外も維持し、これらの予定を自動再取得・週次更新で復元しない。",
+      "excludedCafeByUserRequest": [
+        "event-9aa135968177"
+      ],
+      "cafeReason": "ユーザーはカフェへ行かないため、エオルゼアカフェの予定を掲載対象から除外。自動再取得・週次更新で復元しない。"
     }
   }
 }
