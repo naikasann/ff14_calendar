@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-11-07T14:27:31.133Z",
+  "generatedAt": "2026-11-09T19:49:56.315Z",
   "events": [
+    {
+      "id": "patch-7.58-2026-11-09",
+      "type": "patch",
+      "title": "パッチ7.58 パッチノート公開",
+      "start": "2026-11-09",
+      "end": "2026-11-10",
+      "allDay": true,
+      "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/1e4c13f59390f7353a83501156557f7fbad1dfbc"
+    },
     {
       "id": "maintenance-2026-11-09T19:00",
       "type": "maintenance",
