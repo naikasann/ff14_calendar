@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-07T14:27:31.133Z",
+  "reviewedAt": "2026-11-13T08:58:58.017933+00:00",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -240,6 +240,14 @@
       "end": "2026-11-10T19:00:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/c37f3c23df3ff03c7852805f20e227090d35b1b9"
+    },
+    "event-fbefcdfb376b": {
+      "type": "event",
+      "title": "FFXIV×FFXVI「炎影の旅路」再演",
+      "start": "2026-11-18T17:00:00+09:00",
+      "end": "2026-12-09T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fbefcdfb376b910a31040f6572c61c716b7e7dc2"
     }
   },
   "summaryOverrides": {
@@ -279,7 +287,8 @@
     "broadcast-fanfest2026-piano-archive": "日本ファンフェスのピアノコンサートをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
     "broadcast-fanfest2026-primals-archive": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
     "broadcast-deb038f704ce": "日本ファンフェスの来場者・視聴者を対象に、今後のイベントやサービスの参考とするアンケートを実施。回答にはスクウェア・エニックス アカウントでのログインが必要です。PCブラウザから11月8日23:59頃まで回答できます。",
-    "maintenance-2026-11-09T19:00": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。"
+    "maintenance-2026-11-09T19:00": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。",
+    "event-fbefcdfb376b": "FFXVIとのコラボイベント「炎影の旅路」を再演。マウント「トルガル」やクライヴの装備を再現したメティアン装備などを入手できます。過去開催と同じ内容で、クリア済みでもクエストのリプレイが可能。開始・終了は頃表記です。"
   },
   "excludedIds": [
     "maintenance-2026-09-08T15:00",
@@ -341,7 +350,28 @@
     "broadcast-fanfest2026-piano-archive",
     "broadcast-deb038f704ce",
     "broadcast-fanfest2026-primals-archive",
-    "event-9aa135968177"
+    "event-9aa135968177",
+    "patch-7.58-2026-11-09",
+    "maintenance-2026-11-09T19:00",
+    "pvp-season-22",
+    "event-b28e3ac0a764",
+    "campaign-b28e3ac0a764",
+    "broadcast-b28e3ac0a764",
+    "event-bacfdc4ad48e",
+    "campaign-bacfdc4ad48e",
+    "broadcast-bacfdc4ad48e",
+    "event-ac3ad9a7f0fe",
+    "campaign-ac3ad9a7f0fe",
+    "broadcast-ac3ad9a7f0fe",
+    "event-fe151e9b80fb",
+    "campaign-fe151e9b80fb",
+    "broadcast-fe151e9b80fb",
+    "event-a0ee42e19140",
+    "campaign-a0ee42e19140",
+    "broadcast-a0ee42e19140",
+    "event-5cfbadb85f1a",
+    "campaign-5cfbadb85f1a",
+    "broadcast-5cfbadb85f1a"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -465,6 +495,43 @@
         "event-9aa135968177"
       ],
       "cafeReason": "ユーザーはカフェへ行かないため、エオルゼアカフェの予定を掲載対象から除外。自動再取得・週次更新で復元しない。"
+    },
+    "2026-11-13": {
+      "accepted": [
+        "event-fbefcdfb376b"
+      ],
+      "excludedEndedIds": [
+        "patch-7.58-2026-11-09",
+        "maintenance-2026-11-09T19:00"
+      ],
+      "excludedArticles": [
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/b28e3ac0a7648cdac2f7790f1ba4ded08cdd3b72",
+          "reason": "チョコボレースVRは終了日時未確定。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/bacfdc4ad48e7b4e2457605579c94d94fe47e8a5",
+          "reason": "シーズン21報酬はシーズン22終了まで。確定日時なし。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ac3ad9a7f0fe831ab6f9baf8fefbc50c510033dc",
+          "reason": "TUBBZグッズ販売。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fe151e9b80fbf255a5b356c47cd672a467e68a9f",
+          "reason": "POP UP STOREの物販告知。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/a0ee42e191405ee634ff173aa26625367fea4a30",
+          "reason": "ラベル缶の販売告知。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/5cfbadb85f1a84b8cdda033e55b82528afe240c3",
+          "reason": "音楽商品の発売予告。"
+        }
+      ],
+      "maintenance": "今後のゲーム関連メンテナンス告知なし。",
+      "policy": "ファンフェス・カフェのユーザー指定除外を維持。"
     }
   }
 }

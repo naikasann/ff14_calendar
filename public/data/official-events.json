@@ -1,25 +1,15 @@
 {
-  "generatedAt": "2026-11-09T19:49:56.315Z",
+  "generatedAt": "2026-11-13T08:59:06.469Z",
   "events": [
     {
-      "id": "patch-7.58-2026-11-09",
-      "type": "patch",
-      "title": "パッチ7.58 パッチノート公開",
-      "start": "2026-11-09",
-      "end": "2026-11-10",
-      "allDay": true,
-      "description": "FF14公式パッチノートの公開日です。内容は公式ページをご確認ください。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/1e4c13f59390f7353a83501156557f7fbad1dfbc"
-    },
-    {
-      "id": "maintenance-2026-11-09T19:00",
-      "type": "maintenance",
-      "title": "全ワールド メンテナンス（パッチ7.58）",
-      "start": "2026-11-09T19:00:00+09:00",
-      "end": "2026-11-10T19:00:00+09:00",
+      "id": "event-fbefcdfb376b",
+      "type": "event",
+      "title": "FFXIV×FFXVI「炎影の旅路」再演",
+      "start": "2026-11-18T17:00:00+09:00",
+      "end": "2026-12-09T23:59:00+09:00",
       "allDay": false,
-      "description": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。",
-      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/c37f3c23df3ff03c7852805f20e227090d35b1b9"
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fbefcdfb376b910a31040f6572c61c716b7e7dc2",
+      "description": "FFXVIとのコラボイベント「炎影の旅路」を再演。マウント「トルガル」やクライヴの装備を再現したメティアン装備などを入手できます。過去開催と同じ内容で、クリア済みでもクエストのリプレイが可能。開始・終了は頃表記です。"
     }
   ]
 }
