@@ -31,10 +31,10 @@ export const FRONTLINE_MAPS: FrontlineMap[] = [
 ];
 
 export const CC_SEASON = {
-  number: 21,
-  startedLabel: "2026年7月28日",
-  jpDataCenter: "Elemental DC",
-  officialUrl: "https://jp.finalfantasyxiv.com/lodestone/topics/detail/7723f9b3f09f687298ce18e840da72b72b5bec3b",
+  number: 22,
+  startedLabel: "2026年11月10日",
+  jpDataCenter: "日本DC内の全ワールド",
+  officialUrl: "https://jp.finalfantasyxiv.com/lodestone/topics/detail/bacfdc4ad48e7b4e2457605579c94d94fe47e8a5",
 };
 
 const WEEKDAY_LABELS = ["日", "月", "火", "水", "木", "金", "土"];

@@ -264,7 +264,7 @@ function TodayPanel({ today }: { today: CalendarDate }) {
       <CrystallineConflictRotation />
 
       <article className="season-card">
-        <div className="season-emblem"><span>CC</span><small>21</small></div>
+        <div className="season-emblem"><span>CC</span><small>{CC_SEASON.number}</small></div>
         <div className="season-copy"><p className="eyebrow">クリスタルコンフリクト</p><h2>シーズン {CC_SEASON.number} 開催中</h2><p>{CC_SEASON.startedLabel} 開幕・終了日は公式発表待ち</p></div>
         <div className="season-dc"><span>日本ランクマッチ</span><strong>{CC_SEASON.jpDataCenter}</strong></div>
         <a className="official-link" href={CC_SEASON.officialUrl} target="_blank" rel="noreferrer">公式発表 <Icon name="external" /></a>
@@ -419,7 +419,7 @@ function Sources() {
     ["フロントライン周期", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/072b03a01b057707a9b9b6476c898c9ed3c7c4a4"],
     ["ハウジング抽選", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/ffe05674f919dad5f4f13d443f2fd7067a3dc2b0"],
     ["クリコンマップ周期", "https://jp.finalfantasyxiv.com/lodestone/topics/detail/072b03a01b057707a9b9b6476c898c9ed3c7c4a4"],
-    ["クリコンSeason 21", CC_SEASON.officialUrl],
+    [`クリコンSeason ${CC_SEASON.number}`, CC_SEASON.officialUrl],
   ];
   return (
     <section className="sources-section" id="sources">
