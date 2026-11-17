@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-11-13T08:59:06.469Z",
+  "generatedAt": "2026-11-17T16:00:12.493Z",
   "events": [
+    {
+      "id": "campaign-fe7427cabf03",
+      "type": "campaign",
+      "title": "マウント「初代でぶチョコボ」が当たる！Xフォロー＆RPキャンペーン 第1弾実施！",
+      "start": "2026-11-17",
+      "end": "2026-12-29",
+      "allDay": true,
+      "description": "「白銀のワンダラー」への冒険準備キャンペーンの開催を記念し、Xフォロー＆RPキャンペーン第1弾を実施！ 抽選で140名様にマウント「初代でぶチョコボ」をプレゼントします。「ファイナルファンタジーXIV」公式Xアカウントをフォロー&対象ポストをリポストするだけで応募できますので、ふるってご応募ください。 「白銀のワンダラー」への冒険準備キャンペーンでは、FFXIV史上最長と...",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fe7427cabf032048c807a9376f34111b72efe8e8"
+    },
     {
       "id": "event-fbefcdfb376b",
       "type": "event",
