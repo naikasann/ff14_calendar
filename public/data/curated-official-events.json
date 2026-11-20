@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-13T08:58:58.017933+00:00",
+  "reviewedAt": "2026-11-20T09:07:52.227853+00:00",
   "eventOverrides": {
     "campaign-08eed83e8433": {
       "type": "campaign",
@@ -248,6 +248,30 @@
       "end": "2026-12-09T23:59:00+09:00",
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fbefcdfb376b910a31040f6572c61c716b7e7dc2"
+    },
+    "campaign-fe7427cabf03": {
+      "type": "campaign",
+      "title": "初代でぶチョコボ Xフォロー＆RPキャンペーン 第1弾",
+      "start": "2026-11-17",
+      "end": "2026-12-01",
+      "allDay": true,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fe7427cabf032048c807a9376f34111b72efe8e8"
+    },
+    "campaign-7e1c4366a70f": {
+      "type": "campaign",
+      "title": "最大30日間 無料ログインキャンペーン",
+      "start": "2026-11-16T17:00:00+09:00",
+      "end": "2027-01-14T23:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/special/freelogincampaign/"
+    },
+    "event-59e4b306e8d6": {
+      "type": "event",
+      "title": "闘獣練ランキング シーズン1",
+      "start": "2026-10-26T14:00:00+09:00",
+      "end": "2026-12-01T13:59:00+09:00",
+      "allDay": false,
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/59e4b306e8d668117aa078ae14768bb4b89ada9a"
     }
   },
   "summaryOverrides": {
@@ -288,7 +312,10 @@
     "broadcast-fanfest2026-primals-archive": "日本ファンフェスのTHE PRIMALSライブをアーカイブで視聴できる期間。対象の有料配信チケットが必要で、期間中は繰り返し視聴できます。公開開始は公演翌日18:00頃、終了は11月22日23:59頃の予定です。",
     "broadcast-deb038f704ce": "日本ファンフェスの来場者・視聴者を対象に、今後のイベントやサービスの参考とするアンケートを実施。回答にはスクウェア・エニックス アカウントでのログインが必要です。PCブラウザから11月8日23:59頃まで回答できます。",
     "maintenance-2026-11-09T19:00": "パッチ7.58公開と北米・欧州DCへのリージョン内フリーマッチング実装に伴う全ワールドメンテナンス。期間中はゲームを利用できず、開始30分前からDCトラベルも停止します。終了予定時刻は変更の場合があります。",
-    "event-fbefcdfb376b": "FFXVIとのコラボイベント「炎影の旅路」を再演。マウント「トルガル」やクライヴの装備を再現したメティアン装備などを入手できます。過去開催と同じ内容で、クリア済みでもクエストのリプレイが可能。開始・終了は頃表記です。"
+    "event-fbefcdfb376b": "FFXVIとのコラボイベント「炎影の旅路」を再演。マウント「トルガル」やクライヴの装備を再現したメティアン装備などを入手できます。過去開催と同じ内容で、クリア済みでもクエストのリプレイが可能。開始・終了は頃表記です。",
+    "campaign-fe7427cabf03": "公式Xをフォローし、対象ポストをリポストすると、抽選で140名にマウント「初代でぶチョコボ」のアイテムコードが当たります。第1弾は11月30日23:59頃締切。引用リポストは対象外で、開始時刻は未公表です。",
+    "campaign-7e1c4366a70f": "製品版を登録済みで、全サービスアカウントに利用日数がなく、未契約期間が連続150日以上の方が対象。ランチャーへのログインから最大30日間無料で遊べます。キャンペーン終了は1月14日23:59頃です。",
+    "event-59e4b306e8d6": "闘獣練ランキングのシーズン1は12月1日13:59頃に終了。同一物理データセンターの最終順位で300位以内に入賞すると順位報酬が届きます。終了後はプレシーズンとなり、次のシーズンまでランキングに参加できません。"
   },
   "excludedIds": [
     "maintenance-2026-09-08T15:00",
@@ -371,7 +398,24 @@
     "broadcast-a0ee42e19140",
     "event-5cfbadb85f1a",
     "campaign-5cfbadb85f1a",
-    "broadcast-5cfbadb85f1a"
+    "broadcast-5cfbadb85f1a",
+    "event-4e00056d4ec4",
+    "campaign-4e00056d4ec4",
+    "broadcast-4e00056d4ec4",
+    "event-85f352555049",
+    "campaign-85f352555049",
+    "broadcast-85f352555049",
+    "season-59e4b306e8d6",
+    "broadcast-24840cb71339",
+    "event-96473881ef22",
+    "campaign-96473881ef22",
+    "broadcast-96473881ef22",
+    "event-a063e78ef667",
+    "campaign-a063e78ef667",
+    "broadcast-a063e78ef667",
+    "event-4462a3ecc24d",
+    "campaign-4462a3ecc24d",
+    "broadcast-4462a3ecc24d"
   ],
   "extraEvents": [],
   "reviewNotes": {
@@ -532,6 +576,53 @@
       ],
       "maintenance": "今後のゲーム関連メンテナンス告知なし。",
       "policy": "ファンフェス・カフェのユーザー指定除外を維持。"
+    },
+    "2026-11-20": {
+      "accepted": [
+        "campaign-fe7427cabf03",
+        "campaign-7e1c4366a70f",
+        "event-59e4b306e8d6"
+      ],
+      "excludedArticles": [
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4e00056d4ec4d881f2c2308743c693b9f0d82d84",
+          "reason": "お土産セット等の物販とオンラインくじ再販売。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/85f352555049bfbbd093660ade93c01fc572d1f8",
+          "reason": "チョコボレースVR新宿は終了日時未公表。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/59e4b306e8d668117aa078ae14768bb4b89ada9a",
+          "reason": "シーズン1のみ採用。シーズン2は終了がパッチ8.0メンテナンス開始で未確定。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fe7427cabf032048c807a9376f34111b72efe8e8",
+          "reason": "第2弾・第3弾は詳細後日の日程予告のみのため追加しない。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/evercoldcampaign/",
+          "reason": "無料ログインのみ採用。製品版セール・冒険録販売は対象外。継続プレイヤー報酬の受取期限はパッチ8.0メンテナンス開始で未確定。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/24840cb713392c9615cf58fde06dbd8f940a16e8",
+          "reason": "第94回PLLは12月4日20:00頃開始のみ確定、終了時刻未公表。自動生成の1時間枠を除外し推定しない。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/96473881ef22337b8ed49ab99b3131698159d590",
+          "reason": "オプションアイテム販売。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/a063e78ef6679960efafe09001200eebbb2173b7",
+          "reason": "キャンペーン説明文。開催予定は無料ログイン企画へ集約。"
+        },
+        {
+          "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/4462a3ecc24d59617ce5019becaa487702a07400",
+          "reason": "常設ガイド動画公開。参加期間のある予定ではない。"
+        }
+      ],
+      "maintenance": "メンテナンス一覧を確認。11月16日・17日のサービス系メンテナンスは終了済み。今後の全ワールド等のメンテナンス新規告知なし。",
+      "policy": "X第1弾は開始日だけが公式に記載されるため終日範囲、endは翌日排他。正確な締切を概要へ記載。闘獣練は開始告知4bc6e1a950c9465bbcb3abbf93781c80735f55fbと終了告知を突合。クリコンと混同しないevent分類。過去の除外は維持。"
     }
   }
 }
