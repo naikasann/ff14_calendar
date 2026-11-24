@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T09:07:57.454Z",
+  "generatedAt": "2026-11-24T13:44:07.118Z",
   "events": [
     {
       "id": "event-59e4b306e8d6",
@@ -40,6 +40,16 @@
       "allDay": false,
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/fbefcdfb376b910a31040f6572c61c716b7e7dc2",
       "description": "FFXVIとのコラボイベント「炎影の旅路」を再演。マウント「トルガル」やクライヴの装備を再現したメティアン装備などを入手できます。過去開催と同じ内容で、クリア済みでもクエストのリプレイが可能。開始・終了は頃表記です。"
+    },
+    {
+      "id": "event-479290132698",
+      "type": "event",
+      "title": "「モグモグ★コレクション ～天文に至る路 Part2～」12月1日（火）スタート！",
+      "start": "2026-12-01",
+      "end": "2026-12-02",
+      "allDay": true,
+      "description": "2026年12月1日（火） より、「モグモグ★コレクション ～天文に至る路 Part2～」を開催します。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/479290132698ed3804031f11a016a46d516db018"
     }
   ]
 }
