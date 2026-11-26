@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T13:44:07.118Z",
+  "generatedAt": "2026-11-26T16:54:26.099Z",
   "events": [
     {
       "id": "event-59e4b306e8d6",
@@ -50,6 +50,16 @@
       "allDay": true,
       "description": "2026年12月1日（火） より、「モグモグ★コレクション ～天文に至る路 Part2～」を開催します。",
       "url": "https://jp.finalfantasyxiv.com/lodestone/topics/detail/479290132698ed3804031f11a016a46d516db018"
+    },
+    {
+      "id": "maintenance-2026-12-01T15:00",
+      "type": "maintenance",
+      "title": "全ワールド メンテナンス作業のお知らせ(12/1)",
+      "start": "2026-12-01T15:00:00+09:00",
+      "end": "2026-12-01T19:00:00+09:00",
+      "allDay": false,
+      "description": "[メンテナンス] 全ワールド メンテナンス作業のお知らせ(12/1)。日時は変更される場合があります。最新情報は公式ページをご確認ください。",
+      "url": "https://jp.finalfantasyxiv.com/lodestone/news/detail/f8176837f964270480a0491fefc6be47842ed8a8"
     }
   ]
 }
